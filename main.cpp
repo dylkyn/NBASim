@@ -47,6 +47,7 @@ void gameSimulation(Team offense, Team defense)
             else
             {
                 defender.setNumBlocks(defender.getNumBlocks() + 1);
+                offender.setNumMissedTwo(offender.getNumMissedTwo + 1);
             }
         }
         else
@@ -67,6 +68,8 @@ void gameSimulation(Team offense, Team defense)
             else
             {
                 defender.setNumRebounds(defender.getNumRebounds() + 1);
+                offender.setNumMissedTwo(offender.getNumMissedTwo + 1);
+
             }
         }
     }
@@ -87,6 +90,8 @@ void gameSimulation(Team offense, Team defense)
         else
         {
             defender.setNumSteals(defender.getNumSteals() + 1);
+            offender.setNumMissedThree(offender.getNumMissedThree + 1);
+
 
         }
     }
