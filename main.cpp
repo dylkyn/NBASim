@@ -91,8 +91,6 @@ void gameSimulation(Team offense, Team defense)
         {
             defender.setNumSteals(defender.getNumSteals() + 1);
             offender.setNumMissedThree(offender.getNumMissedThree + 1);
-
-
         }
     }
 }
