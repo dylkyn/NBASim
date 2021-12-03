@@ -88,20 +88,10 @@ NBASim_EXTERNAL_OBJECTS =
 
 NBASim.exe: CMakeFiles/NBASim.dir/main.cpp.obj
 NBASim.exe: CMakeFiles/NBASim.dir/build.make
-NBASim.exe: ../SFML/lib/libsfml-system-s-d.a
-NBASim.exe: ../SFML/lib/libsfml-window-s-d.a
-NBASim.exe: ../SFML/lib/libsfml-graphics-s-d.a
-NBASim.exe: ../SFML/lib/libsfml-audio-s-d.a
-NBASim.exe: ../SFML/lib/libsfml-audio-s-d.a
-NBASim.exe: ../SFML/lib/libsfml-window-s-d.a
-NBASim.exe: ../SFML/lib/libfreetype.a
-NBASim.exe: ../SFML/lib/libsfml-system-s-d.a
-NBASim.exe: ../SFML/lib/libopenal32.a
-NBASim.exe: ../SFML/lib/libvorbisfile.a
-NBASim.exe: ../SFML/lib/libvorbisenc.a
-NBASim.exe: ../SFML/lib/libvorbis.a
-NBASim.exe: ../SFML/lib/libogg.a
-NBASim.exe: ../SFML/lib/libFLAC.a
+NBASim.exe: ../SFML/lib/libsfml-graphics-d.a
+NBASim.exe: ../SFML/lib/libsfml-audio-d.a
+NBASim.exe: ../SFML/lib/libsfml-window-d.a
+NBASim.exe: ../SFML/lib/libsfml-system-d.a
 NBASim.exe: CMakeFiles/NBASim.dir/linklibs.rsp
 NBASim.exe: CMakeFiles/NBASim.dir/objects1.rsp
 NBASim.exe: CMakeFiles/NBASim.dir/link.txt
