@@ -8,5 +8,6 @@ private:
     Player players[5];
 public:
     Team(std::string name);
+    Player getPlayer();
 };
 #endif //NBASIM_TEAM_H

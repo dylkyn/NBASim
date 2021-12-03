@@ -7,7 +7,7 @@
 class Player
 {
 private:
-    int type; //what type of player? 1-5
+    int position; //what type of player? 1-5
     int block;
     int rebound;
     int interiorDefense;
@@ -16,9 +16,20 @@ private:
     int shoot;
     int threePointShot;
     int twoPointShot;
+
+    //player stats
+    int numMissedTwo;
+    int numMissedThree;
+    int numTwo;
+    int numThree;
+    int numAssist;
+    int numRebounds;
+    int numSteals;
+    int numBlocks;
 public:
     Player(int playerType);
     //getters and setters for attributes
+    int getPosition();
     int getBlock();
     int getRebound();
     int getInteriorDefense();
@@ -28,13 +39,22 @@ public:
     int getThreePointShot();
     int getTwoPointShot();
 
-    void setBlock(int newBlock);
-    void setRebound(int newRebound);
-    void setInteriorDefense(int newInterior);
-    void setPerimeterDefense(int newPerimeter);
-    void setPass(int newPass);
-    void setShoot(int newShoot);
-    void setThreePointShot(int newThree);
-    void setTwoPointShot(int newTwo);
+    //player totals
+    void setNumMissedTwo(int newMissedTwo);
+    void setNumMissedThree(int newMissedThree);
+    void setNumTwo(int newNumTwo);
+    void setNumThree(int newNumThree);
+    void setNumAssist(int newNumAssist);
+    void setNumRebounds(int newNumRebounds);
+    void setNumSteals(int newNumSteals);
+    void setNumBlocks(int newNumBlocks);
+    int getNumMissedThree();
+    int getNumMissedTwo();
+    int getNumThree();
+    int getNumTwo();
+    int getNumAssist();
+    int getNumRebounds();
+    int getNumSteals();
+    int getNumBlocks()
 };
 #endif //NBASIM_PLAYER_H

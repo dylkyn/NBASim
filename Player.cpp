@@ -4,8 +4,13 @@
 
 Player::Player(int playerType)
 {
-    this->type = playerType;
+    position = playerType;
     srand(time(NULL));
+    numTwo = 0;
+    numThree = 0;
+    numAssist = 0;
+    numRebounds = 0;
+    numSteals = 0;
     switch (playerType)
     {
         case 1: //point guard
@@ -62,6 +67,10 @@ Player::Player(int playerType)
 }
 
 //getters and setters for attributes
+int Player::getPosition()
+{
+   return position;
+}
 int Player::getBlock()
 {
     return block;
@@ -95,35 +104,68 @@ int Player::getTwoPointShot()
     return twoPointShot;
 }
 
-void Player::setBlock(int newBlock)
+//player totals
+void Player::setNumMissedTwo(int newMissedTwo)
 {
-    block = newBlock;
+    numMissedTwo = newMissedTwo;
 }
-void Player::setRebound(int newRebound)
+void Player::setNumMissedThree(int newMissedThree)
 {
-    rebound = newRebound;
+    numMissedThree = newMissedThree;
 }
-void Player::setInteriorDefense(int newInterior)
+void Player::setNumTwo(int newNumTwo)
 {
-    interiorDefense = newInterior;
+    numTwo = newNumTwo;
 }
-void Player::setPerimeterDefense(int newPerimeter)
+void Player::setNumThree(int newNumThree)
 {
-    perimeterDefense = newPerimeter;
+    numThree = newNumThree;
 }
-void Player::setPass(int newPass)
+void Player::setNumAssist(int newNumAssist)
 {
-    pass = newPass;
+    numAssist = newNumAssist;
 }
-void Player::setShoot(int newShoot)
+void Player::setNumRebounds(int newNumRebounds)
 {
-    shoot = newShoot;
+    numRebounds = newNumRebounds;
 }
-void Player::setThreePointShot(int newThree)
+void Player::setNumSteals(int newNumSteals)
 {
-    threePointShot = newThree;
+    numSteals = newNumSteals;
 }
-void Player::setTwoPointShot(int newTwo)
+void Player::setNumBlocks(int newNumBlocks)
 {
-    twoPointShot = newTwo;
+    numBlocks = newNumBlocks;
+}
+int Player::getNumMissedThree()
+{
+    return numMissedThree;
+}
+int Player::getNumMissedTwo()
+{
+    return numMissedTwo;
+}
+int Player::getNumTwo()
+{
+    return numTwo;
+}
+int Player::getNumThree()
+{
+    return numThree;
+}
+int Player::getNumAssist()
+{
+    return numAssist;
+}
+int Player::getNumRebounds()
+{
+    return numRebounds;
+}
+int Player::getNumSteals()
+{
+    reutn numSteals;
+}
+int Player::getNumBlocks()
+{
+    return numBlocks;
 }

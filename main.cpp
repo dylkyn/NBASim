@@ -1,14 +1,16 @@
 #include <iostream>
+#include "Player.h"
+#include "Team.h"
 
 void gameSimulation(Team offense, Team defense)
 {
     bool assist = false;
     Player offender = offense.getPlayer();
     Player assister = offense.getPlayer();
-    Player defender = defense.getPlayer()
-    while(offender.position == assist.position)
+    Player defender = defense.getPlayer();
+    while(offender.getPosition() == assister.getPosition())
     {
-        assist = offense.getPlayer(); //This while loop makes sure that two different players are selected
+        assister = offense.getPlayer(); //This while loop makes sure that two different players are selected
     }
     srand (time(NULL));
 //	v3 = rand() % 30 + 1985;   // v3 in the range 1985-2014
@@ -22,8 +24,8 @@ void gameSimulation(Team offense, Team defense)
         swap(offender, assister); //https://www.cplusplus.com/reference/algorithm/swap/ need to include <algorithms>
     }
 
-    int twoPoint = rand() % offender.getTwoPoint() + 1;
-    int threePoint = rand() % offender.getThreePoint() + 1;
+    int twoPoint = rand() % offender.getTwoPointShot() + 1;
+    int threePoint = rand() % offender.getThreePointShot() + 1;
 
     if (twoPoint >= threePoint)
     {
@@ -31,44 +33,44 @@ void gameSimulation(Team offense, Team defense)
         int rebound = rand() % defender.getRebound() + 1;
         if(block >= rebound)
         {
-            twoPoint = rand() % offender.getTwoPoint() + 1; //This is ran for a second time due to the bias that would be created from it winning against the three point in the first time. This will be same logic for block being re-ran.
+            twoPoint = rand() % offender.getTwoPointShot() + 1; //This is ran for a second time due to the bias that would be created from it winning against the three point in the first time. This will be same logic for block being re-ran.
 
             block = rand() % defender.getBlock() + 1;
 
             if (block <= twoPoint)
             {
                 offense.setScore(offense.getScore + 2); //I do not know how we are doing and setting up the game but this is lowkey pseudocode here
-                offender.setNumTwo(offender.getNumTwo + 1);
+                offender.setNumTwo(offender.getNumTwo() + 1);
                 if (assist)
                 {
-                    assister.setNumAssist(assister.getAssist + 1); //this is just updating how many assists the player has. We can also do this by updating something within the Game file where its like the number of assists the player pos has
+                    assister.setNumAssist(assister.getNumAssist() + 1); //this is just updating how many assists the player has. We can also do this by updating something within the Game file where its like the number of assists the player pos has
                 }
             }
             else
             {
                 defender.setNumBlocks(defender.getNumBlocks() + 1);
-                offender.setNumMissedTwo(offender.getNumMissedTwo + 1);
+                offender.setNumMissedTwo(offender.getNumMissedTwo() + 1);
             }
         }
         else
         {
-            twoPoint = rand() % offender.getTwoPoint() + 1; //This is ran for a second time due to the bias that would be created from it winning against the three point in the first time. This will be same logic for block being re-ran.
+            twoPoint = rand() % offender.getTwoPointShot() + 1; //This is ran for a second time due to the bias that would be created from it winning against the three point in the first time. This will be same logic for block being re-ran.
 
             rebound = rand() % defender.getBlock() + 1;
 
             if (rebound <= twoPoint)
             {
                 offense.setScore(offense.getScore + 2); //I do not know how we are doing and setting up the game but this is lowkey pseudocode here
-                offender.setNumTwo(offender.getNumTwo + 1);
+                offender.setNumTwo(offender.getNumTwo() + 1);
                 if (assist)
                 {
-                    assister.setNumAssist(assister.getAssist + 1); //this is just updating how many assists the player has. We can also do this by updating something within the Game file where its like the number of assists the player pos has
+                    assister.setNumAssist(assister.getNumAssist() + 1); //this is just updating how many assists the player has. We can also do this by updating something within the Game file where its like the number of assists the player pos has
                 }
             }
             else
             {
                 defender.setNumRebounds(defender.getNumRebounds() + 1);
-                offender.setNumMissedTwo(offender.getNumMissedTwo + 1);
+                offender.setNumMissedTwo(offender.getNumMissedTwo() + 1);
 
             }
         }
@@ -76,21 +78,21 @@ void gameSimulation(Team offense, Team defense)
     else
     {
         int perimeterD = rand() % defender.getPerimeterDefense() + 1;
-        threePoint = rand() % offender.getThreePoint() + 1;
+        threePoint = rand() % offender.getThreePointShot() + 1;
 
         if (threePoint >= perimeterD)
         {
             offense.setScore(offense.getScore + 3); //I do not know how we are doing and setting up the game but this is lowkey pseudocode here
-            offender.setNumThree(offender.getNumThree + 1);
+            offender.setNumThree(offender.getNumThree() + 1);
             if (assist)
             {
-                assister.setNumAssist(assister.getAssist + 1); //this is just updating how many assists the player has. We can also do this by updating something within the Game file where its like the number of assists the player pos has
+                assister.setNumAssist(assister.getNumAssist() + 1); //this is just updating how many assists the player has. We can also do this by updating something within the Game file where its like the number of assists the player pos has
             }
         }
         else
         {
             defender.setNumSteals(defender.getNumSteals() + 1);
-            offender.setNumMissedThree(offender.getNumMissedThree + 1);
+            offender.setNumMissedThree(offender.getNumMissedThree() + 1);
         }
     }
 }
