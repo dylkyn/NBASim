@@ -18,8 +18,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="NBASim">
-				<Option output="C:/Users/kynoc/OneDrive/Documents/GT/Classes/ECE 4122/NBASim/cmake-build-debug/CMAKE_CURRENT_SOURCE_DIR/NBASim.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="CMAKE_CURRENT_SOURCE_DIR"/>
+				<Option output="C:/Users/kynoc/OneDrive/Documents/GT/Classes/ECE 4122/NBASim/cmake-build-debug/NBASim.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/kynoc/OneDrive/Documents/GT/Classes/ECE 4122/NBASim/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -41,8 +41,8 @@
 				</MakeCommands>
 			</Target>
 			<Target title="NBASim/fast">
-				<Option output="C:/Users/kynoc/OneDrive/Documents/GT/Classes/ECE 4122/NBASim/cmake-build-debug/CMAKE_CURRENT_SOURCE_DIR/NBASim.exe" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="CMAKE_CURRENT_SOURCE_DIR"/>
+				<Option output="C:/Users/kynoc/OneDrive/Documents/GT/Classes/ECE 4122/NBASim/cmake-build-debug/NBASim.exe" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/kynoc/OneDrive/Documents/GT/Classes/ECE 4122/NBASim/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
