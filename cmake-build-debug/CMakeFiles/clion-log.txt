@@ -1,5 +1,5 @@
-"C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "C:\Users\kynoc\OneDrive\Documents\GT\Classes\ECE 4122\NBASim"
--- Found SFML 2.5.1 in C:/Users/kynoc/OneDrive/Documents/GT/Classes/ECE 4122/NBASim/SFML/lib/cmake/SFML
+"C:\Program Files\JetBrains\CLion 2021.2.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - NMake Makefiles" C:\Users\bella\ECE\ECE4122\NBASim
+-- Found SFML 2.5.1 in C:/Users/bella/ECE/ECE4122/NBASim/SFML/lib/cmake/SFML
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/kynoc/OneDrive/Documents/GT/Classes/ECE 4122/NBASim/cmake-build-debug
+-- Build files have been written to: C:/Users/bella/ECE/ECE4122/NBASim/cmake-build-debug
