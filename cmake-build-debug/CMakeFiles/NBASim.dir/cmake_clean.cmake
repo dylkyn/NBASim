@@ -1,8 +1,9 @@
 file(REMOVE_RECURSE
-  "CMAKE_CURRENT_SOURCE_DIR/NBASim"
-  "CMAKE_CURRENT_SOURCE_DIR/NBASim.pdb"
-  "CMakeFiles/NBASim.dir/main.cpp.o"
-  "CMakeFiles/NBASim.dir/main.cpp.o.d"
+  "CMakeFiles/NBASim.dir/main.cpp.obj"
+  "NBASim.exe"
+  "NBASim.exe.manifest"
+  "NBASim.pdb"
+  "libNBASim.dll.a"
 )
 
 # Per-language clean rules from dependency scanning.
