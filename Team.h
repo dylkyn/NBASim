@@ -14,5 +14,6 @@ public:
     Player getPlayer();
     int getGameScore();
     void setGameScore(int score);
+    std::string getName();
 };
 #endif //NBASIM_TEAM_H

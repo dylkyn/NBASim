@@ -32,3 +32,7 @@ void Team::setGameScore(int score) {
 int Team::getGameScore() {
     return gameScore;
 }
+std::string Team::getName()
+{
+    return teamName;
+}

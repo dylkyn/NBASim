@@ -1,12 +1,17 @@
 #include <iostream>
 #include "Player.h"
 #include "Team.h"
-#include <algorithm>
 #include "Game.h"
+#include <algorithm>
+#include <string>
 
 int main()
 {
     Team hawks("Hawks");
-	std::cout << "Hello, World!" << std::endl;
-	return 0;
+//    Team thunder("Thunder");
+//    Game game1(hawks, thunder);
+//    game1.fullGameSimulation();
+//    std::cout << "Winner is: " << game1.getWinner().getName() << std::endl;
+//	return 0;
+    std::cout << "hello world";
 }

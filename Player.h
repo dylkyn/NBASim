@@ -18,7 +18,7 @@ private:
     int twoPointShot;
 
     //setting unique name
-    string name;
+    std::string name;
     int pointGuardRange = 30;
     int shootingGuardRange = 30;
     int smallForwardRange = 30;
@@ -64,10 +64,10 @@ public:
     int getNumAssist();
     int getNumRebounds();
     int getNumSteals();
-    int getNumBlocks()
+    int getNumBlocks();
 
     //string array of names
-    string pointGuardNames[30] = {
+    std::string pointGuardNames[30] = {
         "Trae Young",
         "Jose Alvarado",
         "Stephen Curry",
@@ -98,8 +98,8 @@ public:
         "Markelle Fultz",
         "Avery Bradley",
         "Jordan Clarkson"
-    }
-    string shootingGuardNames[30] = {
+    };
+    std::string shootingGuardNames[30] = {
         "Bradley Beal",
         "James Harden",
         "Devin Booker",
@@ -130,8 +130,8 @@ public:
         "Caris LeVert",
         "Jalen Suggs",
         "Gary Trent Jr."
-    }
-    string smallForwardNames[30] = {
+    };
+    std::string smallForwardNames[30] = {
         "Lebron James",
         "Paul George",
         "Khris Middleton",
@@ -162,8 +162,8 @@ public:
         "Tyler Cook",
         "Lugentz Dort",
         "Thanasis Antetokounmpo",
-    }
-    string powerForwardNames[30] = {
+    };
+    std::string powerForwardNames[30] = {
         "Giannis Antetokounmpo",
         "Blake Griffin",
         "Carmelo Anthony",
@@ -194,8 +194,8 @@ public:
         "Draymond Green",
         "Aaron Gordon",
         "Isaiah Jackson"
-    }
-    string centerNames[30] = {
+    };
+    std::string centerNames[30] = {
         "Steven Adams",
         "Bam Adebayo",
         "Lamarcus Aldridge",
@@ -226,6 +226,6 @@ public:
         "Evan Mobley",
         "Nerlens Noel",
         "Jusuf Nurkic"
-    }
+    };
 };
 #endif //NBASIM_PLAYER_H

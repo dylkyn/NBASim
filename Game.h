@@ -15,8 +15,8 @@ public:
     Team getWinner();
     void setTeamScore(int newScore, Team team);
 //    void setTeam2Score(int newScore);
-    int getTeam1Score();
-    int getTeam2Score();
+//    int getTeam1Score();
+//    int getTeam2Score();
 
     void possessionSimulation(Team offense, Team defense);
     Team fullGameSimulation();
