@@ -7,8 +7,9 @@ class Team
 private:
     Player players[5];
     int gameScore;
-    string teamName;
+    std::string teamName;
 public:
+    Team();
     Team(std::string name);
     Player getPlayer();
     int getGameScore();

@@ -66,6 +66,11 @@ Player::Player(int playerType)
     }
 }
 
+Player::Player()
+{
+    Player(1);
+}
+
 //getters and setters for attributes
 int Player::getPosition()
 {

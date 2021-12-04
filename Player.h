@@ -28,6 +28,7 @@ private:
     int numBlocks;
 public:
     Player(int playerType);
+    Player();
     //getters and setters for attributes
     int getPosition();
     int getBlock();

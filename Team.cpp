@@ -13,6 +13,10 @@ Team::Team(std::string name)
 
     gameScore = 0;
 }
+Team::Team()
+{
+    Team("Invalid Team");
+}
 
 Player Team::getPlayer()
 {
