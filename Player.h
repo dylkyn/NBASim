@@ -56,6 +56,6 @@ public:
     int getNumAssist();
     int getNumRebounds();
     int getNumSteals();
-    int getNumBlocks()
+    int getNumBlocks();
 };
 #endif //NBASIM_PLAYER_H

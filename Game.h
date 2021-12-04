@@ -19,5 +19,6 @@ public:
     int getTeam2Score();
 
     void possessionSimulation(Team offense, Team defense);
+    Team fullGameSimulation();
 };
 #endif //NBASIM_GAME_H
