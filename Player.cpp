@@ -12,7 +12,6 @@ Player::Player(int playerType)
     numRebounds = 0;
     numSteals = 0;
     name = "";
-    int randIndex;
     switch (playerType)
     {
         case 1: //point guard
@@ -26,7 +25,7 @@ Player::Player(int playerType)
             twoPointShot = rand() % 100 + 40;
 
             //set name
-            randIndex = rand() % pointGuardRange;
+            int randIndex = rand() % pointGuardRange;
             name = pointGuardNames[randIndex];
             //shorten range
             pointGuardRange--;
@@ -47,7 +46,7 @@ Player::Player(int playerType)
             twoPointShot = rand() % 100 + 50;
 
             //set name
-            randIndex = rand() % shootingGuardRange;
+            int randIndex = rand() % shootingGuardRange;
             name = shootingGuardNames[randIndex];
             //shorten range
             shootingGuardRange--;
@@ -67,7 +66,7 @@ Player::Player(int playerType)
             threePointShot = rand() % 90 + 30;
             twoPointShot = rand() % 100 + 60;
             //set name
-            randIndex = rand() % smallForwardRange;
+            int randIndex = rand() % smallForwardRange;
             name = smallForwardNames[randIndex];
             //shorten range
             smallForwardRange--;
@@ -87,7 +86,7 @@ Player::Player(int playerType)
             threePointShot = rand() % 70 + 10;
             twoPointShot = rand() % 100 + 70;
             //set name
-            randIndex = rand() % powerForwardRange;
+            int randIndex = rand() % powerForwardRange;
             name = powerForwardNames[randIndex];
             //shorten range
             powerForwardRange--;
@@ -107,14 +106,14 @@ Player::Player(int playerType)
             threePointShot = rand() % 50 + 1;
             twoPointShot = rand() % 100 + 75;
             //set name
-            randIndex = rand() % centerRange;
-            name = powerForwardNames[randIndex];
+            int randIndex = rand() % centerRange;
+            name = centerNames[randIndex];
             //shorten range
             centerRange--;
             //shift all elements down one from random index
             for(int i = randIndex; i < 29; i++)
             {
-                powerForwardNames[randIndex] = powerForwardNames[randIndex + 1];
+                centerNames[randIndex] = centerNames[randIndex + 1];
             }
             break;
     }
@@ -196,6 +195,10 @@ void Player::setNumBlocks(int newNumBlocks)
 {
     numBlocks = newNumBlocks;
 }
+void Player::setName(std::string name)
+{
+    name = name;
+}
 int Player::getNumMissedThree()
 {
     return numMissedThree;
@@ -227,4 +230,9 @@ int Player::getNumSteals()
 int Player::getNumBlocks()
 {
     return numBlocks;
+}
+
+std::string Player::getName()
+{
+    return name;
 }
