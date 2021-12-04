@@ -221,7 +221,7 @@ int Player::getNumRebounds()
 }
 int Player::getNumSteals()
 {
-    reutn numSteals;
+    return numSteals;
 }
 int Player::getNumBlocks()
 {
