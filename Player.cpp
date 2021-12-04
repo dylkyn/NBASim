@@ -12,6 +12,7 @@ Player::Player(int playerType)
     numRebounds = 0;
     numSteals = 0;
     name = "";
+    int randIndex;
     switch (playerType)
     {
         case 1: //point guard
@@ -26,7 +27,7 @@ Player::Player(int playerType)
             twoPointShot = rand() % 60 + 40;
 
             //set name
-            int randIndex = rand() % pointGuardRange;
+            randIndex = rand() % pointGuardRange;
             name = pointGuardNames[randIndex];
             //shorten range
             pointGuardRange--;
@@ -49,7 +50,7 @@ Player::Player(int playerType)
             twoPointShot = rand() % 50 + 50;
 
             //set name
-            int randIndex = rand() % shootingGuardRange;
+            randIndex = rand() % shootingGuardRange;
             name = shootingGuardNames[randIndex];
             //shorten range
             shootingGuardRange--;
@@ -71,7 +72,7 @@ Player::Player(int playerType)
             threePointShot = rand() % 50 + 30;
             twoPointShot = rand() % 40 + 60;
             //set name
-            int randIndex = rand() % smallForwardRange;
+            randIndex = rand() % smallForwardRange;
             name = smallForwardNames[randIndex];
             //shorten range
             smallForwardRange--;
@@ -93,7 +94,7 @@ Player::Player(int playerType)
             threePointShot = rand() % 70 + 10;
             twoPointShot = rand() % 30 + 70;
             //set name
-            int randIndex = rand() % powerForwardRange;
+            randIndex = rand() % powerForwardRange;
             name = powerForwardNames[randIndex];
             //shorten range
             powerForwardRange--;
@@ -115,7 +116,7 @@ Player::Player(int playerType)
             threePointShot = rand() % 50 + 1;
             twoPointShot = rand() % 25 + 75;
             //set name
-            int randIndex = rand() % centerRange;
+            randIndex = rand() % centerRange;
             name = centerNames[randIndex];
             //shorten range
             centerRange--;
@@ -205,10 +206,6 @@ void Player::setNumBlocks(int newNumBlocks)
 {
     numBlocks = newNumBlocks;
 }
-void Player::setName(std::string name)
-{
-    name = name;
-}
 int Player::getNumMissedThree()
 {
     return numMissedThree;
@@ -246,7 +243,4 @@ int Player::getNumBlocks()
     return numBlocks;
 }
 
-std::string Player::getName()
-{
-    return name;
-}
+
