@@ -1,6 +1,7 @@
 #include "Team.h"
 #include <stdlib.h>
 #include <time.h>
+#include <iostream>
 
 Team::Team(std::string name)
 {
@@ -19,13 +20,12 @@ Team::Team()
 
 Player Team::getPlayer()
 {
-    srand(time(NULL));
     int player = rand() % 5;
     return players[player];
 }
 
 void Team::setGameScore(int score) {
-    gameScore = score;
+    gameScore += score;
 }
 
 int Team::getGameScore() {
