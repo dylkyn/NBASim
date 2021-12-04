@@ -10,7 +10,6 @@ Team::Team(std::string name)
     players[3] = Player(4); //power forward
     players[4] = Player(5); //small forward
     teamName = name;
-
     gameScore = 0;
 }
 Team::Team()

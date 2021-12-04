@@ -12,6 +12,7 @@ Player::Player(int playerType)
     numRebounds = 0;
     numSteals = 0;
     name = "";
+    int randIndex;
     switch (playerType)
     {
         case 1: //point guard
@@ -25,12 +26,12 @@ Player::Player(int playerType)
             twoPointShot = rand() % 100 + 40;
 
             //set name
-            int randIndex = rand() % pointGuardRange;
+            randIndex = rand() % pointGuardRange;
             name = pointGuardNames[randIndex];
             //shorten range
             pointGuardRange--;
             //shift all elements down one from random index
-            for(int i = randIndex; i < pointGuardNames.length() - 1; i++)
+            for(int i = randIndex; i < 29; i++)
             {
                 pointGuardNames[randIndex] = pointGuardNames[randIndex + 1];
             }
@@ -46,12 +47,12 @@ Player::Player(int playerType)
             twoPointShot = rand() % 100 + 50;
 
             //set name
-            int randIndex = rand() % shootingGuardRange;
+            randIndex = rand() % shootingGuardRange;
             name = shootingGuardNames[randIndex];
             //shorten range
             shootingGuardRange--;
             //shift all elements down one from random index
-            for(int i = randIndex; i < shootingGuardNames.length() - 1; i++)
+            for(int i = randIndex; i < 29; i++)
             {
                 shootingGuardNames[randIndex] = shootingGuardNames[randIndex + 1];
             }
@@ -66,12 +67,12 @@ Player::Player(int playerType)
             threePointShot = rand() % 90 + 30;
             twoPointShot = rand() % 100 + 60;
             //set name
-            int randIndex = rand() % smallForwardRange;
+            randIndex = rand() % smallForwardRange;
             name = smallForwardNames[randIndex];
             //shorten range
             smallForwardRange--;
             //shift all elements down one from random index
-            for(int i = randIndex; i < smallForwardNames.length() - 1; i++)
+            for(int i = randIndex; i < 29; i++)
             {
                 smallForwardNames[randIndex] = smallForwardNames[randIndex + 1];
             }
@@ -86,12 +87,12 @@ Player::Player(int playerType)
             threePointShot = rand() % 70 + 10;
             twoPointShot = rand() % 100 + 70;
             //set name
-            int randIndex = rand() % powerForwardRange;
+            randIndex = rand() % powerForwardRange;
             name = powerForwardNames[randIndex];
             //shorten range
             powerForwardRange--;
             //shift all elements down one from random index
-            for(int i = randIndex; i < powerForwardNames.length() - 1; i++)
+            for(int i = randIndex; i < 29; i++)
             {
                 powerForwardNames[randIndex] = powerForwardNames[randIndex + 1];
             }
@@ -106,12 +107,12 @@ Player::Player(int playerType)
             threePointShot = rand() % 50 + 1;
             twoPointShot = rand() % 100 + 75;
             //set name
-            int randIndex = rand() % centerRange;
+            randIndex = rand() % centerRange;
             name = powerForwardNames[randIndex];
             //shorten range
             centerRange--;
             //shift all elements down one from random index
-            for(int i = randIndex; i < powerForwardNames.length() - 1; i++)
+            for(int i = randIndex; i < 29; i++)
             {
                 powerForwardNames[randIndex] = powerForwardNames[randIndex + 1];
             }

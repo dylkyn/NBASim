@@ -4,6 +4,7 @@
 
 #ifndef NBASIM_PLAYER_H
 #define NBASIM_PLAYER_H
+#include <string>
 class Player
 {
 private:

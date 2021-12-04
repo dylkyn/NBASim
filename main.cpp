@@ -8,10 +8,11 @@
 int main()
 {
     Team hawks("Hawks");
-//    Team thunder("Thunder");
-//    Game game1(hawks, thunder);
-//    game1.fullGameSimulation();
-//    std::cout << "Winner is: " << game1.getWinner().getName() << std::endl;
-//	return 0;
-    std::cout << "hello world";
+    Team thunder("Thunder");
+    Game game1(hawks, thunder);
+    Player test(1);
+    game1.fullGameSimulation();
+    std::cout << "Winner is: " << game1.getWinner().getName() << std::endl;
+	return 0;
+//    std::cout << "hello world";
 }
