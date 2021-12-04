@@ -1,8 +1,9 @@
 #include <iostream>
 #include "Player.h"
 #include "Team.h"
+#include <algorithm>
 
-void gameSimulation(Team offense, Team defense)
+void possessionSimulation(Team offense, Team defense)
 {
     bool assist = false;
     Player offender = offense.getPlayer();
@@ -21,7 +22,7 @@ void gameSimulation(Team offense, Team defense)
     if (pass >= shoot)
     {
         assist = true;
-        swap(offender, assister); //https://www.cplusplus.com/reference/algorithm/swap/ need to include <algorithms>
+        std::swap(offender, assister); //https://www.cplusplus.com/reference/algorithm/swap/ need to include <algorithms>
     }
 
     int twoPoint = rand() % offender.getTwoPointShot() + 1;
