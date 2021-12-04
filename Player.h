@@ -59,6 +59,7 @@ public:
     void setNumSteals(int newNumSteals);
     void setNumBlocks(int newNumBlocks);
     int getNumMissedThree();
+    std::string getName();
     int getNumMissedTwo();
     int getNumThree();
     int getNumTwo();

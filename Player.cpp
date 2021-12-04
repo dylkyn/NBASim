@@ -5,7 +5,7 @@
 Player::Player(int playerType)
 {
     position = playerType;
-    srand(time(NULL));
+    //srand(time(NULL));
     numTwo = 0;
     numThree = 0;
     numAssist = 0;
@@ -199,6 +199,10 @@ void Player::setNumBlocks(int newNumBlocks)
 int Player::getNumMissedThree()
 {
     return numMissedThree;
+}
+std::string Player::getName()
+{
+    return this->name;
 }
 int Player::getNumMissedTwo()
 {

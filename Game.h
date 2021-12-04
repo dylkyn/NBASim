@@ -7,18 +7,17 @@ private:
     Team team1;
     Team team2;
     Team winner;
+    Team loser;
     int team1Score;
     int team2Score;
 public:
-    Game(Team team1, Team team2);
+    Game(Team& team1, Team& team2);
     void setWinner(Team team);
     Team getWinner();
+    Team getLoser();
     void setTeamScore(int newScore, Team team);
-//    void setTeam2Score(int newScore);
-//    int getTeam1Score();
-//    int getTeam2Score();
 
-    void possessionSimulation(Team offense, Team defense);
+    void possessionSimulation(Team& offense, Team& defense);
     Team fullGameSimulation();
 };
 #endif //NBASIM_GAME_H
