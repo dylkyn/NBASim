@@ -13,8 +13,8 @@ private:
 public:
     Game(Team& team1, Team& team2);
     void setWinner(Team team);
-    Team getWinner();
-    Team getLoser();
+    Team& getWinner();
+    Team& getLoser();
     void setTeamScore(int newScore, Team team);
 
     void possessionSimulation(Team& offense, Team& defense);

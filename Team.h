@@ -13,6 +13,7 @@ public:
     Team(std::string name);
     Player getPlayer();
     int getGameScore();
+    void resetTeamScore();
     void setGameScore(int score);
     std::string getName();
 };

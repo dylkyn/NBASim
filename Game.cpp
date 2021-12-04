@@ -15,11 +15,11 @@ void Game::setWinner(Team team)
 {
     winner = team;
 }
-Team Game::getWinner()
+Team& Game::getWinner()
 {
     return winner;
 }
-Team Game::getLoser()
+Team& Game::getLoser()
 {
     return loser;
 }
@@ -120,6 +120,8 @@ void Game::possessionSimulation(Team& offense, Team& defense)
 
 Team Game::fullGameSimulation()
 {
+    team1.resetTeamScore();
+    team2.resetTeamScore();
     #pragma omp parallel for default(shared) private(i) schedule(static, chunk) reduction(+:totalArea)
     for (int i = 0; i < 103; i++)
     {

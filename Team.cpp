@@ -24,6 +24,11 @@ Player Team::getPlayer()
     return players[player];
 }
 
+void Team::resetTeamScore()
+{
+    gameScore = 0;
+}
+
 void Team::setGameScore(int score) {
     gameScore += score;
 }
