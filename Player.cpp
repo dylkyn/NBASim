@@ -15,14 +15,15 @@ Player::Player(int playerType)
     switch (playerType)
     {
         case 1: //point guard
+        {
             block = rand() % 40 + 1;
             rebound = rand() % 80 + 1;
             interiorDefense = rand() % 50 + 1;
-            perimeterDefense = rand() % 100 + 50;
-            pass = rand() % 100 + 40;
-            shoot = rand() % 100 + 20;
-            threePointShot = rand() % 100 + 40;
-            twoPointShot = rand() % 100 + 40;
+            perimeterDefense = rand() % 50 + 50;
+            pass = rand() % 60 + 40;
+            shoot = rand() % 80 + 20;
+            threePointShot = rand() % 60 + 40;
+            twoPointShot = rand() % 60 + 40;
 
             //set name
             int randIndex = rand() % pointGuardRange;
@@ -35,15 +36,17 @@ Player::Player(int playerType)
                 pointGuardNames[randIndex] = pointGuardNames[randIndex + 1];
             }
             break;
+        }
         case 2: //shooting guard
+        {
             block = rand() % 50 + 1;
             rebound = rand() % 80 + 1;
             interiorDefense = rand() % 60 + 1;
-            perimeterDefense = rand() % 100 + 40;
-            pass = rand() % 100 + 20;
-            shoot = rand() % 100 + 40;
-            threePointShot = rand() % 100 + 60;
-            twoPointShot = rand() % 100 + 50;
+            perimeterDefense = rand() % 60 + 40;
+            pass = rand() % 80 + 20;
+            shoot = rand() % 60 + 40;
+            threePointShot = rand() % 40 + 60;
+            twoPointShot = rand() % 50 + 50;
 
             //set name
             int randIndex = rand() % shootingGuardRange;
@@ -56,15 +59,17 @@ Player::Player(int playerType)
                 shootingGuardNames[randIndex] = shootingGuardNames[randIndex + 1];
             }
             break;
+        }
         case 3: //small forward
+        {
             block = rand() % 80 + 20;
-            rebound = rand() % 90 + 20;
-            interiorDefense = rand() % 90 + 40;
-            perimeterDefense = rand() % 80 + 30;
-            pass = rand() % 100 + 20;
-            shoot = rand() % 100 + 20;
-            threePointShot = rand() % 90 + 30;
-            twoPointShot = rand() % 100 + 60;
+            rebound = rand() % 80 + 20;
+            interiorDefense = rand() % 50 + 40;
+            perimeterDefense = rand() % 50 + 30;
+            pass = rand() % 80 + 20;
+            shoot = rand() % 80 + 20;
+            threePointShot = rand() % 50 + 30;
+            twoPointShot = rand() % 40 + 60;
             //set name
             int randIndex = rand() % smallForwardRange;
             name = smallForwardNames[randIndex];
@@ -76,15 +81,17 @@ Player::Player(int playerType)
                 smallForwardNames[randIndex] = smallForwardNames[randIndex + 1];
             }
             break;
+        }
         case 4: //power forward
-            block = rand() % 90 + 40;
-            rebound = rand() % 100 + 50;
-            interiorDefense = rand() % 100 + 50;
-            perimeterDefense = rand() % 70 + 20;
-            pass = rand() % 100 + 20;
-            shoot = rand() % 100 + 20;
+        {
+            block = rand() % 60 + 40;
+            rebound = rand() % 50 + 50;
+            interiorDefense = rand() % 50 + 50;
+            perimeterDefense = rand() % 50 + 20;
+            pass = rand() % 80 + 20;
+            shoot = rand() % 80 + 20;
             threePointShot = rand() % 70 + 10;
-            twoPointShot = rand() % 100 + 70;
+            twoPointShot = rand() % 30 + 70;
             //set name
             int randIndex = rand() % powerForwardRange;
             name = powerForwardNames[randIndex];
@@ -96,15 +103,17 @@ Player::Player(int playerType)
                 powerForwardNames[randIndex] = powerForwardNames[randIndex + 1];
             }
             break;
+        }
         case 5: //center
-            block = rand() % 100 + 60;
-            rebound = rand() % 100 + 70;
-            interiorDefense = rand() % 100 + 70;
+        {
+            block = rand() % 40 + 60;
+            rebound = rand() % 30 + 70;
+            interiorDefense = rand() % 30 + 70;
             perimeterDefense = rand() % 50 + 10;
-            pass = rand() % 100 + 20;
-            shoot = rand() % 100 + 20;
+            pass = rand() % 80 + 20;
+            shoot = rand() % 80 + 20;
             threePointShot = rand() % 50 + 1;
-            twoPointShot = rand() % 100 + 75;
+            twoPointShot = rand() % 25 + 75;
             //set name
             int randIndex = rand() % centerRange;
             name = centerNames[randIndex];
@@ -116,6 +125,7 @@ Player::Player(int playerType)
                 centerNames[randIndex] = centerNames[randIndex + 1];
             }
             break;
+        }
     }
 }
 
