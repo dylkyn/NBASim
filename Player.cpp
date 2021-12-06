@@ -1,6 +1,7 @@
 #include "Player.h"
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>
+#include <iostream>
 
 Player::Player(int playerType)
 {
@@ -8,6 +9,8 @@ Player::Player(int playerType)
     //srand(time(NULL));
     numTwo = 0;
     numThree = 0;
+    numMissedTwo = 0;
+    numMissedThree = 0;
     numAssist = 0;
     numRebounds = 0;
     numSteals = 0;
@@ -17,14 +20,14 @@ Player::Player(int playerType)
     {
         case 1: //point guard
         {
-            block = rand() % 40 + 1;
+            block = rand() % 60 + 1;
             rebound = rand() % 80 + 1;
-            interiorDefense = rand() % 50 + 1;
-            perimeterDefense = rand() % 50 + 50;
+            interiorDefense = rand() % 90 + 1;
+            perimeterDefense = rand() % 40 + 60;
             pass = rand() % 60 + 40;
             shoot = rand() % 80 + 20;
-            threePointShot = rand() % 60 + 40;
-            twoPointShot = rand() % 60 + 40;
+            threePointShot = rand() % 80 + 10;
+            twoPointShot = rand() % 70 + 10;
 
             //set name
             randIndex = rand() % pointGuardRange;
@@ -36,18 +39,22 @@ Player::Player(int playerType)
             {
                 pointGuardNames[randIndex] = pointGuardNames[randIndex + 1];
             }
+            for(int i = 0; i < pointGuardRange; i++)
+            {
+                std::cout << pointGuardNames[i] << "," << std::endl;
+            }
             break;
         }
         case 2: //shooting guard
         {
-            block = rand() % 50 + 1;
+            block = rand() % 70 + 1;
             rebound = rand() % 80 + 1;
-            interiorDefense = rand() % 60 + 1;
+            interiorDefense = rand() % 100 + 1;
             perimeterDefense = rand() % 60 + 40;
             pass = rand() % 80 + 20;
             shoot = rand() % 60 + 40;
-            threePointShot = rand() % 40 + 60;
-            twoPointShot = rand() % 50 + 50;
+            threePointShot = rand() % 70 + 30;
+            twoPointShot = rand() % 80 + 20;
 
             //set name
             randIndex = rand() % shootingGuardRange;
@@ -65,12 +72,12 @@ Player::Player(int playerType)
         {
             block = rand() % 80 + 20;
             rebound = rand() % 80 + 20;
-            interiorDefense = rand() % 50 + 40;
-            perimeterDefense = rand() % 50 + 30;
+            interiorDefense = rand() % 50 + 50;
+            perimeterDefense = rand() % 50 + 40;
             pass = rand() % 80 + 20;
             shoot = rand() % 80 + 20;
-            threePointShot = rand() % 50 + 30;
-            twoPointShot = rand() % 40 + 60;
+            threePointShot = rand() % 70 + 10;
+            twoPointShot = rand() % 60 + 40;
             //set name
             randIndex = rand() % smallForwardRange;
             name = smallForwardNames[randIndex];
@@ -87,12 +94,12 @@ Player::Player(int playerType)
         {
             block = rand() % 60 + 40;
             rebound = rand() % 50 + 50;
-            interiorDefense = rand() % 50 + 50;
-            perimeterDefense = rand() % 50 + 20;
+            interiorDefense = rand() % 40 + 60;
+            perimeterDefense = rand() % 60 + 20;
             pass = rand() % 80 + 20;
             shoot = rand() % 80 + 20;
             threePointShot = rand() % 70 + 10;
-            twoPointShot = rand() % 30 + 70;
+            twoPointShot = rand() % 50 + 50;
             //set name
             randIndex = rand() % powerForwardRange;
             name = powerForwardNames[randIndex];
@@ -110,11 +117,11 @@ Player::Player(int playerType)
             block = rand() % 40 + 60;
             rebound = rand() % 30 + 70;
             interiorDefense = rand() % 30 + 70;
-            perimeterDefense = rand() % 50 + 10;
+            perimeterDefense = rand() % 60 + 10;
             pass = rand() % 80 + 20;
             shoot = rand() % 80 + 20;
             threePointShot = rand() % 50 + 1;
-            twoPointShot = rand() % 25 + 75;
+            twoPointShot = rand() % 45 + 55;
             //set name
             randIndex = rand() % centerRange;
             name = centerNames[randIndex];
