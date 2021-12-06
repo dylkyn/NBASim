@@ -24,6 +24,6 @@ public:
     std::string getName();
     Sprite getLogo();
     int getSeriesScore();
-    int increaseSeriesScore();
+    void increaseSeriesScore();
 };
 #endif //NBASIM_TEAM_H
