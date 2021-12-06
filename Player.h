@@ -69,7 +69,7 @@ public:
     int getNumBlocks();
 
     //string array of names
-    std::string pointGuardNames[30] = {
+    static inline std::string pointGuardNames[32] = {
         "Trae Young",
         "Jose Alvarado",
         "Stephen Curry",
@@ -99,9 +99,11 @@ public:
         "Russell Westbrook",
         "Markelle Fultz",
         "Avery Bradley",
-        "Jordan Clarkson"
+        "Jordan Clarkson",
+        "Fred Vanfleet",
+        "Mike Conley"
     };
-    std::string shootingGuardNames[30] = {
+    static inline std::string shootingGuardNames[32] = {
         "Bradley Beal",
         "James Harden",
         "Devin Booker",
@@ -131,9 +133,11 @@ public:
         "Zach Lavine",
         "Caris LeVert",
         "Jalen Suggs",
-        "Gary Trent Jr."
+        "Gary Trent Jr.",
+        "CJ McCollum",
+        "Jordan Poole"
     };
-    std::string smallForwardNames[30] = {
+    static inline std::string smallForwardNames[32] = {
         "Lebron James",
         "Paul George",
         "Khris Middleton",
@@ -164,8 +168,10 @@ public:
         "Tyler Cook",
         "Lugentz Dort",
         "Thanasis Antetokounmpo",
+        "Kelly Oubre",
+        "Dorian Finney-Smith"
     };
-    std::string powerForwardNames[30] = {
+    static inline std::string powerForwardNames[32] = {
         "Giannis Antetokounmpo",
         "Blake Griffin",
         "Carmelo Anthony",
@@ -195,9 +201,11 @@ public:
         "Nemanja Bjelica",
         "Draymond Green",
         "Aaron Gordon",
-        "Isaiah Jackson"
+        "Isaiah Jackson",
+        "Larry Nance",
+        "Marcus Morris"
     };
-    std::string centerNames[30] = {
+    static inline std::string centerNames[32] = {
         "Steven Adams",
         "Bam Adebayo",
         "Lamarcus Aldridge",
@@ -227,7 +235,9 @@ public:
         "Brook Lopez",
         "Evan Mobley",
         "Nerlens Noel",
-        "Jusuf Nurkic"
+        "Jusuf Nurkic",
+        "Hassan Whiteside",
+        "Dwight Howard"
     };
 };
 #endif //NBASIM_PLAYER_H
