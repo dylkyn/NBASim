@@ -3,7 +3,7 @@
 #include <time.h>
 #include <iostream>
 
-Team::Team(std::string name std::string logo)
+Team::Team(std::string name, std::string logo)
 {
     players[0] = Player(1); //point guard
     players[1] = Player(2); //shooting guard
@@ -11,12 +11,16 @@ Team::Team(std::string name std::string logo)
     players[3] = Player(4); //power forward
     players[4] = Player(5); //small forward
     teamName = name;
-    teamLogo = logo;
+    Texture texture;
+    texture.loadFromFile(logo);
+    Sprite spriteTeam;
+    spriteTeam.setTexture(texture);
+    teamLogo = spriteTeam;
     gameScore = 0;
 }
 Team::Team()
 {
-    Team("Invalid Team");
+    Team("Invalid Team", "");
 }
 
 Player Team::getPlayer()
@@ -41,7 +45,7 @@ std::string Team::getName()
 {
     return teamName;
 }
-std::string Team::getLogo()
+Sprite Team::getLogo()
 {
     return teamLogo;
 }

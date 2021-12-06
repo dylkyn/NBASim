@@ -2,13 +2,17 @@
 #define NBASIM_TEAM_H
 #include "Player.h"
 #include <string>
+#include <SFML/Graphics.hpp>
+#include <SFML/Audio.hpp>
+
+using namespace sf;
 class Team
 {
 private:
     Player players[5];
     int gameScore;
     std::string teamName;
-    std::string teamLogo;
+    Sprite teamLogo;
 public:
     Team();
     Team(std::string name, std::string logo);
@@ -17,6 +21,6 @@ public:
     void resetTeamScore();
     void setGameScore(int score);
     std::string getName();
-    std::string getLogo();
+    Sprite getLogo();
 };
 #endif //NBASIM_TEAM_H
