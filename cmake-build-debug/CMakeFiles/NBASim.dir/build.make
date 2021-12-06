@@ -88,6 +88,7 @@ NBASim_EXTERNAL_OBJECTS =
 
 NBASim.exe: CMakeFiles/NBASim.dir/main.cpp.obj
 NBASim.exe: CMakeFiles/NBASim.dir/build.make
+NBASim.exe: libmy-lib.a
 NBASim.exe: ../SFML/lib/libsfml-graphics-d.a
 NBASim.exe: ../SFML/lib/libsfml-audio-d.a
 NBASim.exe: ../SFML/lib/libsfml-window-d.a

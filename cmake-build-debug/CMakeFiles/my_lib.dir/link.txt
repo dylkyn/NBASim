@@ -1,0 +1,2 @@
+C:\mingw32\bin\ar.exe qc libmy_lib.a CMakeFiles/my_lib.dir/Player.cpp.obj CMakeFiles/my_lib.dir/Team.cpp.obj CMakeFiles/my_lib.dir/Game.cpp.obj
+C:\mingw32\bin\ranlib.exe libmy_lib.a

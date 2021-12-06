@@ -116,6 +116,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named my-lib
+
+# Build rule for target.
+my-lib: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 my-lib
+.PHONY : my-lib
+
+# fast build rule for target.
+my-lib/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my-lib.dir\build.make CMakeFiles/my-lib.dir/build
+.PHONY : my-lib/fast
+
+#=============================================================================
 # Target rules for targets named NBASim
 
 # Build rule for target.
@@ -127,6 +140,78 @@ NBASim: cmake_check_build_system
 NBASim/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\NBASim.dir\build.make CMakeFiles/NBASim.dir/build
 .PHONY : NBASim/fast
+
+Game.obj: Game.cpp.obj
+.PHONY : Game.obj
+
+# target to build an object file
+Game.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my-lib.dir\build.make CMakeFiles/my-lib.dir/Game.cpp.obj
+.PHONY : Game.cpp.obj
+
+Game.i: Game.cpp.i
+.PHONY : Game.i
+
+# target to preprocess a source file
+Game.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my-lib.dir\build.make CMakeFiles/my-lib.dir/Game.cpp.i
+.PHONY : Game.cpp.i
+
+Game.s: Game.cpp.s
+.PHONY : Game.s
+
+# target to generate assembly for a file
+Game.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my-lib.dir\build.make CMakeFiles/my-lib.dir/Game.cpp.s
+.PHONY : Game.cpp.s
+
+Player.obj: Player.cpp.obj
+.PHONY : Player.obj
+
+# target to build an object file
+Player.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my-lib.dir\build.make CMakeFiles/my-lib.dir/Player.cpp.obj
+.PHONY : Player.cpp.obj
+
+Player.i: Player.cpp.i
+.PHONY : Player.i
+
+# target to preprocess a source file
+Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my-lib.dir\build.make CMakeFiles/my-lib.dir/Player.cpp.i
+.PHONY : Player.cpp.i
+
+Player.s: Player.cpp.s
+.PHONY : Player.s
+
+# target to generate assembly for a file
+Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my-lib.dir\build.make CMakeFiles/my-lib.dir/Player.cpp.s
+.PHONY : Player.cpp.s
+
+Team.obj: Team.cpp.obj
+.PHONY : Team.obj
+
+# target to build an object file
+Team.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my-lib.dir\build.make CMakeFiles/my-lib.dir/Team.cpp.obj
+.PHONY : Team.cpp.obj
+
+Team.i: Team.cpp.i
+.PHONY : Team.i
+
+# target to preprocess a source file
+Team.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my-lib.dir\build.make CMakeFiles/my-lib.dir/Team.cpp.i
+.PHONY : Team.cpp.i
+
+Team.s: Team.cpp.s
+.PHONY : Team.s
+
+# target to generate assembly for a file
+Team.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\my-lib.dir\build.make CMakeFiles/my-lib.dir/Team.cpp.s
+.PHONY : Team.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -161,6 +246,16 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... NBASim
+	@echo ... my-lib
+	@echo ... Game.obj
+	@echo ... Game.i
+	@echo ... Game.s
+	@echo ... Player.obj
+	@echo ... Player.i
+	@echo ... Player.s
+	@echo ... Team.obj
+	@echo ... Team.i
+	@echo ... Team.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
