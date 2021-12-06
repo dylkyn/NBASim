@@ -17,6 +17,7 @@ Team::Team(std::string name, std::string logo)
     spriteTeam.setTexture(texture);
     teamLogo = spriteTeam;
     gameScore = 0;
+    seriesScore = 0;
 }
 Team::Team()
 {
@@ -41,6 +42,16 @@ void Team::setGameScore(int score) {
 int Team::getGameScore() {
     return gameScore;
 }
+int getSeriesScore()
+{
+    return seriesScore;
+}
+int increaseSeriesScore()
+{
+    seriesScore += 1;
+}
+
+
 std::string Team::getName()
 {
     return teamName;

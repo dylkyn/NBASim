@@ -52,6 +52,8 @@ public:
     //player totals
     void setNumMissedTwo(int newMissedTwo);
     void setNumMissedThree(int newMissedThree);
+    void increaseMissedTwo();
+    void increaseMissedThree();
     void setNumTwo(int newNumTwo);
     void setNumThree(int newNumThree);
     void setNumAssist(int newNumAssist);

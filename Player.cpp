@@ -204,6 +204,15 @@ void Player::setNumMissedThree(int newMissedThree)
 {
     numMissedThree = newMissedThree;
 }
+void Player::increaseMissedTwo()
+{
+    numMissedTwo += 1;
+}
+void Player::increaseMissedThree()
+{
+    numMissedThree += 1;
+}
+
 void Player::setNumTwo(int newNumTwo)
 {
     numTwo = newNumTwo;

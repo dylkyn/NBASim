@@ -73,7 +73,7 @@ void Game::possessionSimulation(Team& offense, Team& defense)
             else
             {
                 defender.setNumBlocks(defender.getNumBlocks() + 1);
-                offender.setNumMissedTwo(offender.getNumMissedTwo() + 1);
+                offender.increaseMissedTwo();
             }
         }
         else
@@ -92,7 +92,7 @@ void Game::possessionSimulation(Team& offense, Team& defense)
             else
             {
                 defender.setNumRebounds(defender.getNumRebounds() + 1);
-                offender.setNumMissedTwo(offender.getNumMissedTwo() + 1);
+                offender.increaseMissedTwo();
             }
         }
     }
@@ -113,7 +113,7 @@ void Game::possessionSimulation(Team& offense, Team& defense)
         else
         {
             defender.setNumSteals(defender.getNumSteals() + 1);
-            offender.setNumMissedThree(offender.getNumMissedThree() + 1);
+            offender.increaseMissedThree();
         }
     }
 }
@@ -123,28 +123,40 @@ Team Game::fullGameSimulation()
     team1.resetTeamScore();
     team2.resetTeamScore();
     #pragma omp parallel for default(shared) private(i) schedule(static, chunk) reduction(+:totalArea)
-    for (int i = 0; i < 103; i++)
+    while (team1.getSeriesScore() != 4 || team2.getSeriesScore() != 4)
     {
-        possessionSimulation(team1, team2);
-        possessionSimulation(team2, team1);
+        for (int i = 0; i < 103; i++)
+        {
+            possessionSimulation(team1, team2);
+            possessionSimulation(team2, team1);
+        }
+        if (team1.getGameScore() == team2.getGameScore())
+        {
+            int pickWinner = rand() % 2;
+            winner = pickWinner == 0 ? team1 : team2;
+            Player addScore = winner.getPlayer();
+            addScore.setNumTwo(addScore.getNumTwo() + 1);
+            winner.setGameScore(2);
+            winner.increaseSeriesScore(); //Make sure this is a reference not shallow copy?
+        }
+        else if (team1.getGameScore() > team2.getGameScore())
+        {
+            team1.increaseSeriesScore();
+        }
+        else
+        {
+            team2.increaseSeriesScore();
+        }
     }
-    if (team1.getGameScore() == team2.getGameScore())
-    {
-        int pickWinner = rand() % 2;
-        winner = pickWinner == 0 ? team1 : team2;
-        Player addScore = winner.getPlayer();
-        addScore.setNumTwo(addScore.getNumTwo() + 1);
-        winner.setGameScore(2);
-    }
-    else if (team1.getGameScore() > team2.getGameScore())
+
+    if (team1.getSeriesScore == 4)
     {
         winner = team1;
-        loser = team2;
+        return team1;
     }
     else
     {
         winner = team2;
-        loser = team1;
+        return team2;
     }
-    return winner;
 }

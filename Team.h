@@ -13,6 +13,7 @@ private:
     int gameScore;
     std::string teamName;
     Sprite teamLogo;
+    int seriesScore;
 public:
     Team();
     Team(std::string name, std::string logo);
@@ -22,5 +23,7 @@ public:
     void setGameScore(int score);
     std::string getName();
     Sprite getLogo();
+    int getSeriesScore();
+    int increaseSeriesScore();
 };
 #endif //NBASIM_TEAM_H
