@@ -42,11 +42,11 @@ void Team::setGameScore(int score) {
 int Team::getGameScore() {
     return gameScore;
 }
-int getSeriesScore()
+int Team::getSeriesScore()
 {
     return seriesScore;
 }
-int increaseSeriesScore()
+void Team::increaseSeriesScore()
 {
     seriesScore += 1;
 }
