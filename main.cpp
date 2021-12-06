@@ -158,7 +158,7 @@ int main()
 
     Team pelicans("Pelicans", "graphics/pelicans.png");
     Texture texturePelicans;
-    texturePelicanss.loadFromFile(pelicans.getLogo());
+    texturePelicans.loadFromFile(pelicans.getLogo());
     Sprite spritePelicans;
     spritePelicans.setTexture(texturePelicans);
     teams.push_back(pelicans);
