@@ -142,130 +142,98 @@ int main()
     Sprite test;
     test.setTexture(testHawk);
     test.setPosition(Vector2f(500, 500));
-    //next button
-//    Text next;
-//    next.setFont(font);
-//    next.setString("Next Round");
-//    next.setPosition(1500, 975);
-//    next.setCharacterSize(40);
-//    next.setStyle(sf::Text::Regular);
-//    next.setFillColor(Color(0, 0, 0));
 
+    bool started = false;
     bool nextSelected = false;
+    bool roundOneCalc = false;
+    bool roundOneVisible = false;
+    bool roundTwoCalc = false;
+    bool roundTwoVisible = false;
+    bool roundThreeCalc = false;
+    bool roundThreeVisible = false;
+    bool roundFourCalc = false;
+    bool roundFourVisible = false;
+    bool champCalc = false;
+    bool championVisible = false;
 
-//	std::chrono::seconds dura( 5);
-//	std::this_thread::sleep_for( dura );
+    std::vector<Text> leftColOneTeams;
+    std::vector<Text> rightColOneTeams;
+    std::vector<Text> leftColTwoTeams;
+    std::vector<Text> rightColTwoTeams;
 
-	// SPLIT TEAMS
-	//first half of teams in the left most column
-	for (int i = 0; i < 16; i++)
-	{
-		leftColumnOne.push_back(randomTeams.at(i));
-		myText.setString(leftColumnOne.at(i).getName());
-		myText.setPosition(50.0f, 140.0f + 55.0f * i);
-		window.draw(myText);
-	}
-	//second half of teams in right most column
-	for (int i = 16; i < 32; i++)
-	{
-		rightColumnOne.push_back(randomTeams.at(i));
-		myText.setString(rightColumnOne.at(i - 16).getName());
-		myText.setPosition(1725.0f, 140.0f + 55.0f * (i - 16));
-		window.draw(myText);
-	}
 
-	window.display();
+
+
 	std::chrono::seconds dura(5);
 	std::this_thread::sleep_for(dura);
 
-	// PLAY ROUND 1
-	//Above the left most and right most teams are put into their respected vectors
-	for (int i = 0; i < leftColumnOne.size(); i += 2)
-	{
-		Game curr(leftColumnOne.at(i), leftColumnOne.at(i + 1));
-		curr.fullGameSimulation();
-		leftColumnTwo.push_back(curr.getWinner());
-		std::cout << "Round 1 left Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-	}
-	for (int i = 0; i < rightColumnOne.size(); i += 2)
-	{
-		Game curr(rightColumnOne.at(i), rightColumnOne.at(i + 1));
-		curr.fullGameSimulation();
-		rightColumnTwo.push_back(curr.getWinner());
 
-		std::cout << "Round 1 right Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-	}
-
-	// PLAY ROUND 2
-	for (int i = 0; i < leftColumnTwo.size(); i += 2)
-	{
-		Game curr(leftColumnTwo.at(i), leftColumnTwo.at(i + 1));
-		curr.fullGameSimulation();
-		leftColumnThree.push_back(curr.getWinner());
-		std::cout << "Round 2 left Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-	}
-	for (int i = 0; i < rightColumnTwo.size(); i += 2)
-	{
-		Game curr(rightColumnTwo.at(i), rightColumnTwo.at(i + 1));
-		curr.fullGameSimulation();
-		rightColumnThree.push_back(curr.getWinner());
-		std::cout << "Round 2 right Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-	}
-
-	// PLAY ROUND 3
-	for (int i = 0; i < leftColumnThree.size(); i += 2)
-	{
-		Game curr(leftColumnThree.at(i), leftColumnThree.at(i + 1));
-		curr.fullGameSimulation();
-		leftColumnFour.push_back(curr.getWinner());
-		std::cout << "Round 3 left Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-	}
-	for (int i = 0; i < rightColumnThree.size(); i += 2)
-	{
-		Game curr(rightColumnThree.at(i), rightColumnThree.at(i + 1));
-		curr.fullGameSimulation();
-		rightColumnFour.push_back(curr.getWinner());
-		std::cout << "Round 3 right Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-	}
-
-	// PLAY ROUND 4
-	for (int i = 0; i < leftColumnFour.size(); i += 2)
-	{
-		Game curr(leftColumnFour.at(i), leftColumnFour.at(i + 1));
-		curr.fullGameSimulation();
-		championship.push_back(curr.getWinner());
-		std::cout << "Round 4 left Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-	}
-	for (int i = 0; i < rightColumnFour.size(); i += 2)
-	{
-		Game curr(rightColumnFour.at(i), rightColumnFour.at(i + 1));
-		curr.fullGameSimulation();
-		championship.push_back(curr.getWinner());
-		std::cout << "Round 4 right Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-	}
-
-	// PLAY CHAMPIONSHIP
-	Game curr(championship.at(0), rightColumnFour.at(1));
-	curr.fullGameSimulation();
-	std::cout << "The Championship Winner is: " << curr.getWinner().getName() << " the score was "
-			  << curr.getWinner().getGameScore()
-			  << " and " << curr.getLoser().getGameScore() << std::endl;
+//	// PLAY ROUND 2
+//	for (int i = 0; i < leftColumnTwo.size(); i += 2)
+//	{
+//		Game curr(leftColumnTwo.at(i), leftColumnTwo.at(i + 1));
+//		curr.fullGameSimulation();
+//		leftColumnThree.push_back(curr.getWinner());
+//		std::cout << "Round 2 left Winner is: " << curr.getWinner().getName() << " the score was "
+//				  << curr.getWinner().getGameScore()
+//				  << " and " << curr.getLoser().getGameScore() << std::endl;
+//	}
+//	for (int i = 0; i < rightColumnTwo.size(); i += 2)
+//	{
+//		Game curr(rightColumnTwo.at(i), rightColumnTwo.at(i + 1));
+//		curr.fullGameSimulation();
+//		rightColumnThree.push_back(curr.getWinner());
+//		std::cout << "Round 2 right Winner is: " << curr.getWinner().getName() << " the score was "
+//				  << curr.getWinner().getGameScore()
+//				  << " and " << curr.getLoser().getGameScore() << std::endl;
+//	}
+//
+//	// PLAY ROUND 3
+//	for (int i = 0; i < leftColumnThree.size(); i += 2)
+//	{
+//		Game curr(leftColumnThree.at(i), leftColumnThree.at(i + 1));
+//		curr.fullGameSimulation();
+//		leftColumnFour.push_back(curr.getWinner());
+//		std::cout << "Round 3 left Winner is: " << curr.getWinner().getName() << " the score was "
+//				  << curr.getWinner().getGameScore()
+//				  << " and " << curr.getLoser().getGameScore() << std::endl;
+//	}
+//	for (int i = 0; i < rightColumnThree.size(); i += 2)
+//	{
+//		Game curr(rightColumnThree.at(i), rightColumnThree.at(i + 1));
+//		curr.fullGameSimulation();
+//		rightColumnFour.push_back(curr.getWinner());
+//		std::cout << "Round 3 right Winner is: " << curr.getWinner().getName() << " the score was "
+//				  << curr.getWinner().getGameScore()
+//				  << " and " << curr.getLoser().getGameScore() << std::endl;
+//	}
+//
+//	// PLAY ROUND 4
+//	for (int i = 0; i < leftColumnFour.size(); i += 2)
+//	{
+//		Game curr(leftColumnFour.at(i), leftColumnFour.at(i + 1));
+//		curr.fullGameSimulation();
+//		championship.push_back(curr.getWinner());
+//		std::cout << "Round 4 left Winner is: " << curr.getWinner().getName() << " the score was "
+//				  << curr.getWinner().getGameScore()
+//				  << " and " << curr.getLoser().getGameScore() << std::endl;
+//	}
+//	for (int i = 0; i < rightColumnFour.size(); i += 2)
+//	{
+//		Game curr(rightColumnFour.at(i), rightColumnFour.at(i + 1));
+//		curr.fullGameSimulation();
+//		championship.push_back(curr.getWinner());
+//		std::cout << "Round 4 right Winner is: " << curr.getWinner().getName() << " the score was "
+//				  << curr.getWinner().getGameScore()
+//				  << " and " << curr.getLoser().getGameScore() << std::endl;
+//	}
+//
+//	// PLAY CHAMPIONSHIP
+//	Game curr(championship.at(0), rightColumnFour.at(1));
+//	curr.fullGameSimulation();
+//	std::cout << "The Championship Winner is: " << curr.getWinner().getName() << " the score was "
+//			  << curr.getWinner().getGameScore()
+//			  << " and " << curr.getLoser().getGameScore() << std::endl;
 
 	while (window.isOpen())
 	{
@@ -297,19 +265,108 @@ int main()
                     break;
             }
         }
-        window.clear();
+
         if (nextSelected)
         {
+            nextSelected = false;
             std::cout << "drawing test" << std::endl;
-            window.draw(test);
+            if (!started)
+            {
+                started = true;
+                roundOneCalc = true;
+            }
+            else if (!roundOneVisible)
+            {
+                roundOneVisible = true;
+                roundTwoCalc = true;
+            }
+            else if (!roundTwoVisible)
+            {
+                roundTwoVisible = true;
+                roundThreeCalc = true;
+            }
+            else if (!roundThreeVisible)
+            {
+                roundThreeVisible = true;
+                roundFourCalc = true;
+            }
+            else if (!roundFourVisible)
+            {
+                roundFourVisible = true;
+                champCalc = true;
+            }
+            else if (!championVisible)
+            {
+                championVisible = true;
+            }
         }
 
-		window.draw(spriteBackground);
-        //window.draw(next);
-        //hawks.getLogo().setPosition(500, 500);
-        //Sprite hawksLogo = hawks.getLogo();
-        //window.draw(hawksLogo);
-		window.display();
+        if (roundOneCalc)
+        {
+            std::cout << "started" << std::endl;
+            // SPLIT TEAMS
+            //first half of teams in the left most column
+            for (int i = 0; i < 16; i++)
+            {
+                leftColumnOne.push_back(randomTeams.at(i));
+                myText.setString(leftColumnOne.at(i).getName());
+                myText.setPosition(50.0f, 140.0f + 55.0f * i);
+                myText.setFillColor(Color(255, 0, 0));
+                myText.setCharacterSize(25);
+                leftColOneTeams.push_back(myText);
+            }
+            //second half of teams in right most column
+            for (int i = 16; i < 32; i++)
+            {
+                rightColumnOne.push_back(randomTeams.at(i));
+                myText.setString(rightColumnOne.at(i - 16).getName());
+                myText.setPosition(1725.0f, 140.0f + 55.0f * (i - 16));
+                myText.setFillColor(Color(255, 0, 0));
+                myText.setCharacterSize(25);
+                rightColOneTeams.push_back(myText);
+            }
+
+            // PLAY ROUND 1
+            //Above the left most and right most teams are put into their respected vectors
+            for (int i = 0; i < leftColumnOne.size(); i += 2)
+            {
+                Game curr(leftColumnOne.at(i), leftColumnOne.at(i + 1));
+                curr.fullGameSimulation();
+                leftColumnTwo.push_back(curr.getWinner());
+                std::cout << "Round 1 left Winner is: " << curr.getWinner().getName() << " the score was "
+                          << curr.getWinner().getGameScore()
+                          << " and " << curr.getLoser().getGameScore() << std::endl;
+            }
+            for (int i = 0; i < rightColumnOne.size(); i += 2)
+            {
+                Game curr(rightColumnOne.at(i), rightColumnOne.at(i + 1));
+                curr.fullGameSimulation();
+                rightColumnTwo.push_back(curr.getWinner());
+
+                std::cout << "Round 1 right Winner is: " << curr.getWinner().getName() << " the score was "
+                          << curr.getWinner().getGameScore()
+                          << " and " << curr.getLoser().getGameScore() << std::endl;
+            }
+
+            roundOneCalc = false;
+        }
+
+        if (roundTwoCalc)
+        {
+
+        }
+
+        window.clear();
+        window.draw(spriteBackground);
+        if (started)
+        {
+            for (int i = 0; i < 16; i++)
+            {
+                window.draw(leftColOneTeams.at(i));
+                window.draw(rightColOneTeams.at(i));
+            }
+        }
+        window.display();
 	}
 	return 0;
 }
