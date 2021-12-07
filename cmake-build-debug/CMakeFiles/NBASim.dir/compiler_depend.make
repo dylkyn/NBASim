@@ -233,8 +233,212 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__bit_reference \
   ../Player.h \
   ../Team.h \
-  ../Game.h
+  ../SFML/include/SFML/Graphics.hpp \
+  ../SFML/include/SFML/Window.hpp \
+  ../SFML/include/SFML/System.hpp \
+  ../SFML/include/SFML/Config.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/TargetConditionals.h \
+  ../SFML/include/SFML/System/Clock.hpp \
+  ../SFML/include/SFML/System/Export.hpp \
+  ../SFML/include/SFML/System/Time.hpp \
+  ../SFML/include/SFML/System/Err.hpp \
+  ../SFML/include/SFML/System/FileInputStream.hpp \
+  ../SFML/include/SFML/System/InputStream.hpp \
+  ../SFML/include/SFML/System/NonCopyable.hpp \
+  ../SFML/include/SFML/System/Lock.hpp \
+  ../SFML/include/SFML/System/MemoryInputStream.hpp \
+  ../SFML/include/SFML/System/Mutex.hpp \
+  ../SFML/include/SFML/System/Sleep.hpp \
+  ../SFML/include/SFML/System/String.hpp \
+  ../SFML/include/SFML/System/Utf.hpp \
+  ../SFML/include/SFML/System/Utf.inl \
+  ../SFML/include/SFML/System/String.inl \
+  ../SFML/include/SFML/System/Thread.hpp \
+  ../SFML/include/SFML/System/Thread.inl \
+  ../SFML/include/SFML/System/ThreadLocal.hpp \
+  ../SFML/include/SFML/System/ThreadLocalPtr.hpp \
+  ../SFML/include/SFML/System/ThreadLocalPtr.inl \
+  ../SFML/include/SFML/System/Vector2.hpp \
+  ../SFML/include/SFML/System/Vector2.inl \
+  ../SFML/include/SFML/System/Vector3.hpp \
+  ../SFML/include/SFML/System/Vector3.inl \
+  ../SFML/include/SFML/Window/Clipboard.hpp \
+  ../SFML/include/SFML/Window/Export.hpp \
+  ../SFML/include/SFML/Window/Context.hpp \
+  ../SFML/include/SFML/Window/GlResource.hpp \
+  ../SFML/include/SFML/Window/ContextSettings.hpp \
+  ../SFML/include/SFML/Window/Cursor.hpp \
+  ../SFML/include/SFML/Window/Event.hpp \
+  ../SFML/include/SFML/Window/Joystick.hpp \
+  ../SFML/include/SFML/Window/Keyboard.hpp \
+  ../SFML/include/SFML/Window/Mouse.hpp \
+  ../SFML/include/SFML/Window/Sensor.hpp \
+  ../SFML/include/SFML/Window/Touch.hpp \
+  ../SFML/include/SFML/Window/VideoMode.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/vector \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__split_buffer \
+  ../SFML/include/SFML/Window/Window.hpp \
+  ../SFML/include/SFML/Window/WindowHandle.hpp \
+  ../SFML/include/SFML/Window/WindowStyle.hpp \
+  ../SFML/include/SFML/Graphics/BlendMode.hpp \
+  ../SFML/include/SFML/Graphics/Export.hpp \
+  ../SFML/include/SFML/Graphics/CircleShape.hpp \
+  ../SFML/include/SFML/Graphics/Shape.hpp \
+  ../SFML/include/SFML/Graphics/Drawable.hpp \
+  ../SFML/include/SFML/Graphics/RenderStates.hpp \
+  ../SFML/include/SFML/Graphics/Transform.hpp \
+  ../SFML/include/SFML/Graphics/Rect.hpp \
+  ../SFML/include/SFML/Graphics/Rect.inl \
+  ../SFML/include/SFML/Graphics/Transformable.hpp \
+  ../SFML/include/SFML/Graphics/VertexArray.hpp \
+  ../SFML/include/SFML/Graphics/Vertex.hpp \
+  ../SFML/include/SFML/Graphics/Color.hpp \
+  ../SFML/include/SFML/Graphics/PrimitiveType.hpp \
+  ../SFML/include/SFML/Graphics/ConvexShape.hpp \
+  ../SFML/include/SFML/Graphics/Font.hpp \
+  ../SFML/include/SFML/Graphics/Glyph.hpp \
+  ../SFML/include/SFML/Graphics/Texture.hpp \
+  ../SFML/include/SFML/Graphics/Image.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/map \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__tree \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__node_handle \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/optional \
+  ../SFML/include/SFML/Graphics/RectangleShape.hpp \
+  ../SFML/include/SFML/Graphics/RenderTarget.hpp \
+  ../SFML/include/SFML/Graphics/View.hpp \
+  ../SFML/include/SFML/Graphics/RenderTexture.hpp \
+  ../SFML/include/SFML/Graphics/RenderWindow.hpp \
+  ../SFML/include/SFML/Graphics/Shader.hpp \
+  ../SFML/include/SFML/Graphics/Glsl.hpp \
+  ../SFML/include/SFML/Graphics/Glsl.inl \
+  ../SFML/include/SFML/Graphics/Sprite.hpp \
+  ../SFML/include/SFML/Graphics/Text.hpp \
+  ../SFML/include/SFML/Graphics/VertexBuffer.hpp \
+  ../SFML/include/SFML/Audio.hpp \
+  ../SFML/include/SFML/Audio/InputSoundFile.hpp \
+  ../SFML/include/SFML/Audio/Export.hpp \
+  ../SFML/include/SFML/Audio/Listener.hpp \
+  ../SFML/include/SFML/Audio/Music.hpp \
+  ../SFML/include/SFML/Audio/SoundStream.hpp \
+  ../SFML/include/SFML/Audio/SoundSource.hpp \
+  ../SFML/include/SFML/Audio/AlResource.hpp \
+  ../SFML/include/SFML/Audio/OutputSoundFile.hpp \
+  ../SFML/include/SFML/Audio/Sound.hpp \
+  ../SFML/include/SFML/Audio/SoundBuffer.hpp \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/set \
+  ../SFML/include/SFML/Audio/SoundBufferRecorder.hpp \
+  ../SFML/include/SFML/Audio/SoundRecorder.hpp \
+  ../SFML/include/SFML/Audio/SoundFileFactory.hpp \
+  ../SFML/include/SFML/Audio/SoundFileFactory.inl \
+  ../SFML/include/SFML/Audio/SoundFileReader.hpp \
+  ../SFML/include/SFML/Audio/SoundFileWriter.hpp \
+  ../Game.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/random \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/cmath \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/math.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/math.h \
+  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/numeric
 
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/numeric:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/math.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/cmath:
+
+../SFML/include/SFML/Audio/SoundFileWriter.hpp:
+
+../SFML/include/SFML/Audio/SoundRecorder.hpp:
+
+../SFML/include/SFML/Audio/SoundBufferRecorder.hpp:
+
+../SFML/include/SFML/Audio/SoundSource.hpp:
+
+../SFML/include/SFML/Audio/Listener.hpp:
+
+../SFML/include/SFML/Audio/InputSoundFile.hpp:
+
+../SFML/include/SFML/Audio.hpp:
+
+../SFML/include/SFML/Graphics/Shader.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__tree:
+
+../SFML/include/SFML/Graphics/Vertex.hpp:
+
+../SFML/include/SFML/Graphics/Transformable.hpp:
+
+../SFML/include/SFML/Graphics/Rect.inl:
+
+../SFML/include/SFML/Graphics/Transform.hpp:
+
+../SFML/include/SFML/Graphics/Drawable.hpp:
+
+../SFML/include/SFML/Graphics/Shape.hpp:
+
+../SFML/include/SFML/Graphics/BlendMode.hpp:
+
+../SFML/include/SFML/Window/Window.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/vector:
+
+../SFML/include/SFML/Window/VideoMode.hpp:
+
+../SFML/include/SFML/Window/Keyboard.hpp:
+
+../SFML/include/SFML/Window/Event.hpp:
+
+../SFML/include/SFML/Window/Cursor.hpp:
+
+../SFML/include/SFML/Window/Context.hpp:
+
+../SFML/include/SFML/Window/Export.hpp:
+
+../SFML/include/SFML/Window/Clipboard.hpp:
+
+../SFML/include/SFML/System/Vector3.hpp:
+
+../SFML/include/SFML/System/Vector2.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/math.h:
+
+../SFML/include/SFML/System/ThreadLocalPtr.hpp:
+
+../SFML/include/SFML/System/ThreadLocal.hpp:
+
+../SFML/include/SFML/System/String.inl:
+
+../SFML/include/SFML/System/Utf.hpp:
+
+../SFML/include/SFML/System/String.hpp:
+
+../SFML/include/SFML/System/Sleep.hpp:
+
+../SFML/include/SFML/Graphics/Font.hpp:
+
+../SFML/include/SFML/System/Mutex.hpp:
+
+../SFML/include/SFML/Graphics/Sprite.hpp:
+
+../SFML/include/SFML/Window/ContextSettings.hpp:
+
+../SFML/include/SFML/System/Lock.hpp:
+
+../SFML/include/SFML/System/NonCopyable.hpp:
+
+../SFML/include/SFML/System/FileInputStream.hpp:
+
+../SFML/include/SFML/System/Time.hpp:
+
+../SFML/include/SFML/Graphics/Glsl.hpp:
+
+../SFML/include/SFML/System/Clock.hpp:
+
+../SFML/include/SFML/System.hpp:
+
+../SFML/include/SFML/Window.hpp:
+
+../SFML/include/SFML/Audio/SoundFileFactory.inl:
 
 ../Team.h:
 
@@ -244,9 +448,17 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/_types/_nl_item.h:
 
+../SFML/include/SFML/Audio/AlResource.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
 
+../SFML/include/SFML/Window/GlResource.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_fsblkcnt_t.h:
+
+../SFML/include/SFML/Graphics/RectangleShape.hpp:
+
+../SFML/include/SFML/System/MemoryInputStream.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_fd_copy.h:
 
@@ -256,7 +468,11 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_fd_set.h:
 
+../SFML/include/SFML/Graphics/RenderTexture.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_suseconds_t.h:
+
+../SFML/include/SFML/Audio/Music.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_fd_setsize.h:
 
@@ -268,9 +484,13 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_u_int.h:
 
+../SFML/include/SFML/System/Vector2.inl:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_u_char.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/types.h:
+
+../SFML/include/SFML/Audio/SoundBuffer.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/nl_types.h:
 
@@ -280,11 +500,17 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/streambuf:
 
+../SFML/include/SFML/Audio/SoundFileReader.hpp:
+
+../SFML/include/SFML/Audio/Export.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_gid_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/xlocale/_wctype.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/xlocale/_stdlib.h:
+
+../SFML/include/SFML/Graphics/PrimitiveType.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/_locale.h:
 
@@ -293,6 +519,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/locale.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/wctype.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/optional:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/algorithm:
 
@@ -306,9 +534,15 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_mach_port_t.h:
 
+../SFML/include/SFML/Graphics/Text.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_pthread/_pthread_t.h:
 
+../SFML/include/SFML/System/InputStream.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_pthread/_pthread_cond_t.h:
+
+../SFML/include/SFML/Graphics/Glsl.inl:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/pthread/sched.h:
 
@@ -316,11 +550,17 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/errno.h:
 
+../SFML/include/SFML/Window/Joystick.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_posix_availability.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_pthread/_pthread_once_t.h:
 
+../SFML/include/SFML/System/Vector3.inl:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/errno.h:
+
+../SFML/include/SFML/Window/WindowHandle.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/_types/_intmax_t.h:
 
@@ -333,6 +573,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/syslimits.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/limits.h:
+
+../SFML/include/SFML/Graphics/Image.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/chrono:
 
@@ -352,6 +594,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 ../Game.h:
 
+../SFML/include/SFML/Audio/Sound.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_key_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/iterator:
@@ -360,9 +604,13 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__functional_base:
 
+../SFML/include/SFML/System/Thread.inl:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/limits:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/mutex:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/TargetConditionals.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/__stddef_max_align_t.h:
 
@@ -378,9 +626,15 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/i386/endian.h:
 
+../SFML/include/SFML/Graphics/RenderStates.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_timeval.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/resource.h:
+
+../SFML/include/SFML/Audio/SoundStream.hpp:
+
+../SFML/include/SFML/Graphics/Export.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/cstdio:
 
@@ -400,17 +654,27 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/machine/_mcontext.h:
 
+../SFML/include/SFML/Window/Sensor.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_fd_zero.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/appleapiopts.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/signal.h:
 
+../SFML/include/SFML/System/Thread.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/xlocale/__wctype.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_id_t.h:
 
+../SFML/include/SFML/Graphics/RenderTarget.hpp:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/map:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/stdlib.h:
+
+../SFML/include/SFML/System/Export.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h:
 
@@ -423,6 +687,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_ino_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__debug:
+
+../SFML/include/SFML/System/ThreadLocalPtr.inl:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_useconds_t.h:
 
@@ -438,6 +704,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/_types/_uint64_t.h:
 
+../SFML/include/SFML/Graphics/Rect.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/_types/_uint32_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/xlocale/_string.h:
@@ -447,6 +715,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/iosfwd:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/cstdint:
+
+../SFML/include/SFML/Window/WindowStyle.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/strings.h:
 
@@ -462,9 +732,13 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/cstring:
 
+../SFML/include/SFML/Graphics/Glyph.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/system_error:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/xlocale/_time.h:
+
+../SFML/include/SFML/Config.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/string_view:
 
@@ -475,6 +749,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/machine/signal.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/cstddef:
+
+../SFML/include/SFML/Audio/SoundFileFactory.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/initializer_list:
 
@@ -516,6 +792,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/ctype.h:
 
+../SFML/include/SFML/Graphics/VertexArray.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_rune_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/type_traits:
@@ -523,6 +801,12 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/time.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/runetype.h:
+
+../SFML/include/SFML/Graphics/VertexBuffer.hpp:
+
+../SFML/include/SFML/Graphics/RenderWindow.hpp:
+
+../SFML/include/SFML/Graphics/Texture.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_clock_t.h:
 
@@ -546,9 +830,13 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_ssize_t.h:
 
+../SFML/include/SFML/Window/Touch.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/i386/_mcontext.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/functional:
+
+../SFML/include/SFML/System/Err.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_off_t.h:
 
@@ -563,6 +851,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/stdio.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/cwchar:
+
+../SFML/include/SFML/System/Utf.inl:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/cwctype:
 
@@ -604,6 +894,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__mutex_base:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/set:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_fd_def.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/stdio.h:
@@ -618,6 +910,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_uid_t.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__split_buffer:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_u_int64_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_ct_rune_t.h:
@@ -626,11 +920,15 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/xlocale/_ctype.h:
 
+../SFML/include/SFML/Graphics/ConvexShape.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_mbstate_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__nullptr:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/pthread/qos.h:
+
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/random:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/AvailabilityInternal.h:
 
@@ -639,6 +937,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__undef_macros:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/atomic:
+
+../SFML/include/SFML/Audio/OutputSoundFile.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/wchar.h:
 
@@ -652,6 +952,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__memory/utilities.h:
 
+/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__node_handle:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_endian.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/Availability.h:
@@ -664,15 +966,23 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/ios:
 
+../SFML/include/SFML/Graphics/View.hpp:
+
+../SFML/include/SFML/Window/Mouse.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_ino64_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/locale:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_errno_t.h:
 
+../SFML/include/SFML/Graphics/CircleShape.hpp:
+
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_intptr_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h:
+
+../SFML/include/SFML/Graphics.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/_types/_uint8_t.h:
 
@@ -695,6 +1005,8 @@ CMakeFiles/NBASim.dir/main.cpp.o: ../main.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_sigset_t.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/string.h:
+
+../SFML/include/SFML/Graphics/Color.hpp:
 
 ../Player.h:
 

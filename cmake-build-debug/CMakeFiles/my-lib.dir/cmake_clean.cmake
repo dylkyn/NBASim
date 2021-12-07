@@ -1,7 +1,10 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/my-lib.dir/Game.cpp.obj"
-  "CMakeFiles/my-lib.dir/Player.cpp.obj"
-  "CMakeFiles/my-lib.dir/Team.cpp.obj"
+  "CMakeFiles/my-lib.dir/Game.cpp.o"
+  "CMakeFiles/my-lib.dir/Game.cpp.o.d"
+  "CMakeFiles/my-lib.dir/Player.cpp.o"
+  "CMakeFiles/my-lib.dir/Player.cpp.o.d"
+  "CMakeFiles/my-lib.dir/Team.cpp.o"
+  "CMakeFiles/my-lib.dir/Team.cpp.o.d"
   "libmy-lib.a"
   "libmy-lib.pdb"
 )

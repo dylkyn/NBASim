@@ -1,2 +1,0 @@
-C:\mingw32\bin\ar.exe qc libTeam.cpp.a CMakeFiles/Team.cpp.dir/Player.cpp.obj CMakeFiles/Team.cpp.dir/Game.cpp.obj
-C:\mingw32\bin\ranlib.exe libTeam.cpp.a

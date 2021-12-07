@@ -1,6 +1,6 @@
 #include "Game.h"
 #include "Team.h"
-#include <omp.h>
+#include</usr/local/opt/libomp/include/omp.h>
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>
 #include <iostream>
