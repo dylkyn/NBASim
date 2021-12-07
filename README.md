@@ -4,7 +4,7 @@
 ### Team Member(s): Dylan Kynoch, Justin Lau, Bella Poage, Christopher Burgett
 
 ##### Project Statement of Work:
-Our plan is to create a fictional NBA Season Simulator Application. We will have a general league that consists of 30 custom teams each with 5 players.
+Our plan is to create a fictional NBA Season Simulator Application. We will have a general league that consists of 32 custom teams each with 5 players.
 Each player will have certain attributes and tendencies that will determine game possession outcomes.
 For example, a dunk attempt (close range attribute) from an offensive player on a defensive player (block attribute) is determined by a random number generator to determine whether the attempt was successful (dunked) or not (blocked).
 There will be 82 games in the season along with a playoff bracket, and at the end of a season simulation we will use a ML/AI algorithm to make predictions on the next season saved for future simulations and have an “Awards” section to recognize players who scored the most, rebounded the most, shot the most, and other crucial statistics.
