@@ -137,6 +137,22 @@ int main()
 	myText.setStyle(sf::Text::Regular);
 	myText.setFillColor(Color(255, 0, 0));
 
+    Texture testHawk;
+    testHawk.loadFromFile("../graphics/76ers.png");
+    Sprite test;
+    test.setTexture(testHawk);
+    test.setPosition(Vector2f(500, 500));
+    //next button
+//    Text next;
+//    next.setFont(font);
+//    next.setString("Next Round");
+//    next.setPosition(1500, 975);
+//    next.setCharacterSize(40);
+//    next.setStyle(sf::Text::Regular);
+//    next.setFillColor(Color(0, 0, 0));
+
+    bool nextSelected = false;
+
 //	std::chrono::seconds dura( 5);
 //	std::this_thread::sleep_for( dura );
 
@@ -253,18 +269,46 @@ int main()
 
 	while (window.isOpen())
 	{
-		sf::Event e;
-		while (window.pollEvent(e))
-		{
-			switch (e.type)
-			{
-			case sf::Event::EventType::Closed:
-				window.close();
-				break;
-			}
-		}
-		window.clear();
+        sf::Event event;
+
+    // while there are pending events...
+        while (window.pollEvent(event))
+        {
+            // check the type of the event...
+            switch (event.type)
+            {
+                // window closed
+                case sf::Event::Closed:
+                    window.close();
+                    break;
+
+                    // key pressed
+                case sf::Event::KeyPressed:
+                    if (event.key.code == sf::Keyboard::Escape)
+                    {
+                        window.close();
+                    }
+                    else if (event.key.code == sf::Keyboard::Enter)
+                    {
+                        nextSelected = true;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        window.clear();
+        if (nextSelected)
+        {
+            std::cout << "drawing test" << std::endl;
+            window.draw(test);
+        }
+
 		window.draw(spriteBackground);
+        window.draw(next);
+        //hawks.getLogo().setPosition(500, 500);
+        //Sprite hawksLogo = hawks.getLogo();
+        //window.draw(hawksLogo);
 		window.display();
 	}
 	return 0;
