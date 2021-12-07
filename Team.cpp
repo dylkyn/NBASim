@@ -10,11 +10,8 @@ Team::Team(std::string name, std::string logo)
 	players[3] = Player(4); //power forward
 	players[4] = Player(5); //small forward
 	teamName = name;
-	Texture texture;
-	texture.loadFromFile(logo);
-	Sprite spriteTeam;
-	spriteTeam.setTexture(texture);
-	teamLogo = spriteTeam;
+	teamTex.loadFromFile(logo);
+	teamLogo.setTexture(teamTex);
 	gameScore = 0;
 	seriesScore = 0;
 	status = false;
@@ -68,7 +65,7 @@ std::string Team::getName()
 {
 	return teamName;
 }
-Sprite Team::getLogo()
+Sprite* Team::getLogo()
 {
-	return teamLogo;
+	return &teamLogo;
 }

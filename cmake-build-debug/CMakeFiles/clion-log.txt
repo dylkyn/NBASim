@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" C:\Users\justi\CLionProjects\NBASim
+"C:\Program Files\JetBrains\CLion 2021.2.1\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - MinGW Makefiles" "C:\Users\kynoc\OneDrive\Documents\GT\Classes\ECE 4122\Project\NBASim"
 -- The C compiler identification is GNU 7.3.0
 -- The CXX compiler identification is GNU 7.3.0
 -- Detecting C compiler ABI info
@@ -11,7 +11,7 @@
 -- Check for working CXX compiler: C:/mingw32/bin/g++.exe - skipped
 -- Detecting CXX compile features
 -- Detecting CXX compile features - done
--- Found SFML 2.5.1 in C:/Users/justi/CLionProjects/NBASim/SFML/lib/cmake/SFML
+-- Found SFML 2.5.1 in C:/Users/kynoc/OneDrive/Documents/GT/Classes/ECE 4122/Project/NBASim/SFML/lib/cmake/SFML
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/justi/CLionProjects/NBASim/cmake-build-debug
+-- Build files have been written to: C:/Users/kynoc/OneDrive/Documents/GT/Classes/ECE 4122/Project/NBASim/cmake-build-debug
