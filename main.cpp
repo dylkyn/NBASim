@@ -3,15 +3,29 @@
 #include "Game.h"
 #include <iostream>
 #include <algorithm>
+#include <fstream>
 #include <string>
 #include <stdlib.h>
 #include <thread>
 #include <vector>
 #include <chrono>
 #include <random>
-#include <mshtmlc.h>
+//#include <mshtmlc.h>
 
 using namespace sf;
+
+void exportToCsv(Team& Team, std::ofstream& myfile) {
+    ///std::string fileName = (game.getWinner().getName()) + "vs" + game.getLoser().getName() + ".csv";
+    std::string fileName = "test.csv";
+
+    std::string path ="../gameExports/" + fileName;
+    std::ofstream myfile(path);
+    myfile.open(fileName.c_str());
+//    myfile.open("pleaseExport.csv");
+    myfile << "hey";
+    myfile.close();
+}
+
 
 int main()
 {
@@ -281,6 +295,7 @@ int main()
 	// PLAY CHAMPIONSHIP
 	Game curr(championship.at(0), rightColumnFour.at(1));
 	curr.fullGameSimulation();
+    exportToCsv(curr);
 	std::cout << "The Championship Winner is: " << curr.getWinner().getName() << " the score was "
 			  << curr.getWinner().getGameScore()
 			  << " and " << curr.getLoser().getGameScore() << std::endl;

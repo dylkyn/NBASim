@@ -314,24 +314,6 @@ CMakeFiles/my-lib.dir/Game.cpp.o
  /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Graphics/Sprite.hpp
  /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Graphics/Text.hpp
  /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Graphics/VertexBuffer.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/InputSoundFile.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/Export.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/Listener.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/Music.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundStream.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundSource.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/AlResource.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/OutputSoundFile.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/Sound.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundBuffer.hpp
- /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/set
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundBufferRecorder.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundRecorder.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundFileFactory.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundFileFactory.inl
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundFileReader.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundFileWriter.hpp
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/iostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/istream
 
@@ -880,24 +862,6 @@ CMakeFiles/my-lib.dir/Team.cpp.o
  /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Graphics/Sprite.hpp
  /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Graphics/Text.hpp
  /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Graphics/VertexBuffer.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/InputSoundFile.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/Export.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/Listener.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/Music.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundStream.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundSource.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/AlResource.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/OutputSoundFile.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/Sound.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundBuffer.hpp
- /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/set
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundBufferRecorder.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundRecorder.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundFileFactory.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundFileFactory.inl
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundFileReader.hpp
- /Users/cjburgett/Documents/ECE_4122/Final_project_real/SFML/include/SFML/Audio/SoundFileWriter.hpp
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/iostream
  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/istream
 

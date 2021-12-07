@@ -313,24 +313,6 @@ CMakeFiles/my-lib.dir/Game.cpp.o: ../Game.cpp \
   ../SFML/include/SFML/Graphics/Sprite.hpp \
   ../SFML/include/SFML/Graphics/Text.hpp \
   ../SFML/include/SFML/Graphics/VertexBuffer.hpp \
-  ../SFML/include/SFML/Audio.hpp \
-  ../SFML/include/SFML/Audio/InputSoundFile.hpp \
-  ../SFML/include/SFML/Audio/Export.hpp \
-  ../SFML/include/SFML/Audio/Listener.hpp \
-  ../SFML/include/SFML/Audio/Music.hpp \
-  ../SFML/include/SFML/Audio/SoundStream.hpp \
-  ../SFML/include/SFML/Audio/SoundSource.hpp \
-  ../SFML/include/SFML/Audio/AlResource.hpp \
-  ../SFML/include/SFML/Audio/OutputSoundFile.hpp \
-  ../SFML/include/SFML/Audio/Sound.hpp \
-  ../SFML/include/SFML/Audio/SoundBuffer.hpp \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/set \
-  ../SFML/include/SFML/Audio/SoundBufferRecorder.hpp \
-  ../SFML/include/SFML/Audio/SoundRecorder.hpp \
-  ../SFML/include/SFML/Audio/SoundFileFactory.hpp \
-  ../SFML/include/SFML/Audio/SoundFileFactory.inl \
-  ../SFML/include/SFML/Audio/SoundFileReader.hpp \
-  ../SFML/include/SFML/Audio/SoundFileWriter.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/istream
 
@@ -877,41 +859,9 @@ CMakeFiles/my-lib.dir/Team.cpp.o: ../Team.cpp \
   ../SFML/include/SFML/Graphics/Sprite.hpp \
   ../SFML/include/SFML/Graphics/Text.hpp \
   ../SFML/include/SFML/Graphics/VertexBuffer.hpp \
-  ../SFML/include/SFML/Audio.hpp \
-  ../SFML/include/SFML/Audio/InputSoundFile.hpp \
-  ../SFML/include/SFML/Audio/Export.hpp \
-  ../SFML/include/SFML/Audio/Listener.hpp \
-  ../SFML/include/SFML/Audio/Music.hpp \
-  ../SFML/include/SFML/Audio/SoundStream.hpp \
-  ../SFML/include/SFML/Audio/SoundSource.hpp \
-  ../SFML/include/SFML/Audio/AlResource.hpp \
-  ../SFML/include/SFML/Audio/OutputSoundFile.hpp \
-  ../SFML/include/SFML/Audio/Sound.hpp \
-  ../SFML/include/SFML/Audio/SoundBuffer.hpp \
-  /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/set \
-  ../SFML/include/SFML/Audio/SoundBufferRecorder.hpp \
-  ../SFML/include/SFML/Audio/SoundRecorder.hpp \
-  ../SFML/include/SFML/Audio/SoundFileFactory.hpp \
-  ../SFML/include/SFML/Audio/SoundFileFactory.inl \
-  ../SFML/include/SFML/Audio/SoundFileReader.hpp \
-  ../SFML/include/SFML/Audio/SoundFileWriter.hpp \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/iostream \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/istream
 
-
-../SFML/include/SFML/Audio/SoundFileWriter.hpp:
-
-../SFML/include/SFML/Audio/SoundRecorder.hpp:
-
-../SFML/include/SFML/Audio/SoundBufferRecorder.hpp:
-
-../SFML/include/SFML/Audio/SoundSource.hpp:
-
-../SFML/include/SFML/Audio/Listener.hpp:
-
-../SFML/include/SFML/Audio/InputSoundFile.hpp:
-
-../SFML/include/SFML/Audio.hpp:
 
 ../SFML/include/SFML/Graphics/Shader.hpp:
 
@@ -985,8 +935,6 @@ CMakeFiles/my-lib.dir/Team.cpp.o: ../Team.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/_types/_nl_item.h:
 
-../SFML/include/SFML/Audio/AlResource.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_fsfilcnt_t.h:
 
 ../SFML/include/SFML/Window/GlResource.hpp:
@@ -1009,8 +957,6 @@ CMakeFiles/my-lib.dir/Team.cpp.o: ../Team.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_suseconds_t.h:
 
-../SFML/include/SFML/Audio/Music.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_fd_setsize.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_in_port_t.h:
@@ -1027,13 +973,7 @@ CMakeFiles/my-lib.dir/Team.cpp.o: ../Team.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/types.h:
 
-../SFML/include/SFML/Audio/SoundBuffer.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/nl_types.h:
-
-../SFML/include/SFML/Audio/SoundFileReader.hpp:
-
-../SFML/include/SFML/Audio/Export.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_gid_t.h:
 
@@ -1175,8 +1115,6 @@ CMakeFiles/my-lib.dir/Team.cpp.o: ../Team.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/tuple:
 
-../SFML/include/SFML/Audio/Sound.hpp:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_key_t.h:
 
 ../Game.h:
@@ -1230,8 +1168,6 @@ CMakeFiles/my-lib.dir/Team.cpp.o: ../Team.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_timeval.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/resource.h:
-
-../SFML/include/SFML/Audio/SoundStream.hpp:
 
 ../SFML/include/SFML/Graphics/Export.hpp:
 
@@ -1339,8 +1275,6 @@ CMakeFiles/my-lib.dir/Team.cpp.o: ../Team.cpp \
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/__mutex_base:
 
-/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/set:
-
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_fd_def.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/stdio.h:
@@ -1374,8 +1308,6 @@ CMakeFiles/my-lib.dir/Team.cpp.o: ../Team.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/AvailabilityVersions.h:
 
 /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/13.0.0/include/stddef.h:
-
-../SFML/include/SFML/Audio/OutputSoundFile.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/wchar.h:
 
@@ -1456,8 +1388,6 @@ CMakeFiles/my-lib.dir/Team.cpp.o: ../Team.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/wait.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/sys/_types/_int16_t.h:
-
-../SFML/include/SFML/Audio/SoundFileFactory.inl:
 
 ../Team.h:
 
@@ -1540,8 +1470,6 @@ CMakeFiles/my-lib.dir/Team.cpp.o: ../Team.cpp \
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/pthread.h:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/cstring:
-
-../SFML/include/SFML/Audio/SoundFileFactory.hpp:
 
 /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX12.0.sdk/usr/include/c++/v1/initializer_list:
 
