@@ -129,7 +129,7 @@ int main()
 	// Load it from a file
 	if (!font.loadFromFile("../font.ttf"))
 	{
-		std::cout << "Oh shit." << std::endl;
+		std::cout << "Oh shit, no font." << std::endl;
 	}
 	Text myText;
 	myText.setFont(font);
@@ -137,8 +137,8 @@ int main()
 	myText.setStyle(sf::Text::Regular);
 	myText.setFillColor(Color(255, 0, 0));
 
-//	std::chrono::seconds dura( 5);
-//	std::this_thread::sleep_for( dura );
+	std::chrono::seconds dura(1);
+	std::this_thread::sleep_for(dura);
 
 	// SPLIT TEAMS
 	//first half of teams in the left most column
@@ -146,7 +146,7 @@ int main()
 	{
 		leftColumnOne.push_back(randomTeams.at(i));
 		myText.setString(leftColumnOne.at(i).getName());
-		myText.setPosition(50.0f, 140.0f + 55.0f * i);
+		myText.setPosition(50.0f, 135.0f + 55.0f * i);
 		window.draw(myText);
 	}
 	//second half of teams in right most column
@@ -154,14 +154,13 @@ int main()
 	{
 		rightColumnOne.push_back(randomTeams.at(i));
 		myText.setString(rightColumnOne.at(i - 16).getName());
-		myText.setPosition(1725.0f, 140.0f + 55.0f * (i - 16));
+		myText.setPosition(1715.0f, 135.0f + 55.0f * (i - 16));
 		window.draw(myText);
 	}
-
 	window.display();
-	std::chrono::seconds dura(5);
 	std::this_thread::sleep_for(dura);
-
+	window.clear();
+	window.draw(spriteBackground);
 	// PLAY ROUND 1
 	//Above the left most and right most teams are put into their respected vectors
 	for (int i = 0; i < leftColumnOne.size(); i += 2)
@@ -172,18 +171,26 @@ int main()
 		std::cout << "Round 1 left Winner is: " << curr.getWinner().getName() << " the score was "
 				  << curr.getWinner().getGameScore()
 				  << " and " << curr.getLoser().getGameScore() << std::endl;
+		myText.setString(curr.getWinner().getName());
+		myText.setPosition(235.0f, 160.0f + 55.0f * i);
+		window.draw(myText);
 	}
 	for (int i = 0; i < rightColumnOne.size(); i += 2)
 	{
 		Game curr(rightColumnOne.at(i), rightColumnOne.at(i + 1));
 		curr.fullGameSimulation();
 		rightColumnTwo.push_back(curr.getWinner());
-
 		std::cout << "Round 1 right Winner is: " << curr.getWinner().getName() << " the score was "
 				  << curr.getWinner().getGameScore()
 				  << " and " << curr.getLoser().getGameScore() << std::endl;
+		myText.setString(curr.getWinner().getName());
+		myText.setPosition(1550.0f, 160.0f + 55.0f * i);
+		window.draw(myText);
 	}
-
+	window.display();
+	std::this_thread::sleep_for(dura);
+	window.clear();
+	window.draw(spriteBackground);
 	// PLAY ROUND 2
 	for (int i = 0; i < leftColumnTwo.size(); i += 2)
 	{
@@ -193,6 +200,9 @@ int main()
 		std::cout << "Round 2 left Winner is: " << curr.getWinner().getName() << " the score was "
 				  << curr.getWinner().getGameScore()
 				  << " and " << curr.getLoser().getGameScore() << std::endl;
+		myText.setString(curr.getWinner().getName());
+		myText.setPosition(400.0f, 220.0f + 110.0f * i);
+		window.draw(myText);
 	}
 	for (int i = 0; i < rightColumnTwo.size(); i += 2)
 	{
@@ -202,8 +212,14 @@ int main()
 		std::cout << "Round 2 right Winner is: " << curr.getWinner().getName() << " the score was "
 				  << curr.getWinner().getGameScore()
 				  << " and " << curr.getLoser().getGameScore() << std::endl;
+		myText.setString(curr.getWinner().getName());
+		myText.setPosition(1380.0f, 220.0f + 110.0f * i);
+		window.draw(myText);
 	}
-
+	window.display();
+	std::this_thread::sleep_for(dura);
+	window.clear();
+	window.draw(spriteBackground);
 	// PLAY ROUND 3
 	for (int i = 0; i < leftColumnThree.size(); i += 2)
 	{
@@ -213,6 +229,9 @@ int main()
 		std::cout << "Round 3 left Winner is: " << curr.getWinner().getName() << " the score was "
 				  << curr.getWinner().getGameScore()
 				  << " and " << curr.getLoser().getGameScore() << std::endl;
+		myText.setString(curr.getWinner().getName());
+		myText.setPosition(570.0f, 330.0f + 220.0f * i);
+		window.draw(myText);
 	}
 	for (int i = 0; i < rightColumnThree.size(); i += 2)
 	{
@@ -222,8 +241,14 @@ int main()
 		std::cout << "Round 3 right Winner is: " << curr.getWinner().getName() << " the score was "
 				  << curr.getWinner().getGameScore()
 				  << " and " << curr.getLoser().getGameScore() << std::endl;
+		myText.setString(curr.getWinner().getName());
+		myText.setPosition(1215.0f, 330.0f + 220.0f * i);
+		window.draw(myText);
 	}
-
+	window.display();
+	std::this_thread::sleep_for(dura);
+	window.clear();
+	window.draw(spriteBackground);
 	// PLAY ROUND 4
 	for (int i = 0; i < leftColumnFour.size(); i += 2)
 	{
@@ -233,6 +258,9 @@ int main()
 		std::cout << "Round 4 left Winner is: " << curr.getWinner().getName() << " the score was "
 				  << curr.getWinner().getGameScore()
 				  << " and " << curr.getLoser().getGameScore() << std::endl;
+		myText.setString(curr.getWinner().getName());
+		myText.setPosition(735.0f, 550);
+		window.draw(myText);
 	}
 	for (int i = 0; i < rightColumnFour.size(); i += 2)
 	{
@@ -242,15 +270,25 @@ int main()
 		std::cout << "Round 4 right Winner is: " << curr.getWinner().getName() << " the score was "
 				  << curr.getWinner().getGameScore()
 				  << " and " << curr.getLoser().getGameScore() << std::endl;
+		myText.setString(curr.getWinner().getName());
+		myText.setPosition(1050.0f, 550);
+		window.draw(myText);
 	}
-
+	window.display();
+	std::this_thread::sleep_for(dura);
+	window.clear();
+	window.draw(spriteBackground);
 	// PLAY CHAMPIONSHIP
 	Game curr(championship.at(0), rightColumnFour.at(1));
 	curr.fullGameSimulation();
 	std::cout << "The Championship Winner is: " << curr.getWinner().getName() << " the score was "
 			  << curr.getWinner().getGameScore()
 			  << " and " << curr.getLoser().getGameScore() << std::endl;
-
+	myText.setString(curr.getWinner().getName());
+	myText.setPosition(900.0f, 650);
+	window.draw(myText);
+	window.display();
+	std::this_thread::sleep_for(dura);
 	while (window.isOpen())
 	{
 		sf::Event e;
@@ -265,6 +303,7 @@ int main()
 		}
 		window.clear();
 		window.draw(spriteBackground);
+		window.draw(myText);
 		window.display();
 	}
 	return 0;
