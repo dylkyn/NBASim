@@ -11,6 +11,7 @@ class Team
 	Player players[5];
 	int gameScore;
 	std::string teamName;
+	Texture teamTex;
 	Sprite teamLogo;
 	int seriesScore;
 	bool status;
@@ -24,7 +25,7 @@ class Team
 	void setStatus(bool stat);
 	bool getStatus();
 	std::string getName();
-	Sprite& getLogo();
+	Sprite* getLogo();
 	int getSeriesScore();
 	void increaseSeriesScore();
 };
