@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2021.3\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\NBASim.dir/objects.a
+C:\mingw32\bin\ar.exe qc CMakeFiles\NBASim.dir/objects.a @CMakeFiles\NBASim.dir\objects1.rsp
+C:\mingw32\bin\g++.exe -g -Wl,--whole-archive CMakeFiles\NBASim.dir/objects.a -Wl,--no-whole-archive -o CMAKE_CURRENT_SOURCE_DIR\NBASim.exe -Wl,--out-implib,libNBASim.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\NBASim.dir\linklibs.rsp
