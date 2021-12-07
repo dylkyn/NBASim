@@ -87,8 +87,7 @@ void Game::possessionSimulation(Team& offense, Team& defense)
 			rebound = rand() % defender.getBlock() + 1;
 			if (rebound <= twoPoint)
 			{
-				offense
-					.setGameScore(2); //I do not know how we are doing and setting up the game but this is lowkey pseudocode here
+				offense.setGameScore(2); //I do not know how we are doing and setting up the game but this is lowkey pseudocode here
 				offender.setNumTwo(offender.getNumTwo() + 1);
 				if (assist)
 				{
