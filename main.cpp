@@ -16,7 +16,9 @@ using namespace sf;
 
 int main()
 {
-    srand(time(NULL));
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+
+    srand(seed);
     // Create a video mode object
     VideoMode vm(1920, 1080);
 
@@ -25,7 +27,6 @@ int main()
 
     // Create a texture to hold a graphic on the GPU
     Texture textureBackground;
-
     // Load a graphic into the texture
     textureBackground.loadFromFile("../graphics/background.png"); //FIX THIS TO OUR FILE
 
@@ -55,8 +56,6 @@ int main()
     Team hornets("Hornets", "../graphics/hornets.png");
     teams.push_back(hornets);
 
-    Team bulls("Bulls", "../graphics/bulls.png");
-    teams.push_back(bulls);
 
     Team cavaliers("Cavaliers", "../graphics/cavaliers.png");
     teams.push_back(cavaliers);
@@ -136,12 +135,14 @@ int main()
     Team wreck("Ramblin' Wreck", "../graphics/wreck.png");
     teams.push_back(wreck);
 
+    Team bulls("Bulls", "../graphics/bulls.png");
+    teams.push_back(bulls);
+
+
     //randomly shuffle teams
     std::vector<Team> randomTeams;
     randomTeams = teams;
     // obtain a time-based seed:
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-
     std::shuffle(randomTeams.begin(), randomTeams.end(), std::default_random_engine(seed));
     //place teams in columns
     std::vector<Team> columnOne;
@@ -174,9 +175,6 @@ int main()
     Game game7(columnOne.at(12), columnOne.at(13));
     Game game8(columnOne.at(14), columnOne.at(15));
 
-    std::cout << hawks.getGameScore() << " " << thunder.getGameScore() << std::endl;
-    Player test(1);
-    std::cout << test.getName() << std::endl;
     game1.fullGameSimulation();
     game2.fullGameSimulation();
     game3.fullGameSimulation();
@@ -204,6 +202,21 @@ int main()
     std::cout << "Winner is: " << gameC.getWinner().getName() << " the score was " << gameC.getWinner().getGameScore()
               << " and " << gameC.getLoser().getGameScore() << std::endl;
 
+    while (window.isOpen()) {
+
+        sf::Event e;
+        while (window.pollEvent(e)) {
+
+            switch (e.type) {
+                case sf::Event::EventType::Closed:
+                    window.close();
+                    break;
+            }
+        }
+        window.clear();
+        window.draw(spriteBackground);
+        window.display();
+    }
 
 
     return 0;

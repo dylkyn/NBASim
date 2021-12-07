@@ -2,6 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 #include <iostream>
+#include <SFML/Graphics.hpp>
+
 
 Team::Team(std::string name, std::string logo)
 {
@@ -21,7 +23,7 @@ Team::Team(std::string name, std::string logo)
 }
 Team::Team()
 {
-	Team("Invalid Team", "");
+	Team("Invalid Team", "../graphics/hawks.png");
 }
 
 Player Team::getPlayer()

@@ -131,8 +131,6 @@ Team Game::fullGameSimulation()
 	team1.resetTeamScore();
 	team2.resetTeamScore();
 #pragma omp parallel for default(shared) private(i) schedule(static, chunk) reduction(+:totalArea)
-	while (team1.getSeriesScore() != 4 || team2.getSeriesScore() != 4)
-	{
 		for (int i = 0; i < 103; i++)
 		{
 			possessionSimulation(team1, team2);
@@ -145,26 +143,15 @@ Team Game::fullGameSimulation()
 			Player addScore = winner.getPlayer();
 			addScore.setNumTwo(addScore.getNumTwo() + 1);
 			winner.setGameScore(2);
-			winner.increaseSeriesScore(); //Make sure this is a reference not shallow copy?
 		}
 		else if (team1.getGameScore() > team2.getGameScore())
 		{
-			team1.increaseSeriesScore();
+			winner = team1;
 		}
 		else
 		{
-			team2.increaseSeriesScore();
+			winner = team2;
 		}
-	}
 
-	if (team1.getSeriesScore() == 4)
-	{
-		winner = team1;
-		return team1;
-	}
-	else
-	{
-		winner = team2;
-		return team2;
-	}
+        return winner;
 }
