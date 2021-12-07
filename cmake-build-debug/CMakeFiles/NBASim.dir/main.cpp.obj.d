@@ -97,6 +97,10 @@ CMakeFiles/NBASim.dir/main.cpp.obj: \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/basic_string.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ext/alloc_traits.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/alloc_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/string_view \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/limits \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/functional_hash.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/string_view.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ext/string_conversions.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/cstdlib \
  C:/mingw32/i686-w64-mingw32/include/stdlib.h \
@@ -106,7 +110,6 @@ CMakeFiles/NBASim.dir/main.cpp.obj: \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/std_abs.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/cstdio \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/cerrno \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/functional_hash.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/basic_string.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/locale_classes.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/system_error \
@@ -125,4 +128,169 @@ CMakeFiles/NBASim.dir/main.cpp.obj: \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/basic_ios.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/ostream.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/istream \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/istream.tcc
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/istream.tcc \
+ C:\Users\justi\CLionProjects\NBASim\Player.h \
+ C:\Users\justi\CLionProjects\NBASim\Team.h \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Config.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Clock.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Export.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Time.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Err.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/FileInputStream.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/InputStream.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/NonCopyable.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Lock.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/MemoryInputStream.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Mutex.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Sleep.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/String.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Utf.hpp \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/algorithm \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/utility \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_relops.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_algo.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/algorithmfwd.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_heap.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_tempbuf.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_construct.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/uniform_int_dist.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/locale \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/locale_facets_nonio.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ctime \
+ C:/mingw32/i686-w64-mingw32/include/time.h \
+ C:/mingw32/i686-w64-mingw32/include/_timeval.h \
+ C:/mingw32/i686-w64-mingw32/include/pthread_time.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/time_members.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/messages_members.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/codecvt.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/locale_facets_nonio.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/locale_conv.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stringfwd.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/allocator.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/codecvt.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/unique_ptr.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tuple \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/array \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/uses_allocator.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/invoke.h \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Utf.inl \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/iterator \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stream_iterator.h \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/String.inl \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Thread.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Thread.inl \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/ThreadLocal.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/ThreadLocalPtr.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/ThreadLocalPtr.inl \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Vector2.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Vector2.inl \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Vector3.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Vector3.inl \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/Clipboard.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/Export.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/Context.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/GlResource.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/ContextSettings.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/Cursor.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/Event.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/Joystick.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/Keyboard.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/Mouse.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/Sensor.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/Touch.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/VideoMode.hpp \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/vector \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_uninitialized.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_vector.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_bvector.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/vector.tcc \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/Window.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/WindowHandle.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window/WindowStyle.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/BlendMode.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Export.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/CircleShape.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Shape.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Drawable.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/RenderStates.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Transform.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Rect.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Rect.inl \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Transformable.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/VertexArray.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Vertex.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Color.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/PrimitiveType.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/ConvexShape.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Font.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Glyph.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Texture.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Image.hpp \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/map \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_tree.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ext/aligned_buffer.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/node_handle.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/optional \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/enable_special_members.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_map.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_multimap.h \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/RectangleShape.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/RenderTarget.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/View.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/RenderTexture.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/RenderWindow.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Shader.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Glsl.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Glsl.inl \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Sprite.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Text.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/VertexBuffer.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/InputSoundFile.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/Export.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/Listener.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/Music.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundStream.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundSource.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/AlResource.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/OutputSoundFile.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/Sound.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundBuffer.hpp \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/set \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_set.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_multiset.h \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundBufferRecorder.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundRecorder.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundFileFactory.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundFileFactory.inl \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundFileReader.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundFileWriter.hpp \
+ C:\Users\justi\CLionProjects\NBASim\Game.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/chrono \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ratio \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/parse_numbers.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/random \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/cmath \
+ C:/mingw32/i686-w64-mingw32/include/math.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/specfun.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/gamma.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/special_function_util.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/bessel_function.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/special_function_util.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/beta_function.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/ell_integral.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/exp_integral.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/hypergeometric.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/legendre_function.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/modified_bessel_func.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/poly_hermite.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/poly_laguerre.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/tr1/riemann_zeta.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/random.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/opt_random.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/random.tcc \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/numeric \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_numeric.h
