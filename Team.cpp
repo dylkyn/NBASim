@@ -68,7 +68,7 @@ std::string Team::getName()
 {
 	return teamName;
 }
-Sprite Team::getLogo()
+Sprite& Team::getLogo()
 {
 	return teamLogo;
 }
