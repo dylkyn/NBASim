@@ -186,7 +186,7 @@ class Player
 		"Jeff Green",
 		"Rui Hachimura",
 		"Jalen Mcdaniels",
-		"Jaden Mcdaniels",
+		"Lauri Markkanen",
 		"Kevin Love",
 		"Paul Millsap",
 		"Jabari Parker",
