@@ -163,7 +163,7 @@ Player::Player(int playerType)
 
 Player::Player()
 {
-    std::cout << "Default" << std::endl;
+    Player(1);
 }
 
 //getters and setters for attributes
