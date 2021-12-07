@@ -145,27 +145,140 @@ int main()
     // obtain a time-based seed:
     std::shuffle(randomTeams.begin(), randomTeams.end(), std::default_random_engine(seed));
     //place teams in columns
-    std::vector<Team> columnOne;
-    std::vector<Team> columnTwo;
-    //first half of teams in column one
+    std::vector<Team> leftColumnOne;
+    std::vector<Team> rightColumnOne;
+    std::vector<Team> leftColumnTwo;
+    std::vector<Team> rightColumnTwo;
+    std::vector<Team> leftColumnThree;
+    std::vector<Team> rightColumnThree;
+    std::vector<Team> leftColumnFour;
+    std::vector<Team> rightColumnFour;
+    std::vector<Team> championship;
+
+
+
+    //first half of teams in the left most column
     for (int i = 0; i < 16; i++)
     {
-        columnOne.push_back(randomTeams.at(i));
+        leftColumnOne.push_back(randomTeams.at(i));
     }
-    //second half of teams in column two
-    for (int i = 4; i < 32; i++)
+    //second half of teams in right most column
+    for (int i = 16; i < 32; i++)
     {
-        columnTwo.push_back(randomTeams.at(i));
+        rightColumnOne.push_back(randomTeams.at(i));
     }
-    for (unsigned i = 0; i < columnOne.size(); i++)
+
+    //Above the left most and right most teams are put into their respected vectors
+    for (int i = 0; i < leftColumnOne.size(); i+=2)
     {
-        columnOne.at(i).getLogo().setPosition(100, 300 + 150 * i);
+        Game curr(leftColumnOne.at(i), leftColumnOne.at(i+1));
+        curr.fullGameSimulation();
+        leftColumnTwo.push_back(curr.getWinner());
+        std::cout << "Round 1 left Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
+                  << " and " << curr.getLoser().getGameScore() << std::endl;
     }
-    for (unsigned i = 0; i < columnTwo.size(); i++)
+
+    for (int i = 0; i < rightColumnOne.size(); i+=2)
     {
-        columnTwo.at(i).getLogo().setPosition(1750, 300 + 150 * i);
+        Game curr(rightColumnOne.at(i), rightColumnOne.at(i+1));
+        curr.fullGameSimulation();
+        rightColumnTwo.push_back(curr.getWinner());
+
+        std::cout << "Round 1 right Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
+                  << " and " << curr.getLoser().getGameScore() << std::endl;
     }
+
+
+    for (int i = 0; i < leftColumnTwo.size(); i+=2)
+    {
+        Game curr(leftColumnTwo.at(i), leftColumnTwo.at(i+1));
+        curr.fullGameSimulation();
+        leftColumnThree.push_back(curr.getWinner());
+
+        std::cout << "Round 2 left Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
+                  << " and " << curr.getLoser().getGameScore() << std::endl;
+    }
+
+    for (int i = 0; i < rightColumnTwo.size(); i+=2)
+    {
+        Game curr(rightColumnTwo.at(i), rightColumnTwo.at(i+1));
+        curr.fullGameSimulation();
+        rightColumnThree.push_back(curr.getWinner());
+
+        std::cout << "Round 2 right Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
+                  << " and " << curr.getLoser().getGameScore() << std::endl;
+    }
+
+    //Above is the setup and simulation for the second columns
+
+
+    for (int i = 0; i < leftColumnThree.size(); i+=2)
+    {
+        Game curr(leftColumnThree.at(i), leftColumnThree.at(i+1));
+        curr.fullGameSimulation();
+        leftColumnFour.push_back(curr.getWinner());
+
+        std::cout << "Round 3 left Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
+                  << " and " << curr.getLoser().getGameScore() << std::endl;
+    }
+
+    for (int i = 0; i < rightColumnThree.size(); i+=2)
+    {
+        Game curr(rightColumnThree.at(i), rightColumnThree.at(i+1));
+        curr.fullGameSimulation();
+        rightColumnFour.push_back(curr.getWinner());
+
+        std::cout << "Round 3 right Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
+                  << " and " << curr.getLoser().getGameScore() << std::endl;
+    }
+
+    //Above is the setup and simulation for the third columns
+
+    for (int i = 0; i < leftColumnFour.size(); i+=2)
+    {
+        Game curr(leftColumnFour.at(i), leftColumnFour.at(i+1));
+        curr.fullGameSimulation();
+        championship.push_back(curr.getWinner());
+
+        std::cout << "Round 4 left Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
+                  << " and " << curr.getLoser().getGameScore() << std::endl;
+    }
+
+    for (int i = 0; i < rightColumnFour.size(); i+=2)
+    {
+        Game curr(rightColumnFour.at(i), rightColumnFour.at(i+1));
+        curr.fullGameSimulation();
+        championship.push_back(curr.getWinner());
+        std::cout << "Round 4 right Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
+                  << " and " << curr.getLoser().getGameScore() << std::endl;
+    }
+
+
+
+    //setup and simulation of the fourth columns above
+
+
+    Game curr(championship.at(0), rightColumnFour.at(1));
+    curr.fullGameSimulation();
+
+    std::cout << "The Championship Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
+              << " and " << curr.getLoser().getGameScore() << std::endl;
+
+
+
+
+
+//    for (unsigned i = 0; i < leftColumnOne.size(); i++)
+//    {
+//        columnOne.at(i).getLogo().setPosition(100, 300 + 150 * i);
+//    }
+//    for (unsigned i = 0; i < rightColumnOne.size(); i++)
+//    {
+//        columnTwo.at(i).getLogo().setPosition(1750, 300 + 150 * i);
+//    }
 //for (int i = 0; i < 16; i+=2)
+
+/*
     Game game1(columnOne.at(0), columnOne.at(1));
     Game game2(columnOne.at(2), columnOne.at(3));
     Game game3(columnOne.at(4), columnOne.at(5));
@@ -201,7 +314,7 @@ int main()
     gameC.fullGameSimulation();
     std::cout << "Winner is: " << gameC.getWinner().getName() << " the score was " << gameC.getWinner().getGameScore()
               << " and " << gameC.getLoser().getGameScore() << std::endl;
-
+*/
     while (window.isOpen()) {
 
         sf::Event e;

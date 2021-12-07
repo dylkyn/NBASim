@@ -1,2 +1,2 @@
-C:\mingw32\bin\ar.exe qc libmy-lib.a CMakeFiles/my-lib.dir/Player.cpp.obj CMakeFiles/my-lib.dir/Team.cpp.obj CMakeFiles/my-lib.dir/Game.cpp.obj
-C:\mingw32\bin\ranlib.exe libmy-lib.a
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ar qc libmy-lib.a CMakeFiles/my-lib.dir/Player.cpp.o CMakeFiles/my-lib.dir/Team.cpp.o CMakeFiles/my-lib.dir/Game.cpp.o
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib libmy-lib.a

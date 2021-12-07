@@ -14,6 +14,7 @@ class Team
 	std::string teamName;
 	Sprite teamLogo;
 	int seriesScore;
+    bool status;
  public:
 	Team();
 	Team(std::string name, std::string logo);
@@ -21,6 +22,8 @@ class Team
 	int getGameScore();
 	void resetTeamScore();
 	void setGameScore(int score);
+    void setStatus(bool stat);
+    bool getStatus();
 	std::string getName();
 	Sprite getLogo();
 	int getSeriesScore();

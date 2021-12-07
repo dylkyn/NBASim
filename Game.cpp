@@ -9,7 +9,10 @@ Game::Game(Team& team1, Team& team2)
 {
 	this->team1 = team1;
 	this->team2 = team2;
-	team1.setGameScore(0);
+    this->team1.setStatus(true);
+    this->team2.setStatus(true);
+
+    team1.setGameScore(0);
 	team2.setGameScore(0);
 }
 void Game::setWinner(Team team)
@@ -140,7 +143,8 @@ Team Game::fullGameSimulation()
 		{
 			int pickWinner = rand() % 2;
 			winner = pickWinner == 0 ? team1 : team2;
-			Player addScore = winner.getPlayer();
+            loser = pickWinner != 0 ? team1 : team2;
+            Player addScore = winner.getPlayer();
 			addScore.setNumTwo(addScore.getNumTwo() + 1);
 			winner.setGameScore(2);
 		}

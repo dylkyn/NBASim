@@ -20,6 +20,7 @@ Team::Team(std::string name, std::string logo)
 	teamLogo = spriteTeam;
 	gameScore = 0;
 	seriesScore = 0;
+    status = false;
 }
 Team::Team()
 {
@@ -46,6 +47,17 @@ int Team::getGameScore()
 {
 	return gameScore;
 }
+
+bool Team::getStatus()
+{
+    return status;
+}
+
+void Team::setStatus(bool stat)
+{
+    status = stat;
+}
+
 int Team::getSeriesScore()
 {
 	return seriesScore;
