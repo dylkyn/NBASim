@@ -17,7 +17,7 @@ int main()
 {
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 
-	srand(time(NULL));
+	srand(seed);
 	// Create a video mode object
 	VideoMode vm(1920, 1080);
 
@@ -139,6 +139,19 @@ int main()
 
 	std::chrono::milliseconds duration(250);
 	std::this_thread::sleep_for(duration);
+    //next button
+//    Text next;
+//    next.setFont(font);
+//    next.setString("Next Round");
+//    next.setPosition(1500, 975);
+//    next.setCharacterSize(40);
+//    next.setStyle(sf::Text::Regular);
+//    next.setFillColor(Color(0, 0, 0));
+
+    bool nextSelected = false;
+
+//	std::chrono::seconds dura( 5);
+//	std::this_thread::sleep_for( dura );
 
 	// SPLIT TEAMS
 	//first half of teams in the left most column
@@ -158,7 +171,7 @@ int main()
 		window.draw(myText);
 	}
 	window.display();
-	std::this_thread::sleep_for(duration);
+	std::this_thread::sleep_for(dura);
 	window.clear();
 	window.draw(spriteBackground);
 	// PLAY ROUND 1
@@ -188,7 +201,7 @@ int main()
 		window.draw(myText);
 	}
 	window.display();
-	std::this_thread::sleep_for(duration);
+	std::this_thread::sleep_for(dura);
 	window.clear();
 	window.draw(spriteBackground);
 	// PLAY ROUND 2
@@ -217,7 +230,7 @@ int main()
 		window.draw(myText);
 	}
 	window.display();
-	std::this_thread::sleep_for(duration);
+	std::this_thread::sleep_for(dura);
 	window.clear();
 	window.draw(spriteBackground);
 	// PLAY ROUND 3
@@ -246,7 +259,7 @@ int main()
 		window.draw(myText);
 	}
 	window.display();
-	std::this_thread::sleep_for(duration);
+	std::this_thread::sleep_for(dura);
 	window.clear();
 	window.draw(spriteBackground);
 	// PLAY ROUND 4
@@ -275,7 +288,7 @@ int main()
 		window.draw(myText);
 	}
 	window.display();
-	std::this_thread::sleep_for(duration);
+	std::this_thread::sleep_for(dura);
 	window.clear();
 	window.draw(spriteBackground);
 	// PLAY CHAMPIONSHIP
@@ -286,26 +299,47 @@ int main()
 			  << " and " << curr.getLoser().getGameScore() << std::endl;
 	myText.setString(curr.getWinner().getName());
 	myText.setPosition(900.0f, 650);
-	(*curr.getWinner().getLogo()).setPosition(900.0f, 525.0f);
-	window.draw(*curr.getWinner().getLogo());
 	window.draw(myText);
 	window.display();
-	std::this_thread::sleep_for(duration);
+	std::this_thread::sleep_for(dura);
 	while (window.isOpen())
 	{
-		sf::Event e;
-		while (window.pollEvent(e))
-		{
-			switch (e.type)
-			{
-			case sf::Event::EventType::Closed:
-				window.close();
-				break;
-			}
-		}
-		window.clear();
+        sf::Event event;
+
+    // while there are pending events...
+        while (window.pollEvent(event))
+        {
+            // check the type of the event...
+            switch (event.type)
+            {
+                // window closed
+                case sf::Event::Closed:
+                    window.close();
+                    break;
+
+                    // key pressed
+                case sf::Event::KeyPressed:
+                    if (event.key.code == sf::Keyboard::Escape)
+                    {
+                        window.close();
+                    }
+                    else if (event.key.code == sf::Keyboard::Enter)
+                    {
+                        nextSelected = true;
+                    }
+                    break;
+                default:
+                    break;
+            }
+        }
+        window.clear();
+        if (nextSelected)
+        {
+            std::cout << "drawing test" << std::endl;
+            window.draw(test);
+        }
+
 		window.draw(spriteBackground);
-		window.draw(*curr.getWinner().getLogo());
 		window.draw(myText);
 		window.display();
 	}
