@@ -5,9 +5,11 @@
 #include <algorithm>
 #include <string>
 #include <stdlib.h>
+#include <thread>
 #include <vector>
 #include <chrono>
 #include <random>
+#include <mshtmlc.h>
 
 using namespace sf;
 
@@ -35,6 +37,9 @@ int main()
 
 	// Set the spriteBackground to cover the screen
 	spriteBackground.setPosition(0, 0);
+
+	window.clear();
+	window.draw(spriteBackground);
 
 	//create vector of teams
 	std::vector<Team> teams;
@@ -119,17 +124,43 @@ int main()
 	std::vector<Team> rightColumnFour;
 	std::vector<Team> championship;
 
+	// Declare a new font
+	sf::Font font;
+	// Load it from a file
+	if (!font.loadFromFile("../font.ttf"))
+	{
+		std::cout << "Oh shit." << std::endl;
+	}
+	Text myText;
+	myText.setFont(font);
+	myText.setCharacterSize(25);
+	myText.setStyle(sf::Text::Regular);
+	myText.setFillColor(Color(255, 0, 0));
+
+//	std::chrono::seconds dura( 5);
+//	std::this_thread::sleep_for( dura );
+
 	// SPLIT TEAMS
 	//first half of teams in the left most column
 	for (int i = 0; i < 16; i++)
 	{
 		leftColumnOne.push_back(randomTeams.at(i));
+		myText.setString(leftColumnOne.at(i).getName());
+		myText.setPosition(50.0f, 140.0f + 55.0f * i);
+		window.draw(myText);
 	}
 	//second half of teams in right most column
 	for (int i = 16; i < 32; i++)
 	{
 		rightColumnOne.push_back(randomTeams.at(i));
+		myText.setString(rightColumnOne.at(i - 16).getName());
+		myText.setPosition(1725.0f, 140.0f + 55.0f * (i - 16));
+		window.draw(myText);
 	}
+
+	window.display();
+	std::chrono::seconds dura(5);
+	std::this_thread::sleep_for(dura);
 
 	// PLAY ROUND 1
 	//Above the left most and right most teams are put into their respected vectors
