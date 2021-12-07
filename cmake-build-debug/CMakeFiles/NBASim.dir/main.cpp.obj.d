@@ -1,14 +1,30 @@
 CMakeFiles/NBASim.dir/main.cpp.obj: \
  C:\Users\justi\CLionProjects\NBASim\main.cpp \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/iostream \
+ C:\Users\justi\CLionProjects\NBASim\Player.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/string \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/c++config.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/os_defines.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/cpu_defines.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ostream \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ios \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/iosfwd \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stringfwd.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/memoryfwd.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/char_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_algobase.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/functexcept.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/exception_defines.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/cpp_type_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ext/type_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ext/numeric_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_pair.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/move.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/concept_check.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/type_traits \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_iterator_base_types.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_iterator_base_funcs.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/debug/assertions.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_iterator.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/ptr_traits.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/debug/debug.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/predefined_ops.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/postypes.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/cwchar \
  C:/mingw32/i686-w64-mingw32/include/wchar.h \
@@ -25,46 +41,38 @@ CMakeFiles/NBASim.dir/main.cpp.obj: \
  C:/mingw32/i686-w64-mingw32/include/swprintf.inl \
  C:/mingw32/i686-w64-mingw32/include/sec_api/wchar_s.h \
  C:/mingw32/i686-w64-mingw32/include/_mingw_print_pop.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/exception \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/exception.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/exception_ptr.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/exception_defines.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/cxxabi_init_exception.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/stddef.h \
- C:/mingw32/i686-w64-mingw32/include/stddef.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/typeinfo \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/hash_bytes.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/new \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/nested_exception.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/move.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/concept_check.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/type_traits \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/char_traits.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_algobase.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/functexcept.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/cpp_type_traits.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ext/type_traits.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ext/numeric_traits.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_pair.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_iterator_base_types.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_iterator_base_funcs.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/debug/assertions.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_iterator.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/ptr_traits.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/debug/debug.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/predefined_ops.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/cstdint \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/stdint.h \
  C:/mingw32/i686-w64-mingw32/include/stdint.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/stddef.h \
+ C:/mingw32/i686-w64-mingw32/include/stddef.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/allocator.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/c++allocator.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ext/new_allocator.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/new \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/exception \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/exception.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/exception_ptr.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/cxxabi_init_exception.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/typeinfo \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/hash_bytes.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/nested_exception.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/localefwd.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/c++locale.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/clocale \
  C:/mingw32/i686-w64-mingw32/include/locale.h \
  C:/mingw32/i686-w64-mingw32/include/stdio.h \
  C:/mingw32/i686-w64-mingw32/include/sec_api/stdio_s.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/iosfwd \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/cctype \
  C:/mingw32/i686-w64-mingw32/include/ctype.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/ios_base.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/ostream_insert.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/cxxabi_forced.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_function.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward/binders.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/range_access.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/initializer_list \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/basic_string.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ext/atomicity.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/gthr.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/gthr-default.h \
@@ -83,18 +91,6 @@ CMakeFiles/NBASim.dir/main.cpp.obj: \
  C:/mingw32/i686-w64-mingw32/include/pthread_compat.h \
  C:/mingw32/i686-w64-mingw32/include/pthread_unistd.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/atomic_word.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/locale_classes.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/string \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/allocator.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/c++allocator.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ext/new_allocator.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/ostream_insert.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/cxxabi_forced.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_function.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward/binders.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/range_access.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/initializer_list \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/basic_string.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ext/alloc_traits.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/alloc_traits.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/string_view \
@@ -111,6 +107,19 @@ CMakeFiles/NBASim.dir/main.cpp.obj: \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/cstdio \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/cerrno \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/basic_string.tcc \
+ C:\Users\justi\CLionProjects\NBASim\Team.h \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Config.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Clock.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Export.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Time.hpp \
+ C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Err.hpp \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ostream \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ios \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/ios_base.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/locale_classes.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/locale_classes.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/system_error \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/error_constants.h \
@@ -127,18 +136,6 @@ CMakeFiles/NBASim.dir/main.cpp.obj: \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/locale_facets.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/basic_ios.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/ostream.tcc \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/istream \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/istream.tcc \
- C:\Users\justi\CLionProjects\NBASim\Player.h \
- C:\Users\justi\CLionProjects\NBASim\Team.h \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Window.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Config.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Clock.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Export.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Time.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Err.hpp \
  C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/FileInputStream.hpp \
  C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/InputStream.hpp \
  C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/NonCopyable.hpp \
@@ -178,6 +175,8 @@ CMakeFiles/NBASim.dir/main.cpp.obj: \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/invoke.h \
  C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Utf.inl \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/iterator \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/istream \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/istream.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stream_iterator.h \
  C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/String.inl \
  C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/System/Thread.hpp \
@@ -248,30 +247,24 @@ CMakeFiles/NBASim.dir/main.cpp.obj: \
  C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Sprite.hpp \
  C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/Text.hpp \
  C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Graphics/VertexBuffer.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/InputSoundFile.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/Export.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/Listener.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/Music.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundStream.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundSource.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/AlResource.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/OutputSoundFile.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/Sound.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundBuffer.hpp \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/set \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_set.h \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_multiset.h \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundBufferRecorder.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundRecorder.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundFileFactory.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundFileFactory.inl \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundFileReader.hpp \
- C:/Users/justi/CLionProjects/NBASim/SFML/include/SFML/Audio/SoundFileWriter.hpp \
  C:\Users\justi\CLionProjects\NBASim\Game.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/iostream \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/thread \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/chrono \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ratio \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/parse_numbers.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/memory \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_raw_storage_iter.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/ext/concurrence.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/unique_ptr.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/shared_ptr.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/shared_ptr_base.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/allocated_ptr.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/refwrap.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/shared_ptr_atomic.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/atomic_base.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/atomic_lockfree_defines.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward/auto_ptr.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/random \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/cmath \
  C:/mingw32/i686-w64-mingw32/include/math.h \
@@ -293,4 +286,151 @@ CMakeFiles/NBASim.dir/main.cpp.obj: \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/opt_random.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/random.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/numeric \
- C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_numeric.h
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/stl_numeric.h \
+ C:/mingw32/i686-w64-mingw32/include/mshtmlc.h \
+ C:/mingw32/i686-w64-mingw32/include/rpc.h \
+ C:/mingw32/i686-w64-mingw32/include/windows.h \
+ C:/mingw32/i686-w64-mingw32/include/sdkddkver.h \
+ C:/mingw32/i686-w64-mingw32/include/excpt.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/stdarg.h \
+ C:/mingw32/i686-w64-mingw32/include/stdarg.h \
+ C:/mingw32/i686-w64-mingw32/include/_mingw_stdarg.h \
+ C:/mingw32/i686-w64-mingw32/include/windef.h \
+ C:/mingw32/i686-w64-mingw32/include/minwindef.h \
+ C:/mingw32/i686-w64-mingw32/include/winapifamily.h \
+ C:/mingw32/i686-w64-mingw32/include/specstrings.h \
+ C:/mingw32/i686-w64-mingw32/include/sal.h \
+ C:/mingw32/i686-w64-mingw32/include/driverspecs.h \
+ C:/mingw32/i686-w64-mingw32/include/winnt.h \
+ C:/mingw32/i686-w64-mingw32/include/_mingw_unicode.h \
+ C:/mingw32/i686-w64-mingw32/include/apiset.h \
+ C:/mingw32/i686-w64-mingw32/include/psdk_inc/intrin-impl.h \
+ C:/mingw32/i686-w64-mingw32/include/basetsd.h \
+ C:/mingw32/i686-w64-mingw32/include/guiddef.h \
+ C:/mingw32/i686-w64-mingw32/include/string.h \
+ C:/mingw32/i686-w64-mingw32/include/sec_api/string_s.h \
+ C:/mingw32/i686-w64-mingw32/include/pshpack4.h \
+ C:/mingw32/i686-w64-mingw32/include/poppack.h \
+ C:/mingw32/i686-w64-mingw32/include/pshpack4.h \
+ C:/mingw32/i686-w64-mingw32/include/pshpack2.h \
+ C:/mingw32/i686-w64-mingw32/include/poppack.h \
+ C:/mingw32/i686-w64-mingw32/include/pshpack2.h \
+ C:/mingw32/i686-w64-mingw32/include/pshpack8.h \
+ C:/mingw32/i686-w64-mingw32/include/pshpack8.h \
+ C:/mingw32/i686-w64-mingw32/include/ktmtypes.h \
+ C:/mingw32/i686-w64-mingw32/include/winbase.h \
+ C:/mingw32/i686-w64-mingw32/include/apisetcconv.h \
+ C:/mingw32/i686-w64-mingw32/include/minwinbase.h \
+ C:/mingw32/i686-w64-mingw32/include/bemapiset.h \
+ C:/mingw32/i686-w64-mingw32/include/debugapi.h \
+ C:/mingw32/i686-w64-mingw32/include/errhandlingapi.h \
+ C:/mingw32/i686-w64-mingw32/include/fibersapi.h \
+ C:/mingw32/i686-w64-mingw32/include/fileapi.h \
+ C:/mingw32/i686-w64-mingw32/include/handleapi.h \
+ C:/mingw32/i686-w64-mingw32/include/heapapi.h \
+ C:/mingw32/i686-w64-mingw32/include/ioapiset.h \
+ C:/mingw32/i686-w64-mingw32/include/interlockedapi.h \
+ C:/mingw32/i686-w64-mingw32/include/jobapi.h \
+ C:/mingw32/i686-w64-mingw32/include/libloaderapi.h \
+ C:/mingw32/i686-w64-mingw32/include/memoryapi.h \
+ C:/mingw32/i686-w64-mingw32/include/namedpipeapi.h \
+ C:/mingw32/i686-w64-mingw32/include/namespaceapi.h \
+ C:/mingw32/i686-w64-mingw32/include/processenv.h \
+ C:/mingw32/i686-w64-mingw32/include/processthreadsapi.h \
+ C:/mingw32/i686-w64-mingw32/include/processtopologyapi.h \
+ C:/mingw32/i686-w64-mingw32/include/profileapi.h \
+ C:/mingw32/i686-w64-mingw32/include/realtimeapiset.h \
+ C:/mingw32/i686-w64-mingw32/include/securityappcontainer.h \
+ C:/mingw32/i686-w64-mingw32/include/securitybaseapi.h \
+ C:/mingw32/i686-w64-mingw32/include/synchapi.h \
+ C:/mingw32/i686-w64-mingw32/include/sysinfoapi.h \
+ C:/mingw32/i686-w64-mingw32/include/systemtopologyapi.h \
+ C:/mingw32/i686-w64-mingw32/include/threadpoolapiset.h \
+ C:/mingw32/i686-w64-mingw32/include/threadpoollegacyapiset.h \
+ C:/mingw32/i686-w64-mingw32/include/utilapiset.h \
+ C:/mingw32/i686-w64-mingw32/include/wow64apiset.h \
+ C:/mingw32/i686-w64-mingw32/include/winerror.h \
+ C:/mingw32/i686-w64-mingw32/include/fltwinerror.h \
+ C:/mingw32/i686-w64-mingw32/include/timezoneapi.h \
+ C:/mingw32/i686-w64-mingw32/include/wingdi.h \
+ C:/mingw32/i686-w64-mingw32/include/pshpack1.h \
+ C:/mingw32/i686-w64-mingw32/include/winuser.h \
+ C:/mingw32/i686-w64-mingw32/include/tvout.h \
+ C:/mingw32/i686-w64-mingw32/include/winnls.h \
+ C:/mingw32/i686-w64-mingw32/include/datetimeapi.h \
+ C:/mingw32/i686-w64-mingw32/include/stringapiset.h \
+ C:/mingw32/i686-w64-mingw32/include/wincon.h \
+ C:/mingw32/i686-w64-mingw32/include/winver.h \
+ C:/mingw32/i686-w64-mingw32/include/winreg.h \
+ C:/mingw32/i686-w64-mingw32/include/reason.h \
+ C:/mingw32/i686-w64-mingw32/include/winnetwk.h \
+ C:/mingw32/i686-w64-mingw32/include/wnnc.h \
+ C:/mingw32/i686-w64-mingw32/include/virtdisk.h \
+ C:/mingw32/i686-w64-mingw32/include/cderr.h \
+ C:/mingw32/i686-w64-mingw32/include/dde.h \
+ C:/mingw32/i686-w64-mingw32/include/ddeml.h \
+ C:/mingw32/i686-w64-mingw32/include/dlgs.h \
+ C:/mingw32/i686-w64-mingw32/include/lzexpand.h \
+ C:/mingw32/i686-w64-mingw32/include/mmsystem.h \
+ C:/mingw32/i686-w64-mingw32/include/nb30.h \
+ C:/mingw32/i686-w64-mingw32/include/rpc.h \
+ C:/mingw32/i686-w64-mingw32/include/rpcdce.h \
+ C:/mingw32/i686-w64-mingw32/include/rpcdcep.h \
+ C:/mingw32/i686-w64-mingw32/include/rpcnsi.h \
+ C:/mingw32/i686-w64-mingw32/include/rpcnterr.h \
+ C:/mingw32/i686-w64-mingw32/include/rpcasync.h \
+ C:/mingw32/i686-w64-mingw32/include/shellapi.h \
+ C:/mingw32/i686-w64-mingw32/include/winperf.h \
+ C:/mingw32/i686-w64-mingw32/include/winsock.h \
+ C:/mingw32/i686-w64-mingw32/include/_bsd_types.h \
+ C:/mingw32/i686-w64-mingw32/include/inaddr.h \
+ C:/mingw32/i686-w64-mingw32/include/psdk_inc/_socket_types.h \
+ C:/mingw32/i686-w64-mingw32/include/psdk_inc/_fd_types.h \
+ C:/mingw32/i686-w64-mingw32/include/psdk_inc/_ip_types.h \
+ C:/mingw32/i686-w64-mingw32/include/psdk_inc/_ip_mreq1.h \
+ C:/mingw32/i686-w64-mingw32/include/psdk_inc/_wsadata.h \
+ C:/mingw32/i686-w64-mingw32/include/psdk_inc/_xmitfile.h \
+ C:/mingw32/i686-w64-mingw32/include/psdk_inc/_wsa_errnos.h \
+ C:/mingw32/i686-w64-mingw32/include/wincrypt.h \
+ C:/mingw32/i686-w64-mingw32/include/bcrypt.h \
+ C:/mingw32/i686-w64-mingw32/include/ncrypt.h \
+ C:/mingw32/i686-w64-mingw32/include/dpapi.h \
+ C:/mingw32/i686-w64-mingw32/include/winefs.h \
+ C:/mingw32/i686-w64-mingw32/include/winscard.h \
+ C:/mingw32/i686-w64-mingw32/include/wtypes.h \
+ C:/mingw32/i686-w64-mingw32/include/rpcndr.h \
+ C:/mingw32/i686-w64-mingw32/include/rpcnsip.h \
+ C:/mingw32/i686-w64-mingw32/include/rpcsal.h \
+ C:/mingw32/i686-w64-mingw32/include/ole2.h \
+ C:/mingw32/i686-w64-mingw32/include/objbase.h \
+ C:/mingw32/i686-w64-mingw32/include/combaseapi.h \
+ C:/mingw32/i686-w64-mingw32/include/wtypesbase.h \
+ C:/mingw32/i686-w64-mingw32/include/unknwnbase.h \
+ C:/mingw32/i686-w64-mingw32/include/objidlbase.h \
+ C:/mingw32/i686-w64-mingw32/include/cguid.h \
+ C:/mingw32/i686-w64-mingw32/include/objidl.h \
+ C:/mingw32/i686-w64-mingw32/include/unknwn.h \
+ C:/mingw32/i686-w64-mingw32/include/urlmon.h \
+ C:/mingw32/i686-w64-mingw32/include/oleidl.h \
+ C:/mingw32/i686-w64-mingw32/include/servprov.h \
+ C:/mingw32/i686-w64-mingw32/include/msxml.h \
+ C:/mingw32/i686-w64-mingw32/include/oaidl.h \
+ C:/mingw32/i686-w64-mingw32/include/propidl.h \
+ C:/mingw32/i686-w64-mingw32/include/oleauto.h \
+ C:/mingw32/i686-w64-mingw32/include/winioctl.h \
+ C:/mingw32/i686-w64-mingw32/include/winsmcrd.h \
+ C:/mingw32/i686-w64-mingw32/include/winspool.h \
+ C:/mingw32/i686-w64-mingw32/include/prsht.h \
+ C:/mingw32/i686-w64-mingw32/include/commdlg.h \
+ C:/mingw32/i686-w64-mingw32/include/stralign.h \
+ C:/mingw32/i686-w64-mingw32/include/sec_api/stralign_s.h \
+ C:/mingw32/i686-w64-mingw32/include/winsvc.h \
+ C:/mingw32/i686-w64-mingw32/include/mcx.h \
+ C:/mingw32/i686-w64-mingw32/include/imm.h \
+ C:/mingw32/i686-w64-mingw32/include/rpcndr.h \
+ C:/mingw32/i686-w64-mingw32/include/windows.h \
+ C:/mingw32/i686-w64-mingw32/include/ole2.h \
+ C:/mingw32/i686-w64-mingw32/include/ocidl.h \
+ C:/mingw32/i686-w64-mingw32/include/dimm.h \
+ C:/mingw32/i686-w64-mingw32/include/olectl.h \
+ C:/mingw32/i686-w64-mingw32/include/ocidl.h

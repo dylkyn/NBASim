@@ -1,6 +1,7 @@
 #include "Game.h"
 #include <stdlib.h>     /* srand, rand */
 #include <iostream>
+#include <chrono>
 
 Game::Game(Team& team1, Team& team2)
 {
@@ -86,8 +87,7 @@ void Game::possessionSimulation(Team& offense, Team& defense)
 			rebound = rand() % defender.getBlock() + 1;
 			if (rebound <= twoPoint)
 			{
-				offense
-					.setGameScore(2); //I do not know how we are doing and setting up the game but this is lowkey pseudocode here
+				offense.setGameScore(2); //I do not know how we are doing and setting up the game but this is lowkey pseudocode here
 				offender.setNumTwo(offender.getNumTwo() + 1);
 				if (assist)
 				{
@@ -128,6 +128,8 @@ void Game::possessionSimulation(Team& offense, Team& defense)
 
 Team Game::fullGameSimulation()
 {
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    srand(seed);
 	team1.resetTeamScore();
 	team2.resetTeamScore();
 #pragma omp parallel for default(shared) private(i) schedule(static, chunk) reduction(+:totalArea)

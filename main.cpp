@@ -17,7 +17,7 @@ int main()
 {
 	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 
-	srand(seed);
+	srand(time(NULL));
 	// Create a video mode object
 	VideoMode vm(1920, 1080);
 
