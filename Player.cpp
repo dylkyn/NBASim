@@ -1,12 +1,9 @@
 #include "Player.h"
 #include <stdlib.h>     /* srand, rand */
-#include <time.h>
-#include <iostream>
 
 Player::Player(int playerType)
 {
 	position = playerType;
-	//srand(time(NULL));
 	numTwo = 0;
 	numThree = 0;
 	numMissedTwo = 0;
@@ -14,7 +11,6 @@ Player::Player(int playerType)
 	numAssist = 0;
 	numRebounds = 0;
 	numSteals = 0;
-	//name = "";
 	int randIndex;
 	switch (playerType)
 	{
