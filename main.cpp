@@ -150,8 +150,8 @@ int main()
 
     bool nextSelected = false;
 
-//	std::chrono::seconds dura( 5);
-//	std::this_thread::sleep_for( dura );
+//	std::chrono::seconds duration( 5);
+//	std::this_thread::sleep_for( duration );
 
 	// SPLIT TEAMS
 	//first half of teams in the left most column
@@ -171,7 +171,7 @@ int main()
 		window.draw(myText);
 	}
 	window.display();
-	std::this_thread::sleep_for(dura);
+	std::this_thread::sleep_for(duration);
 	window.clear();
 	window.draw(spriteBackground);
 	// PLAY ROUND 1
@@ -201,7 +201,7 @@ int main()
 		window.draw(myText);
 	}
 	window.display();
-	std::this_thread::sleep_for(dura);
+	std::this_thread::sleep_for(duration);
 	window.clear();
 	window.draw(spriteBackground);
 	// PLAY ROUND 2
@@ -230,7 +230,7 @@ int main()
 		window.draw(myText);
 	}
 	window.display();
-	std::this_thread::sleep_for(dura);
+	std::this_thread::sleep_for(duration);
 	window.clear();
 	window.draw(spriteBackground);
 	// PLAY ROUND 3
@@ -259,7 +259,7 @@ int main()
 		window.draw(myText);
 	}
 	window.display();
-	std::this_thread::sleep_for(dura);
+	std::this_thread::sleep_for(duration);
 	window.clear();
 	window.draw(spriteBackground);
 	// PLAY ROUND 4
@@ -288,7 +288,7 @@ int main()
 		window.draw(myText);
 	}
 	window.display();
-	std::this_thread::sleep_for(dura);
+	std::this_thread::sleep_for(duration);
 	window.clear();
 	window.draw(spriteBackground);
 	// PLAY CHAMPIONSHIP
@@ -299,9 +299,11 @@ int main()
 			  << " and " << curr.getLoser().getGameScore() << std::endl;
 	myText.setString(curr.getWinner().getName());
 	myText.setPosition(900.0f, 650);
+	curr.getWinner().getLogo()->setPosition(915.0f, 525.0f);
+	window.draw(*curr.getWinner().getLogo());
 	window.draw(myText);
 	window.display();
-	std::this_thread::sleep_for(dura);
+	std::this_thread::sleep_for(duration);
 	while (window.isOpen())
 	{
         sf::Event event;
@@ -336,10 +338,11 @@ int main()
         if (nextSelected)
         {
             std::cout << "drawing test" << std::endl;
-            window.draw(test);
+            // window.draw(test);
         }
 
 		window.draw(spriteBackground);
+		window.draw(*curr.getWinner().getLogo());
 		window.draw(myText);
 		window.display();
 	}
