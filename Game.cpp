@@ -147,10 +147,12 @@ Team Game::fullGameSimulation()
 		else if (team1.getGameScore() > team2.getGameScore())
 		{
 			winner = team1;
+            loser = team2;
 		}
 		else
 		{
 			winner = team2;
+            loser = team1;
 		}
 
         return winner;
