@@ -1,336 +1,271 @@
-#include <iostream>
 #include "Player.h"
 #include "Team.h"
 #include "Game.h"
+#include <iostream>
 #include <algorithm>
 #include <string>
-#include <time.h>
 #include <stdlib.h>
-#include <SFML/Graphics.hpp>
-#include <SFML/Audio.hpp>
+#include <thread>
 #include <vector>
 #include <chrono>
 #include <random>
+#include <mshtmlc.h>
 
 using namespace sf;
 
 int main()
 {
-    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-
-    srand(seed);
-    // Create a video mode object
-    VideoMode vm(1920, 1080);
-
-    // Create and open a window for the game
-    RenderWindow window(vm, "NBA Simulation", Style::Close | Style::Titlebar);// , Style::Fullscreen);
-
-    // Create a texture to hold a graphic on the GPU
-    Texture textureBackground;
-    // Load a graphic into the texture
-    textureBackground.loadFromFile("../graphics/background.png"); //FIX THIS TO OUR FILE
-
-    // Create a sprite
-    Sprite spriteBackground;
-
-    // Attach the texture to the sprite
-    spriteBackground.setTexture(textureBackground);
-
-    // Set the spriteBackground to cover the screen
-    spriteBackground.setPosition(0, 0);
-
-    //create vector of teams
-    std::vector<Team> teams;
-    Team hawks("Hawks", "../graphics/hawks.png");
-    teams.push_back(hawks);
-
-    Team thunder("Thunder", "../graphics/thunder.png");
-    teams.push_back(thunder);
-
-    Team celtics("Celtics", "../graphics/celtics.png");
-    teams.push_back(celtics);
-
-    Team nets("Nets", "../graphics/nets.png");
-    teams.push_back(nets);
-
-    Team hornets("Hornets", "../graphics/hornets.png");
-    teams.push_back(hornets);
-
-
-    Team cavaliers("Cavaliers", "../graphics/cavaliers.png");
-    teams.push_back(cavaliers);
-
-    Team mavericks("Mavericks", "../graphics/mavericks.png");
-    teams.push_back(mavericks);
-
-    Team nuggets("Nuggets", "../graphics/nuggets.png");
-    teams.push_back(nuggets);
-
-    Team pistons("Pistons", "../graphics/pistons.png");
-    teams.push_back(pistons);
-
-    Team warriors("Warriors", "../graphics/warriors.png");
-    teams.push_back(warriors);
-
-    Team rockets("Rockets", "../graphics/rockets.png");
-    teams.push_back(rockets);
-
-    Team pacers("Pacers", "../graphics/pacers.png");
-    teams.push_back(pacers);
-
-    Team lakers("Lakers", "../graphics/lakers.png");
-    teams.push_back(lakers);
-
-    Team grizzlies("Grizzlies", "../graphics/grizzlies.png");
-    teams.push_back(grizzlies);
-
-    Team bucks("Bucks", "../graphics/bucks.png");
-    teams.push_back(bucks);
-
-    Team timberwolves("Timberwolves", "../graphics/timberwolves.png");
-    teams.push_back(timberwolves);
-
-    Team pelicans("Pelicans", "../graphics/pelicans.png");
-    teams.push_back(pelicans);
-
-    Team knicks("Knicks", "../graphics/knicks.png");
-    teams.push_back(knicks);
-
-    Team magic("Magic", "../graphics/magic.png");
-    teams.push_back(magic);
-
-    Team the76ers("76ers", "../graphics/76ers.png");
-    teams.push_back(the76ers);
-
-    Team suns("Suns", "../graphics/suns.png");
-    teams.push_back(suns);
-
-    Team blazers("Blazers", "../graphics/blazers.png");
-    teams.push_back(blazers);
-
-    Team spurs("Spurs", "../graphics/spurs.png");
-    teams.push_back(spurs);
-
-    Team raptors("Raptors", "../graphics/raptors.png");
-    teams.push_back(raptors);
-
-    Team jazz("Jazz", "../graphics/jazz.png");
-    teams.push_back(jazz);
-
-    Team heat("Heat", "../graphics/heat.png");
-    teams.push_back(heat);
-
-    Team wizards("Wizards", "../graphics/wizards.png");
-    teams.push_back(wizards);
-
-    Team clippers("Clippers", "../graphics/clippers.png");
-    teams.push_back(clippers);
-
-    Team kings("Kings", "../graphics/kings.png");
-    teams.push_back(kings);
-
-    Team buzz("Buzz", "../graphics/buzz.png");
-    teams.push_back(buzz);
-
-    Team wreck("Ramblin' Wreck", "../graphics/wreck.png");
-    teams.push_back(wreck);
-
-    Team bulls("Bulls", "../graphics/bulls.png");
-    teams.push_back(bulls);
-
-
-    //randomly shuffle teams
-    std::vector<Team> randomTeams;
-    randomTeams = teams;
-    // obtain a time-based seed:
-    std::shuffle(randomTeams.begin(), randomTeams.end(), std::default_random_engine(seed));
-    //place teams in columns
-    std::vector<Team> leftColumnOne;
-    std::vector<Team> rightColumnOne;
-    std::vector<Team> leftColumnTwo;
-    std::vector<Team> rightColumnTwo;
-    std::vector<Team> leftColumnThree;
-    std::vector<Team> rightColumnThree;
-    std::vector<Team> leftColumnFour;
-    std::vector<Team> rightColumnFour;
-    std::vector<Team> championship;
-
-
-
-    //first half of teams in the left most column
-    for (int i = 0; i < 16; i++)
-    {
-        leftColumnOne.push_back(randomTeams.at(i));
-    }
-    //second half of teams in right most column
-    for (int i = 16; i < 32; i++)
-    {
-        rightColumnOne.push_back(randomTeams.at(i));
-    }
-
-    //Above the left most and right most teams are put into their respected vectors
-    for (int i = 0; i < leftColumnOne.size(); i+=2)
-    {
-        Game curr(leftColumnOne.at(i), leftColumnOne.at(i+1));
-        curr.fullGameSimulation();
-        leftColumnTwo.push_back(curr.getWinner());
-        std::cout << "Round 1 left Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
-                  << " and " << curr.getLoser().getGameScore() << std::endl;
-    }
-
-    for (int i = 0; i < rightColumnOne.size(); i+=2)
-    {
-        Game curr(rightColumnOne.at(i), rightColumnOne.at(i+1));
-        curr.fullGameSimulation();
-        rightColumnTwo.push_back(curr.getWinner());
-
-        std::cout << "Round 1 right Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
-                  << " and " << curr.getLoser().getGameScore() << std::endl;
-    }
-
-
-    for (int i = 0; i < leftColumnTwo.size(); i+=2)
-    {
-        Game curr(leftColumnTwo.at(i), leftColumnTwo.at(i+1));
-        curr.fullGameSimulation();
-        leftColumnThree.push_back(curr.getWinner());
-
-        std::cout << "Round 2 left Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
-                  << " and " << curr.getLoser().getGameScore() << std::endl;
-    }
-
-    for (int i = 0; i < rightColumnTwo.size(); i+=2)
-    {
-        Game curr(rightColumnTwo.at(i), rightColumnTwo.at(i+1));
-        curr.fullGameSimulation();
-        rightColumnThree.push_back(curr.getWinner());
-
-        std::cout << "Round 2 right Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
-                  << " and " << curr.getLoser().getGameScore() << std::endl;
-    }
-
-    //Above is the setup and simulation for the second columns
-
-
-    for (int i = 0; i < leftColumnThree.size(); i+=2)
-    {
-        Game curr(leftColumnThree.at(i), leftColumnThree.at(i+1));
-        curr.fullGameSimulation();
-        leftColumnFour.push_back(curr.getWinner());
-
-        std::cout << "Round 3 left Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
-                  << " and " << curr.getLoser().getGameScore() << std::endl;
-    }
-
-    for (int i = 0; i < rightColumnThree.size(); i+=2)
-    {
-        Game curr(rightColumnThree.at(i), rightColumnThree.at(i+1));
-        curr.fullGameSimulation();
-        rightColumnFour.push_back(curr.getWinner());
-
-        std::cout << "Round 3 right Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
-                  << " and " << curr.getLoser().getGameScore() << std::endl;
-    }
-
-    //Above is the setup and simulation for the third columns
-
-    for (int i = 0; i < leftColumnFour.size(); i+=2)
-    {
-        Game curr(leftColumnFour.at(i), leftColumnFour.at(i+1));
-        curr.fullGameSimulation();
-        championship.push_back(curr.getWinner());
-
-        std::cout << "Round 4 left Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
-                  << " and " << curr.getLoser().getGameScore() << std::endl;
-    }
-
-    for (int i = 0; i < rightColumnFour.size(); i+=2)
-    {
-        Game curr(rightColumnFour.at(i), rightColumnFour.at(i+1));
-        curr.fullGameSimulation();
-        championship.push_back(curr.getWinner());
-        std::cout << "Round 4 right Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
-                  << " and " << curr.getLoser().getGameScore() << std::endl;
-    }
-
-
-
-    //setup and simulation of the fourth columns above
-
-
-    Game curr(championship.at(0), rightColumnFour.at(1));
-    curr.fullGameSimulation();
-
-    std::cout << "The Championship Winner is: " << curr.getWinner().getName() << " the score was " << curr.getWinner().getGameScore()
-              << " and " << curr.getLoser().getGameScore() << std::endl;
-
-
-
-
-
-//    for (unsigned i = 0; i < leftColumnOne.size(); i++)
-//    {
-//        columnOne.at(i).getLogo().setPosition(100, 300 + 150 * i);
-//    }
-//    for (unsigned i = 0; i < rightColumnOne.size(); i++)
-//    {
-//        columnTwo.at(i).getLogo().setPosition(1750, 300 + 150 * i);
-//    }
-//for (int i = 0; i < 16; i+=2)
-
-/*
-    Game game1(columnOne.at(0), columnOne.at(1));
-    Game game2(columnOne.at(2), columnOne.at(3));
-    Game game3(columnOne.at(4), columnOne.at(5));
-    Game game4(columnOne.at(6), columnOne.at(7));
-    Game game5(columnOne.at(8), columnOne.at(9));
-    Game game6(columnOne.at(10), columnOne.at(11));
-    Game game7(columnOne.at(12), columnOne.at(13));
-    Game game8(columnOne.at(14), columnOne.at(15));
-
-    game1.fullGameSimulation();
-    game2.fullGameSimulation();
-    game3.fullGameSimulation();
-    game4.fullGameSimulation();
-    std::cout << "Winner is: " << game1.getWinner().getName() << " the score was " << game1.getWinner().getGameScore()
-              << " and " << game1.getLoser().getGameScore() << std::endl;
-    std::cout << "Winner is: " << game2.getWinner().getName() << " the score was " << game2.getWinner().getGameScore()
-              << " and " << game2.getLoser().getGameScore() << std::endl;
-    std::cout << "Winner is: " << game3.getWinner().getName() << " the score was " << game3.getWinner().getGameScore()
-              << " and " << game3.getLoser().getGameScore() << std::endl;
-    std::cout << "Winner is: " << game4.getWinner().getName() << " the score was " << game4.getWinner().getGameScore()
-              << " and " << game4.getLoser().getGameScore() << std::endl;
-
-    Game gameA(game1.getWinner(), game2.getWinner());
-    Game gameB(game3.getWinner(), game4.getWinner());
-    gameA.fullGameSimulation();
-    gameB.fullGameSimulation();
-    std::cout << "Winner is: " << gameA.getWinner().getName() << " the score was " << gameA.getWinner().getGameScore()
-              << " and " << gameA.getLoser().getGameScore() << std::endl;
-    std::cout << "Winner is: " << gameB.getWinner().getName() << " the score was " << gameB.getWinner().getGameScore()
-              << " and " << gameB.getLoser().getGameScore() << std::endl;
-
-    Game gameC(gameA.getWinner(), gameB.getWinner());
-    gameC.fullGameSimulation();
-    std::cout << "Winner is: " << gameC.getWinner().getName() << " the score was " << gameC.getWinner().getGameScore()
-              << " and " << gameC.getLoser().getGameScore() << std::endl;
-*/
-    while (window.isOpen()) {
-
-        sf::Event e;
-        while (window.pollEvent(e)) {
-
-            switch (e.type) {
-                case sf::Event::EventType::Closed:
-                    window.close();
-                    break;
-            }
-        }
-        window.clear();
-        window.draw(spriteBackground);
-        window.display();
-    }
-
-
-    return 0;
+	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+
+	srand(time(NULL));
+	// Create a video mode object
+	VideoMode vm(1920, 1080);
+
+	// Create and open a window for the game
+	RenderWindow window(vm, "NBA Simulation", Style::Resize);
+
+	// Create a texture to hold a graphic on the GPU
+	Texture textureBackground;
+	// Load a graphic into the texture
+	textureBackground.loadFromFile("../graphics/background.png");
+
+	// Create a sprite
+	Sprite spriteBackground;
+
+	// Attach the texture to the sprite
+	spriteBackground.setTexture(textureBackground);
+
+	// Set the spriteBackground to cover the screen
+	spriteBackground.setPosition(0, 0);
+
+	window.clear();
+	window.draw(spriteBackground);
+
+	//create vector of teams
+	std::vector<Team> teams;
+	Team hawks("Hawks", "../graphics/hawks.png");
+	teams.push_back(hawks);
+	Team thunder("Thunder", "../graphics/thunder.png");
+	teams.push_back(thunder);
+	Team celtics("Celtics", "../graphics/celtics.png");
+	teams.push_back(celtics);
+	Team nets("Nets", "../graphics/nets.png");
+	teams.push_back(nets);
+	Team hornets("Hornets", "../graphics/hornets.png");
+	teams.push_back(hornets);
+	Team cavaliers("Cavaliers", "../graphics/cavaliers.png");
+	teams.push_back(cavaliers);
+	Team mavericks("Mavericks", "../graphics/mavericks.png");
+	teams.push_back(mavericks);
+	Team nuggets("Nuggets", "../graphics/nuggets.png");
+	teams.push_back(nuggets);
+	Team pistons("Pistons", "../graphics/pistons.png");
+	teams.push_back(pistons);
+	Team warriors("Warriors", "../graphics/warriors.png");
+	teams.push_back(warriors);
+	Team rockets("Rockets", "../graphics/rockets.png");
+	teams.push_back(rockets);
+	Team pacers("Pacers", "../graphics/pacers.png");
+	teams.push_back(pacers);
+	Team lakers("Lakers", "../graphics/lakers.png");
+	teams.push_back(lakers);
+	Team grizzlies("Grizzlies", "../graphics/grizzlies.png");
+	teams.push_back(grizzlies);
+	Team bucks("Bucks", "../graphics/bucks.png");
+	teams.push_back(bucks);
+	Team timberwolves("Timberwolves", "../graphics/timberwolves.png");
+	teams.push_back(timberwolves);
+	Team pelicans("Pelicans", "../graphics/pelicans.png");
+	teams.push_back(pelicans);
+	Team knicks("Knicks", "../graphics/knicks.png");
+	teams.push_back(knicks);
+	Team magic("Magic", "../graphics/magic.png");
+	teams.push_back(magic);
+	Team the76ers("76ers", "../graphics/76ers.png");
+	teams.push_back(the76ers);
+	Team suns("Suns", "../graphics/suns.png");
+	teams.push_back(suns);
+	Team blazers("Blazers", "../graphics/blazers.png");
+	teams.push_back(blazers);
+	Team spurs("Spurs", "../graphics/spurs.png");
+	teams.push_back(spurs);
+	Team raptors("Raptors", "../graphics/raptors.png");
+	teams.push_back(raptors);
+	Team jazz("Jazz", "../graphics/jazz.png");
+	teams.push_back(jazz);
+	Team heat("Heat", "../graphics/heat.png");
+	teams.push_back(heat);
+	Team wizards("Wizards", "../graphics/wizards.png");
+	teams.push_back(wizards);
+	Team clippers("Clippers", "../graphics/clippers.png");
+	teams.push_back(clippers);
+	Team kings("Kings", "../graphics/kings.png");
+	teams.push_back(kings);
+	Team buzz("Buzz", "../graphics/buzz.png");
+	teams.push_back(buzz);
+	Team wreck("Ramblin' Wreck", "../graphics/wreck.png");
+	teams.push_back(wreck);
+	Team bulls("Bulls", "../graphics/bulls.png");
+	teams.push_back(bulls);
+
+	//randomly shuffle teams
+	std::vector<Team> randomTeams;
+	randomTeams = teams;
+	// obtain a time-based seed.
+	std::shuffle(randomTeams.begin(), randomTeams.end(), std::default_random_engine(seed));
+	//place teams in columns
+	std::vector<Team> leftColumnOne;
+	std::vector<Team> rightColumnOne;
+	std::vector<Team> leftColumnTwo;
+	std::vector<Team> rightColumnTwo;
+	std::vector<Team> leftColumnThree;
+	std::vector<Team> rightColumnThree;
+	std::vector<Team> leftColumnFour;
+	std::vector<Team> rightColumnFour;
+	std::vector<Team> championship;
+
+	// Declare a new font
+	sf::Font font;
+	// Load it from a file
+	if (!font.loadFromFile("../font.ttf"))
+	{
+		std::cout << "Oh shit." << std::endl;
+	}
+	Text myText;
+	myText.setFont(font);
+	myText.setCharacterSize(25);
+	myText.setStyle(sf::Text::Regular);
+	myText.setFillColor(Color(255, 0, 0));
+
+//	std::chrono::seconds dura( 5);
+//	std::this_thread::sleep_for( dura );
+
+	// SPLIT TEAMS
+	//first half of teams in the left most column
+	for (int i = 0; i < 16; i++)
+	{
+		leftColumnOne.push_back(randomTeams.at(i));
+		myText.setString(leftColumnOne.at(i).getName());
+		myText.setPosition(50.0f, 140.0f + 55.0f * i);
+		window.draw(myText);
+	}
+	//second half of teams in right most column
+	for (int i = 16; i < 32; i++)
+	{
+		rightColumnOne.push_back(randomTeams.at(i));
+		myText.setString(rightColumnOne.at(i - 16).getName());
+		myText.setPosition(1725.0f, 140.0f + 55.0f * (i - 16));
+		window.draw(myText);
+	}
+
+	window.display();
+	std::chrono::seconds dura(5);
+	std::this_thread::sleep_for(dura);
+
+	// PLAY ROUND 1
+	//Above the left most and right most teams are put into their respected vectors
+	for (int i = 0; i < leftColumnOne.size(); i += 2)
+	{
+		Game curr(leftColumnOne.at(i), leftColumnOne.at(i + 1));
+		curr.fullGameSimulation();
+		leftColumnTwo.push_back(curr.getWinner());
+		std::cout << "Round 1 left Winner is: " << curr.getWinner().getName() << " the score was "
+				  << curr.getWinner().getGameScore()
+				  << " and " << curr.getLoser().getGameScore() << std::endl;
+	}
+	for (int i = 0; i < rightColumnOne.size(); i += 2)
+	{
+		Game curr(rightColumnOne.at(i), rightColumnOne.at(i + 1));
+		curr.fullGameSimulation();
+		rightColumnTwo.push_back(curr.getWinner());
+
+		std::cout << "Round 1 right Winner is: " << curr.getWinner().getName() << " the score was "
+				  << curr.getWinner().getGameScore()
+				  << " and " << curr.getLoser().getGameScore() << std::endl;
+	}
+
+	// PLAY ROUND 2
+	for (int i = 0; i < leftColumnTwo.size(); i += 2)
+	{
+		Game curr(leftColumnTwo.at(i), leftColumnTwo.at(i + 1));
+		curr.fullGameSimulation();
+		leftColumnThree.push_back(curr.getWinner());
+		std::cout << "Round 2 left Winner is: " << curr.getWinner().getName() << " the score was "
+				  << curr.getWinner().getGameScore()
+				  << " and " << curr.getLoser().getGameScore() << std::endl;
+	}
+	for (int i = 0; i < rightColumnTwo.size(); i += 2)
+	{
+		Game curr(rightColumnTwo.at(i), rightColumnTwo.at(i + 1));
+		curr.fullGameSimulation();
+		rightColumnThree.push_back(curr.getWinner());
+		std::cout << "Round 2 right Winner is: " << curr.getWinner().getName() << " the score was "
+				  << curr.getWinner().getGameScore()
+				  << " and " << curr.getLoser().getGameScore() << std::endl;
+	}
+
+	// PLAY ROUND 3
+	for (int i = 0; i < leftColumnThree.size(); i += 2)
+	{
+		Game curr(leftColumnThree.at(i), leftColumnThree.at(i + 1));
+		curr.fullGameSimulation();
+		leftColumnFour.push_back(curr.getWinner());
+		std::cout << "Round 3 left Winner is: " << curr.getWinner().getName() << " the score was "
+				  << curr.getWinner().getGameScore()
+				  << " and " << curr.getLoser().getGameScore() << std::endl;
+	}
+	for (int i = 0; i < rightColumnThree.size(); i += 2)
+	{
+		Game curr(rightColumnThree.at(i), rightColumnThree.at(i + 1));
+		curr.fullGameSimulation();
+		rightColumnFour.push_back(curr.getWinner());
+		std::cout << "Round 3 right Winner is: " << curr.getWinner().getName() << " the score was "
+				  << curr.getWinner().getGameScore()
+				  << " and " << curr.getLoser().getGameScore() << std::endl;
+	}
+
+	// PLAY ROUND 4
+	for (int i = 0; i < leftColumnFour.size(); i += 2)
+	{
+		Game curr(leftColumnFour.at(i), leftColumnFour.at(i + 1));
+		curr.fullGameSimulation();
+		championship.push_back(curr.getWinner());
+		std::cout << "Round 4 left Winner is: " << curr.getWinner().getName() << " the score was "
+				  << curr.getWinner().getGameScore()
+				  << " and " << curr.getLoser().getGameScore() << std::endl;
+	}
+	for (int i = 0; i < rightColumnFour.size(); i += 2)
+	{
+		Game curr(rightColumnFour.at(i), rightColumnFour.at(i + 1));
+		curr.fullGameSimulation();
+		championship.push_back(curr.getWinner());
+		std::cout << "Round 4 right Winner is: " << curr.getWinner().getName() << " the score was "
+				  << curr.getWinner().getGameScore()
+				  << " and " << curr.getLoser().getGameScore() << std::endl;
+	}
+
+	// PLAY CHAMPIONSHIP
+	Game curr(championship.at(0), rightColumnFour.at(1));
+	curr.fullGameSimulation();
+	std::cout << "The Championship Winner is: " << curr.getWinner().getName() << " the score was "
+			  << curr.getWinner().getGameScore()
+			  << " and " << curr.getLoser().getGameScore() << std::endl;
+
+	while (window.isOpen())
+	{
+		sf::Event e;
+		while (window.pollEvent(e))
+		{
+			switch (e.type)
+			{
+			case sf::Event::EventType::Closed:
+				window.close();
+				break;
+			}
+		}
+		window.clear();
+		window.draw(spriteBackground);
+		window.display();
+	}
+	return 0;
 }
