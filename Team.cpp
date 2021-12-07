@@ -1,9 +1,6 @@
 #include "Team.h"
 #include <stdlib.h>
-#include <time.h>
 #include <iostream>
-#include <SFML/Graphics.hpp>
-
 
 Team::Team(std::string name, std::string logo)
 {
@@ -20,7 +17,7 @@ Team::Team(std::string name, std::string logo)
 	teamLogo = spriteTeam;
 	gameScore = 0;
 	seriesScore = 0;
-    status = false;
+	status = false;
 }
 Team::Team()
 {
@@ -50,12 +47,12 @@ int Team::getGameScore()
 
 bool Team::getStatus()
 {
-    return status;
+	return status;
 }
 
 void Team::setStatus(bool stat)
 {
-    status = stat;
+	status = stat;
 }
 
 int Team::getSeriesScore()
