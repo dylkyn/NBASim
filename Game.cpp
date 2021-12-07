@@ -1,6 +1,7 @@
 #include "Game.h"
 #include <stdlib.h>     /* srand, rand */
 #include <iostream>
+#include <chrono>
 
 Game::Game(Team& team1, Team& team2)
 {
@@ -128,6 +129,8 @@ void Game::possessionSimulation(Team& offense, Team& defense)
 
 Team Game::fullGameSimulation()
 {
+    unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+    srand(seed);
 	team1.resetTeamScore();
 	team2.resetTeamScore();
 #pragma omp parallel for default(shared) private(i) schedule(static, chunk) reduction(+:totalArea)
