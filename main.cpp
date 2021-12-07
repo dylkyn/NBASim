@@ -137,6 +137,21 @@ int main()
 	myText.setStyle(sf::Text::Regular);
 	myText.setFillColor(Color(255, 0, 0));
 
+    Texture testHawk;
+    testHawk.loadFromFile("../graphics/76ers.png");
+    Sprite test;
+    test.setTexture(testHawk);
+    test.setPosition(Vector2f(500, 500));
+    //next button
+//    Text next;
+//    next.setFont(font);
+//    next.setString("Next Round");
+//    next.setPosition(1500, 975);
+//    next.setCharacterSize(40);
+//    next.setStyle(sf::Text::Regular);
+//    next.setFillColor(Color(0, 0, 0));
+
+    bool nextSelected = false;
 	std::chrono::seconds dura(1);
 	std::this_thread::sleep_for(dura);
 
