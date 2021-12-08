@@ -32,7 +32,7 @@ void exportCSV(std::ofstream* myfile, Team loser)
 {
     *myfile << loser.getName() << "\n";
     *myfile << "Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks \n";
-    for (int i = 1; i < 6; i++)
+    for (int i = 0; i < 5; i++)
     {
         *myfile << loser.getPlayer(i)->getName() << "," << loser.getPlayer(i)->getNumTwo() * 2 + loser.getPlayer(i)->getNumThree() * 3 << "," <<
         loser.getPlayer(i)->getNumThree() << "," << loser.getPlayer(i)->getNumThree() * 1.0 / ((loser.getPlayer(i)->getNumMissedThree() + loser.getPlayer(i)->getNumThree() * 1.0) * 1.0) <<
