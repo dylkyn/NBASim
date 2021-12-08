@@ -183,7 +183,7 @@ int main()
 	textureBoxScore.loadFromFile("../graphics/boxscore.png");
 	Sprite spriteBoxScore;
 	spriteBoxScore.setTexture(textureBoxScore);
-	spriteBoxScore.setPosition(310, 100);
+	spriteBoxScore.setPosition(280, 100);
 	spriteBoxScore.setScale(4.8, 4.3);
 
 	Text boxScoreText;
