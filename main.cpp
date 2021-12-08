@@ -28,16 +28,16 @@ Description :
 using namespace sf;
 
 
-void exportCSV(std::ofstream myfile, Team loser)
+void exportCSV(std::ofstream* myfile, Team loser)
 {
-    myfile << loser.getName() << "\n";
-    myfile << "Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks \n";
-    for (int i = 1; i < 4; i++)
+    *myfile << loser.getName() << "\n";
+    *myfile << "Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks \n";
+    for (int i = 1; i < 6; i++)
     {
-        myfile << loser.getPlayer(i)->getName() << "," << loser.getPlayer(i)->getNumTwo() * 2 + loser.getPlayer(i)->getNumThree() * 3 << "," <<
-        loser.getPlayer(i)->getNumThree() << "," << loser.getPlayer(i)->getNumThree() * 1.0 / (loser.getPlayer(i)->getNumMissedThree() * 1.0) <<
-        "," << loser.getPlayer(i)->getNumTwo() << "," << loser.getPlayer(i)->getNumTwo() * 1.0 / (loser.getPlayer(i)->getNumMissedTwo() * 1.0) <<
-        "," << loser.getPlayer(i)->getNumAssist() << "," << loser.getPlayer(i)->getNumRebounds() << "," << loser.getPlayer(i)->getNumBlocks();
+        *myfile << loser.getPlayer(i)->getName() << "," << loser.getPlayer(i)->getNumTwo() * 2 + loser.getPlayer(i)->getNumThree() * 3 << "," <<
+        loser.getPlayer(i)->getNumThree() << "," << loser.getPlayer(i)->getNumThree() * 1.0 / ((loser.getPlayer(i)->getNumMissedThree() + loser.getPlayer(i)->getNumThree() * 1.0) * 1.0) <<
+        "," << loser.getPlayer(i)->getNumTwo() << "," << loser.getPlayer(i)->getNumTwo() * 1.0 / ((loser.getPlayer(i)->getNumMissedTwo() + loser.getPlayer(i)->getNumTwo()) * 1.0) <<
+        "," << loser.getPlayer(i)->getNumAssist() << "," << loser.getPlayer(i)->getNumRebounds() << "," << loser.getPlayer(i)->getNumBlocks() << "\n";
     }
 }
 
@@ -398,6 +398,11 @@ int main()
                 std::thread t3(execute,&curr2);
                 std::thread t4(execute,&curr3);
 
+                exportCSV(&myfile, curr.getLoser());
+                exportCSV(&myfile, curr1.getLoser());
+                exportCSV(&myfile, curr2.getLoser());
+                exportCSV(&myfile, curr3.getLoser());
+
                 t1.join();
                 t2.join();
                 t3.join();
@@ -407,7 +412,7 @@ int main()
                           << curr.getWinner().getGameScore()
                           << " and " << curr.getLoser().getGameScore() << std::endl;
                 myText.setString(curr.getWinner().getName());
-                myText.setPosition(1550.0f, 160.0f + 55.0f * i);
+                myText.setPosition(235.0f, 160.0f + 55.0f * i);
                 leftColTwoTeams.push_back(myText);
 
                 leftColumnTwo.push_back(curr1.getWinner());
@@ -415,7 +420,7 @@ int main()
                           << curr1.getWinner().getGameScore()
                           << " and " << curr1.getLoser().getGameScore() << std::endl;
                 myText.setString(curr1.getWinner().getName());
-                myText.setPosition(1550.0f, 160.0f + 55.0f * (i+2));
+                myText.setPosition(235.0f, 160.0f + 55.0f * (i+2));
                 leftColTwoTeams.push_back(myText);
 
                 leftColumnTwo.push_back(curr2.getWinner());
@@ -423,7 +428,7 @@ int main()
                           << curr2.getWinner().getGameScore()
                           << " and " << curr2.getLoser().getGameScore() << std::endl;
                 myText.setString(curr2.getWinner().getName());
-                myText.setPosition(1550.0f, 160.0f + 55.0f * (i+4));
+                myText.setPosition(235.0f, 160.0f + 55.0f * (i+4));
                 leftColTwoTeams.push_back(myText);
 
                 leftColumnTwo.push_back(curr3.getWinner());
@@ -431,7 +436,7 @@ int main()
                           << curr3.getWinner().getGameScore()
                           << " and " << curr3.getLoser().getGameScore() << std::endl;
                 myText.setString(curr3.getWinner().getName());
-                myText.setPosition(1550.0f, 160.0f + 55.0f * (i+6));
+                myText.setPosition(235.0f, 160.0f + 55.0f * (i+6));
                 leftColTwoTeams.push_back(myText);
             }
             for (int i = 0; i < rightColumnOne.size(); i += 8)
@@ -445,6 +450,11 @@ int main()
                 std::thread t3(execute,&curr2);
                 std::thread t4(execute,&curr3);
 
+                exportCSV(&myfile, curr.getLoser());
+                exportCSV(&myfile, curr1.getLoser());
+                exportCSV(&myfile, curr2.getLoser());
+                exportCSV(&myfile, curr3.getLoser());
+
                 t1.join();
                 t2.join();
                 t3.join();
@@ -454,7 +464,7 @@ int main()
                           << curr.getWinner().getGameScore()
                           << " and " << curr.getLoser().getGameScore() << std::endl;
                 myText.setString(curr.getWinner().getName());
-                myText.setPosition(235.0f, 160.0f + 55.0f * i);
+                myText.setPosition(1550.0f, 160.0f + 55.0f * i);
                 rightColTwoTeams.push_back(myText);
 
                 rightColumnTwo.push_back(curr1.getWinner());
@@ -462,7 +472,7 @@ int main()
                           << curr1.getWinner().getGameScore()
                           << " and " << curr1.getLoser().getGameScore() << std::endl;
                 myText.setString(curr1.getWinner().getName());
-                myText.setPosition(235.0f, 160.0f + 55.0f * (i+2));
+                myText.setPosition(1550.0f, 160.0f + 55.0f * (i+2));
                 rightColTwoTeams.push_back(myText);
 
                 rightColumnTwo.push_back(curr2.getWinner());
@@ -470,7 +480,7 @@ int main()
                           << curr2.getWinner().getGameScore()
                           << " and " << curr2.getLoser().getGameScore() << std::endl;
                 myText.setString(curr2.getWinner().getName());
-                myText.setPosition(235.0f, 160.0f + 55.0f * (i+4));
+                myText.setPosition(1550.0f, 160.0f + 55.0f * (i+4));
                 rightColTwoTeams.push_back(myText);
 
                 rightColumnTwo.push_back(curr3.getWinner());
@@ -478,7 +488,7 @@ int main()
                           << curr3.getWinner().getGameScore()
                           << " and " << curr3.getLoser().getGameScore() << std::endl;
                 myText.setString(curr3.getWinner().getName());
-                myText.setPosition(235.0f, 160.0f + 55.0f * (i+6));
+                myText.setPosition(1550.0f, 160.0f + 55.0f * (i+6));
                 rightColTwoTeams.push_back(myText);
             }
             roundOneCalc = false;
@@ -503,6 +513,12 @@ int main()
                 t2.join();
                 t3.join();
                 t4.join();
+                exportCSV(&myfile, curr.getLoser());
+                exportCSV(&myfile, curr1.getLoser());
+                exportCSV(&myfile, curr2.getLoser());
+                exportCSV(&myfile, curr3.getLoser());
+
+
                 leftColumnThree.push_back(curr.getWinner());
                 std::cout << "Round 2 left Winner is: " << curr.getWinner().getName() << " the score was "
                           << curr.getWinner().getGameScore()
@@ -539,7 +555,7 @@ int main()
 
 
             int c = 0;
-            while (z == 0)
+            while (c == 0)
             {
                 Game curr(rightColumnTwo.at(0), rightColumnTwo.at(1));
                 Game curr1(rightColumnTwo.at(2), rightColumnTwo.at(3));
@@ -549,6 +565,11 @@ int main()
                 Game curr3(rightColumnTwo.at(6), rightColumnTwo.at(7));
                 std::thread t3(execute,&curr2);
                 std::thread t4(execute,&curr3);
+
+                exportCSV(&myfile, curr.getLoser());
+                exportCSV(&myfile, curr1.getLoser());
+                exportCSV(&myfile, curr2.getLoser());
+                exportCSV(&myfile, curr3.getLoser());
 
                 t1.join();
                 t2.join();
@@ -587,31 +608,6 @@ int main()
                 rightColThreeTeams.push_back(myText);
                 c = 1;
             }
-
-            for (int i = 0; i < leftColumnTwo.size(); i += 2)
-            {
-                Game curr(leftColumnTwo.at(i), leftColumnTwo.at(i + 1));
-                curr.fullGameSimulation();
-                leftColumnThree.push_back(curr.getWinner());
-                std::cout << "Round 2 left Winner is: " << curr.getWinner().getName() << " the score was "
-                          << curr.getWinner().getGameScore()
-                          << " and " << curr.getLoser().getGameScore() << std::endl;
-                myText.setString(curr.getWinner().getName());
-                myText.setPosition(400.0f, 220.0f + 110.0f * i);
-                leftColThreeTeams.push_back(myText);
-            }
-            for (int i = 0; i < rightColumnTwo.size(); i += 2)
-            {
-                Game curr(rightColumnTwo.at(i), rightColumnTwo.at(i + 1));
-                curr.fullGameSimulation();
-                rightColumnThree.push_back(curr.getWinner());
-                std::cout << "Round 2 right Winner is: " << curr.getWinner().getName() << " the score was "
-                          << curr.getWinner().getGameScore()
-                          << " and " << curr.getLoser().getGameScore() << std::endl;
-                myText.setString(curr.getWinner().getName());
-                myText.setPosition(1380.0f, 220.0f + 110.0f * i);
-                rightColThreeTeams.push_back(myText);
-            }
             roundTwoCalc = false;
         }
         //2 teams on each side
@@ -622,6 +618,8 @@ int main()
             {
                 Game curr(leftColumnThree.at(i), leftColumnThree.at(i + 1));
                 curr.fullGameSimulation();
+                exportCSV(&myfile, curr.getLoser());
+
                 leftColumnFour.push_back(curr.getWinner());
                 std::cout << "Round 3 left Winner is: " << curr.getWinner().getName() << " the score was "
                           << curr.getWinner().getGameScore()
@@ -634,6 +632,8 @@ int main()
             {
                 Game curr(rightColumnThree.at(i), rightColumnThree.at(i + 1));
                 curr.fullGameSimulation();
+                exportCSV(&myfile, curr.getLoser());
+
                 rightColumnFour.push_back(curr.getWinner());
                 std::cout << "Round 3 right Winner is: " << curr.getWinner().getName() << " the score was "
                           << curr.getWinner().getGameScore()
@@ -652,6 +652,8 @@ int main()
             {
                 Game curr(leftColumnFour.at(i), leftColumnFour.at(i + 1));
                 curr.fullGameSimulation();
+                exportCSV(&myfile, curr.getLoser());
+
                 championship.push_back(curr.getWinner());
                 std::cout << "Round 4 left Winner is: " << curr.getWinner().getName() << " the score was "
                           << curr.getWinner().getGameScore()
@@ -664,6 +666,8 @@ int main()
             {
                 Game curr(rightColumnFour.at(i), rightColumnFour.at(i + 1));
                 curr.fullGameSimulation();
+                exportCSV(&myfile, curr.getLoser());
+
                 championship.push_back(curr.getWinner());
                 std::cout << "Round 4 right Winner is: " << curr.getWinner().getName() << " the score was "
                           << curr.getWinner().getGameScore()
@@ -677,10 +681,10 @@ int main()
         //calculate the overall winner
         if (champCalc)
         {
-            std::cout << "LOOK HERE CHRIS BURG " << "twos " << leftColumnFour.at(0).getPlayer(1)->getNumTwo() << "threes : " << leftColumnFour.at(0).getPlayer(1)->getNumTwo() << leftColumnFour.at(0).getPlayer(1)->getName() << std::endl;
             // PLAY CHAMPIONSHIP
             Game curr(championship.at(0), championship.at(1));
             curr.fullGameSimulation();
+            exportCSV(&myfile, curr.getLoser());
             std::cout << "The Championship Winner is: " << curr.getWinner().getName() << " the score was "
                       << curr.getWinner().getGameScore()
                       << " and " << curr.getLoser().getGameScore() << std::endl;
