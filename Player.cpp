@@ -48,7 +48,7 @@ Player::Player(int playerType)
 		//shorten range
 		pointGuardRange--;
 		//shift all elements down one from random index
-		for (int i = randIndex; i < 31; i++)
+		for (int i = 0; i < 31; i++)
 		{
 			pointGuardNames[i] = pointGuardNames[i + 1];
 		}
@@ -76,7 +76,7 @@ Player::Player(int playerType)
 		//shorten range
 		shootingGuardRange--;
 		//shift all elements down one from random index
-		for (int i = randIndex; i < 31; i++)
+		for (int i = 0; i < 31; i++)
 		{
 			shootingGuardNames[i] = shootingGuardNames[i + 1];
 		}
@@ -104,7 +104,7 @@ Player::Player(int playerType)
 		//shorten range
 		smallForwardRange--;
 		//shift all elements down one from random index
-		for (int i = randIndex; i < 31; i++)
+		for (int i = 0; i < 31; i++)
 		{
 			smallForwardNames[i] = smallForwardNames[i + 1];
 		}
@@ -132,7 +132,7 @@ Player::Player(int playerType)
 		//shorten range
 		powerForwardRange--;
 		//shift all elements down one from random index
-		for (int i = randIndex; i < 31; i++)
+		for (int i = 0; i < 31; i++)
 		{
 			powerForwardNames[i] = powerForwardNames[i + 1];
 		}
@@ -160,7 +160,7 @@ Player::Player(int playerType)
 		//shorten range
 		centerRange--;
 		//shift all elements down one from random index
-		for (int i = randIndex; i < 31; i++)
+		for (int i = 0; i < 31; i++)
 		{
 			centerNames[i] = centerNames[i + 1];
 		}

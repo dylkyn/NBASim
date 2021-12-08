@@ -1,5 +1,5 @@
 /*
-Author: Bella Poage, Chris Burgett, Justin Lau, Dylan Knyoch
+Author: Bella Poage, Chris Burgett, Justin Lau, Dylan Kynoch
 Class : ECE4122
 Last Date Modified : 12-7-2021
 Description :
@@ -21,118 +21,144 @@ Description :
 #include <thread>
 #include <vector>
 #include <chrono>
+#include <fstream>
 #include <random>
 #include <mshtmlc.h>
 
 using namespace sf;
 
+
+void exportCSV(std::ofstream myfile, Team loser)
+{
+    myfile << loser.getName() << "\n";
+    myfile << "Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks \n";
+    for (int i = 1; i < 4; i++)
+    {
+        myfile << loser.getPlayer(i)->getName() << "," << loser.getPlayer(i)->getNumTwo() * 2 + loser.getPlayer(i)->getNumThree() * 3 << "," <<
+        loser.getPlayer(i)->getNumThree() << "," << loser.getPlayer(i)->getNumThree() * 1.0 / (loser.getPlayer(i)->getNumMissedThree() * 1.0) <<
+        "," << loser.getPlayer(i)->getNumTwo() << "," << loser.getPlayer(i)->getNumTwo() * 1.0 / (loser.getPlayer(i)->getNumMissedTwo() * 1.0) <<
+        "," << loser.getPlayer(i)->getNumAssist() << "," << loser.getPlayer(i)->getNumRebounds() << "," << loser.getPlayer(i)->getNumBlocks();
+    }
+}
+
+void execute(Game* curr)
+{
+    curr->fullGameSimulation();
+}
+
+
 int main()
 {
+
+    std::ofstream myfile;
+    myfile.open ("../gameExports/seasonBoxScore.csv");
+    myfile << "Season Box Score\n";
+
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 
-    srand(seed);
-    // Create a video mode object
-    VideoMode vm(1920, 1080);
+	srand(seed);
+	// Create a video mode object
+	VideoMode vm(1920, 1080);
 
-    // Create and open a window for the game
-    RenderWindow window(vm, "NBA Simulation", Style::Resize);
+	// Create and open a window for the game
+	RenderWindow window(vm, "NBA Simulation", Style::Resize | Style::Close);
 
-    // Create a texture to hold a graphic on the GPU
-    Texture textureBackground;
-    // Load a graphic into the texture
-    textureBackground.loadFromFile("../graphics/background.png");
+	// Create a texture to hold a graphic on the GPU
+	Texture textureBackground;
+	// Load a graphic into the texture
+	textureBackground.loadFromFile("../graphics/background.png");
 
-    // Create a sprite
-    Sprite spriteBackground;
+	// Create a sprite
+	Sprite spriteBackground;
 
-    // Attach the texture to the sprite
-    spriteBackground.setTexture(textureBackground);
+	// Attach the texture to the sprite
+	spriteBackground.setTexture(textureBackground);
 
-    // Set the spriteBackground to cover the screen
-    spriteBackground.setPosition(0, 0);
+	// Set the spriteBackground to cover the screen
+	spriteBackground.setPosition(0, 0);
 
-    //create vector of teams
-    std::vector<Team> teams;
-    Team hawks("Hawks", "../resized/hawks.png");
-    teams.push_back(hawks);
-    Team thunder("Thunder", "../resized/thunder.png");
-    teams.push_back(thunder);
-    Team celtics("Celtics", "../resized/celtics.png");
-    teams.push_back(celtics);
-    Team nets("Nets", "../resized/nets.png");
-    teams.push_back(nets);
-    Team hornets("Hornets", "../resized/hornets.png");
-    teams.push_back(hornets);
-    Team cavaliers("Cavaliers", "../resized/cavaliers.png");
-    teams.push_back(cavaliers);
-    Team mavericks("Mavericks", "../resized/mavericks.png");
-    teams.push_back(mavericks);
-    Team nuggets("Nuggets", "../resized/nuggets.png");
-    teams.push_back(nuggets);
-    Team pistons("Pistons", "../resized/pistons.png");
-    teams.push_back(pistons);
-    Team warriors("Warriors", "../resized/warriors.png");
-    teams.push_back(warriors);
-    Team rockets("Rockets", "../resized/rockets.png");
-    teams.push_back(rockets);
-    Team pacers("Pacers", "../resized/pacers.png");
-    teams.push_back(pacers);
-    Team lakers("Lakers", "../resized/lakers.png");
-    teams.push_back(lakers);
-    Team grizzlies("Grizzlies", "../resized/grizzlies.png");
-    teams.push_back(grizzlies);
-    Team bucks("Bucks", "../resized/bucks.png");
-    teams.push_back(bucks);
-    Team timberwolves("Timberwolves", "../resized/timberwolves.png");
-    teams.push_back(timberwolves);
-    Team pelicans("Pelicans", "../resized/pelicans.png");
-    teams.push_back(pelicans);
-    Team knicks("Knicks", "../resized/knicks.png");
-    teams.push_back(knicks);
-    Team magic("Magic", "../resized/magic.png");
-    teams.push_back(magic);
-    Team the76ers("76ers", "../resized/76ers.png");
-    teams.push_back(the76ers);
-    Team suns("Suns", "../resized/suns.png");
-    teams.push_back(suns);
-    Team blazers("Blazers", "../resized/blazers.png");
-    teams.push_back(blazers);
-    Team spurs("Spurs", "../resized/spurs.png");
-    teams.push_back(spurs);
-    Team raptors("Raptors", "../resized/raptors.png");
-    teams.push_back(raptors);
-    Team jazz("Jazz", "../resized/jazz.png");
-    teams.push_back(jazz);
-    Team heat("Heat", "../resized/heat.png");
-    teams.push_back(heat);
-    Team wizards("Wizards", "../resized/wizards.png");
-    teams.push_back(wizards);
-    Team clippers("Clippers", "../resized/clippers.png");
-    teams.push_back(clippers);
-    Team kings("Kings", "../resized/kings.png");
-    teams.push_back(kings);
-    Team buzz("Buzz", "../resized/buzz.png");
-    teams.push_back(buzz);
-    Team wreck("Ramblin' Wreck", "../resized/wreck.png");
-    teams.push_back(wreck);
-    Team bulls("Bulls", "../resized/bulls.png");
-    teams.push_back(bulls);
+	//create vector of teams
+	std::vector<Team> teams;
+	Team hawks("Hawks", "../resized/hawks.png");
+	teams.push_back(hawks);
+	Team thunder("Thunder", "../resized/thunder.png");
+	teams.push_back(thunder);
+	Team celtics("Celtics", "../resized/celtics.png");
+	teams.push_back(celtics);
+	Team nets("Nets", "../resized/nets.png");
+	teams.push_back(nets);
+	Team hornets("Hornets", "../resized/hornets.png");
+	teams.push_back(hornets);
+	Team cavaliers("Cavaliers", "../resized/cavaliers.png");
+	teams.push_back(cavaliers);
+	Team mavericks("Mavericks", "../resized/mavericks.png");
+	teams.push_back(mavericks);
+	Team nuggets("Nuggets", "../resized/nuggets.png");
+	teams.push_back(nuggets);
+	Team pistons("Pistons", "../resized/pistons.png");
+	teams.push_back(pistons);
+	Team warriors("Warriors", "../resized/warriors.png");
+	teams.push_back(warriors);
+	Team rockets("Rockets", "../resized/rockets.png");
+	teams.push_back(rockets);
+	Team pacers("Pacers", "../resized/pacers.png");
+	teams.push_back(pacers);
+	Team lakers("Lakers", "../resized/lakers.png");
+	teams.push_back(lakers);
+	Team grizzlies("Grizzlies", "../resized/grizzlies.png");
+	teams.push_back(grizzlies);
+	Team bucks("Bucks", "../resized/bucks.png");
+	teams.push_back(bucks);
+	Team timberwolves("Timberwolves", "../resized/timberwolves.png");
+	teams.push_back(timberwolves);
+	Team pelicans("Pelicans", "../resized/pelicans.png");
+	teams.push_back(pelicans);
+	Team knicks("Knicks", "../resized/knicks.png");
+	teams.push_back(knicks);
+	Team magic("Magic", "../resized/magic.png");
+	teams.push_back(magic);
+	Team the76ers("76ers", "../resized/76ers.png");
+	teams.push_back(the76ers);
+	Team suns("Suns", "../resized/suns.png");
+	teams.push_back(suns);
+	Team blazers("Blazers", "../resized/blazers.png");
+	teams.push_back(blazers);
+	Team spurs("Spurs", "../resized/spurs.png");
+	teams.push_back(spurs);
+	Team raptors("Raptors", "../resized/raptors.png");
+	teams.push_back(raptors);
+	Team jazz("Jazz", "../resized/jazz.png");
+	teams.push_back(jazz);
+	Team heat("Heat", "../resized/heat.png");
+	teams.push_back(heat);
+	Team wizards("Wizards", "../resized/wizards.png");
+	teams.push_back(wizards);
+	Team clippers("Clippers", "../resized/clippers.png");
+	teams.push_back(clippers);
+	Team kings("Kings", "../resized/kings.png");
+	teams.push_back(kings);
+	Team buzz("Buzz", "../resized/buzz.png");
+	teams.push_back(buzz);
+	Team wreck("Ramblin' Wreck", "../resized/wreck.png");
+	teams.push_back(wreck);
+	Team bulls("Bulls", "../resized/bulls.png");
+	teams.push_back(bulls);
 
-    //randomly shuffle teams
-    std::vector<Team> randomTeams;
-    randomTeams = teams;
-    // obtain a time-based seed.
-    std::shuffle(randomTeams.begin(), randomTeams.end(), std::default_random_engine(seed));
-    //place teams in columns
-    std::vector<Team> leftColumnOne;
-    std::vector<Team> rightColumnOne;
-    std::vector<Team> leftColumnTwo;
-    std::vector<Team> rightColumnTwo;
-    std::vector<Team> leftColumnThree;
-    std::vector<Team> rightColumnThree;
-    std::vector<Team> leftColumnFour;
-    std::vector<Team> rightColumnFour;
-    std::vector<Team> championship;
+	//randomly shuffle teams
+	std::vector<Team> randomTeams;
+	randomTeams = teams;
+	// obtain a time-based seed.
+	std::shuffle(randomTeams.begin(), randomTeams.end(), std::default_random_engine(seed));
+	//place teams in columns
+	std::vector<Team> leftColumnOne;
+	std::vector<Team> rightColumnOne;
+	std::vector<Team> leftColumnTwo;
+	std::vector<Team> rightColumnTwo;
+	std::vector<Team> leftColumnThree;
+	std::vector<Team> rightColumnThree;
+	std::vector<Team> leftColumnFour;
+	std::vector<Team> rightColumnFour;
+	std::vector<Team> championship;
 
     // Declare a new font
     sf::Font font;
@@ -147,116 +173,116 @@ int main()
     myText.setStyle(sf::Text::Regular);
     myText.setFillColor(Color(0, 0, 255));
 
-    std::chrono::milliseconds duration(250);
-    std::this_thread::sleep_for(duration);
+//	std::chrono::milliseconds duration(250);
+//	std::this_thread::sleep_for(duration);
 
-    bool initialDisplay = false;
-    bool started = false;
-    bool nextSelected = false;
-    bool roundOneCalc = false;
-    bool roundOneVisible = false;
-    bool roundTwoCalc = false;
-    bool roundTwoVisible = false;
-    bool roundThreeCalc = false;
-    bool roundThreeVisible = false;
-    bool roundFourCalc = false;
-    bool roundFourVisible = false;
-    bool champCalc = false;
-    bool championVisible = false;
-    bool boxScoreVisible = false;
+	bool initialDisplay = false;
+	bool started = false;
+	bool nextSelected = false;
+	bool roundOneCalc = false;
+	bool roundOneVisible = false;
+	bool roundTwoCalc = false;
+	bool roundTwoVisible = false;
+	bool roundThreeCalc = false;
+	bool roundThreeVisible = false;
+	bool roundFourCalc = false;
+	bool roundFourVisible = false;
+	bool champCalc = false;
+	bool championVisible = false;
+	bool boxScoreVisible = false;
 
-    std::vector<Text> leftColOneTeams;
-    std::vector<Text> rightColOneTeams;
-    std::vector<Text> leftColTwoTeams;
-    std::vector<Text> rightColTwoTeams;
-    std::vector<Text> leftColThreeTeams;
-    std::vector<Text> rightColThreeTeams;
-    std::vector<Text> leftColFourTeams;
-    std::vector<Text> rightColFourTeams;
-    Text leftChampTeam;
-    Text rightChampTeam;
-    Text winnerText;
-    Sprite winnerLogo;
+	std::vector<Text> leftColOneTeams;
+	std::vector<Text> rightColOneTeams;
+	std::vector<Text> leftColTwoTeams;
+	std::vector<Text> rightColTwoTeams;
+	std::vector<Text> leftColThreeTeams;
+	std::vector<Text> rightColThreeTeams;
+	std::vector<Text> leftColFourTeams;
+	std::vector<Text> rightColFourTeams;
+	Text leftChampTeam;
+	Text rightChampTeam;
+	Text winnerText;
+	Sprite winnerLogo;
 
-    //box score display
-    Texture textureBoxScore;
-    textureBoxScore.loadFromFile("../graphics/boxscore.png");
-    Sprite spriteBoxScore;
-    spriteBoxScore.setTexture(textureBoxScore);
-    spriteBoxScore.setPosition(310, 100);
-    spriteBoxScore.setScale(4.8, 4.3);
+	//box score display
+	Texture textureBoxScore;
+	textureBoxScore.loadFromFile("../graphics/boxscore.png");
+	Sprite spriteBoxScore;
+	spriteBoxScore.setTexture(textureBoxScore);
+	spriteBoxScore.setPosition(280, 100);
+	spriteBoxScore.setScale(4.8, 4.3);
 
-    Text boxScoreText;
-    boxScoreText.setFont(font);
-    boxScoreText.setCharacterSize(25);
-    boxScoreText.setStyle(sf::Text::Regular);
-    boxScoreText.setFillColor(Color(0, 0, 255));
+	Text boxScoreText;
+	boxScoreText.setFont(font);
+	boxScoreText.setCharacterSize(25);
+	boxScoreText.setStyle(sf::Text::Regular);
+	boxScoreText.setFillColor(Color(0, 255, 0));
 
-    //box score variables (global)
-    std::string winningTeamName;
-    std::string losingTeamName;
-    int winningTeamScore;
-    int losingTeamScore;
-    std::string winningPGName;
-    std::string winningSGName;
-    std::string winningSFName;
-    std::string winningPFName;
-    std::string winningCName;
-    int winningPGpts;
-    int winningPGasts;
-    int winningPGrebs;
-    int winningPGstls;
-    int winningPGblks;
-    int winningSGpts;
-    int winningSGasts;
-    int winningSGrebs;
-    int winningSGstls;
-    int winningSGblks;
-    int winningSFpts;
-    int winningSFasts;
-    int winningSFrebs;
-    int winningSFstls;
-    int winningSFblks;
-    int winningPFpts;
-    int winningPFasts;
-    int winningPFrebs;
-    int winningPFstls;
-    int winningPFblks;
-    int winningCpts;
-    int winningCasts;
-    int winningCrebs;
-    int winningCstls;
-    int winningCblks;
-    int losingPGpts;
-    int losingPGasts;
-    int losingPGrebs;
-    int losingPGstls;
-    int losingPGblks;
-    int losingSGpts;
-    int losingSGasts;
-    int losingSGrebs;
-    int losingSGstls;
-    int losingSGblks;
-    int losingSFpts;
-    int losingSFasts;
-    int losingSFrebs;
-    int losingSFstls;
-    int losingSFblks;
-    int losingPFpts;
-    int losingPFasts;
-    int losingPFrebs;
-    int losingPFstls;
-    int losingPFblks;
-    int losingCpts;
-    int losingCasts;
-    int losingCrebs;
-    int losingCstls;
-    int losingCblks;
-    std::string losingPGName;
-    std::string losingSGName;
-    std::string losingSFName;
-    std::string losingPFName;
-    std::string losingCName;
+	//box score variables (global)
+	std::string winningTeamName;
+	std::string losingTeamName;
+	std::string winningPGName;
+	std::string winningSGName;
+	std::string winningSFName;
+	std::string winningPFName;
+	std::string winningCName;
+	int winningTeamScore;
+	int losingTeamScore;
+	int winningPGpts;
+	int winningPGasts;
+	int winningPGrebs;
+	int winningPGstls;
+	int winningPGblks;
+	int winningSGpts;
+	int winningSGasts;
+	int winningSGrebs;
+	int winningSGstls;
+	int winningSGblks;
+	int winningSFpts;
+	int winningSFasts;
+	int winningSFrebs;
+	int winningSFstls;
+	int winningSFblks;
+	int winningPFpts;
+	int winningPFasts;
+	int winningPFrebs;
+	int winningPFstls;
+	int winningPFblks;
+	int winningCpts;
+	int winningCasts;
+	int winningCrebs;
+	int winningCstls;
+	int winningCblks;
+	int losingPGpts;
+	int losingPGasts;
+	int losingPGrebs;
+	int losingPGstls;
+	int losingPGblks;
+	int losingSGpts;
+	int losingSGasts;
+	int losingSGrebs;
+	int losingSGstls;
+	int losingSGblks;
+	int losingSFpts;
+	int losingSFasts;
+	int losingSFrebs;
+	int losingSFstls;
+	int losingSFblks;
+	int losingPFpts;
+	int losingPFasts;
+	int losingPFrebs;
+	int losingPFstls;
+	int losingPFblks;
+	int losingCpts;
+	int losingCasts;
+	int losingCrebs;
+	int losingCstls;
+	int losingCblks;
+	std::string losingPGName;
+	std::string losingSGName;
+	std::string losingSFName;
+	std::string losingPFName;
+	std::string losingCName;
 
     while (window.isOpen())
     {
@@ -361,28 +387,98 @@ int main()
         {
             // PLAY ROUND 1
             //Above the left most and right most teams are put into their respected vectors
-            for (int i = 0; i < leftColumnOne.size(); i += 2)
+            for (int i = 0; i < leftColumnOne.size(); i += 8)
             {
                 Game curr(leftColumnOne.at(i), leftColumnOne.at(i + 1));
-                curr.fullGameSimulation();
+                Game curr1(leftColumnOne.at(i+2), leftColumnOne.at(i + 3));
+                std::thread t1(execute,&curr);
+                std::thread t2(execute,&curr1);
+                Game curr2(leftColumnOne.at(i+4), leftColumnOne.at(i + 5));
+                Game curr3(leftColumnOne.at(i+6), leftColumnOne.at(i + 7));
+                std::thread t3(execute,&curr2);
+                std::thread t4(execute,&curr3);
+
+                t1.join();
+                t2.join();
+                t3.join();
+                t4.join();
                 leftColumnTwo.push_back(curr.getWinner());
                 std::cout << "Round 1 left Winner is: " << curr.getWinner().getName() << " the score was "
                           << curr.getWinner().getGameScore()
                           << " and " << curr.getLoser().getGameScore() << std::endl;
                 myText.setString(curr.getWinner().getName());
-                myText.setPosition(235.0f, 160.0f + 55.0f * i);
+                myText.setPosition(1550.0f, 160.0f + 55.0f * i);
+                leftColTwoTeams.push_back(myText);
+
+                leftColumnTwo.push_back(curr1.getWinner());
+                std::cout << "Round 1 left Winner is: " << curr1.getWinner().getName() << " the score was "
+                          << curr1.getWinner().getGameScore()
+                          << " and " << curr1.getLoser().getGameScore() << std::endl;
+                myText.setString(curr1.getWinner().getName());
+                myText.setPosition(1550.0f, 160.0f + 55.0f * (i+2));
+                leftColTwoTeams.push_back(myText);
+
+                leftColumnTwo.push_back(curr2.getWinner());
+                std::cout << "Round 1 left Winner is: " << curr2.getWinner().getName() << " the score was "
+                          << curr2.getWinner().getGameScore()
+                          << " and " << curr2.getLoser().getGameScore() << std::endl;
+                myText.setString(curr2.getWinner().getName());
+                myText.setPosition(1550.0f, 160.0f + 55.0f * (i+4));
+                leftColTwoTeams.push_back(myText);
+
+                leftColumnTwo.push_back(curr3.getWinner());
+                std::cout << "Round 1 left Winner is: " << curr3.getWinner().getName() << " the score was "
+                          << curr3.getWinner().getGameScore()
+                          << " and " << curr3.getLoser().getGameScore() << std::endl;
+                myText.setString(curr3.getWinner().getName());
+                myText.setPosition(1550.0f, 160.0f + 55.0f * (i+6));
                 leftColTwoTeams.push_back(myText);
             }
-            for (int i = 0; i < rightColumnOne.size(); i += 2)
+            for (int i = 0; i < rightColumnOne.size(); i += 8)
             {
                 Game curr(rightColumnOne.at(i), rightColumnOne.at(i + 1));
-                curr.fullGameSimulation();
+                Game curr1(rightColumnOne.at(i+2), rightColumnOne.at(i + 3));
+                std::thread t1(execute,&curr);
+                std::thread t2(execute,&curr1);
+                Game curr2(rightColumnOne.at(i+4), rightColumnOne.at(i + 5));
+                Game curr3(rightColumnOne.at(i+6), rightColumnOne.at(i + 7));
+                std::thread t3(execute,&curr2);
+                std::thread t4(execute,&curr3);
+
+                t1.join();
+                t2.join();
+                t3.join();
+                t4.join();
                 rightColumnTwo.push_back(curr.getWinner());
                 std::cout << "Round 1 right Winner is: " << curr.getWinner().getName() << " the score was "
                           << curr.getWinner().getGameScore()
                           << " and " << curr.getLoser().getGameScore() << std::endl;
                 myText.setString(curr.getWinner().getName());
-                myText.setPosition(1550.0f, 160.0f + 55.0f * i);
+                myText.setPosition(235.0f, 160.0f + 55.0f * i);
+                rightColTwoTeams.push_back(myText);
+
+                rightColumnTwo.push_back(curr1.getWinner());
+                std::cout << "Round 1 right Winner is: " << curr1.getWinner().getName() << " the score was "
+                          << curr1.getWinner().getGameScore()
+                          << " and " << curr1.getLoser().getGameScore() << std::endl;
+                myText.setString(curr1.getWinner().getName());
+                myText.setPosition(235.0f, 160.0f + 55.0f * (i+2));
+                rightColTwoTeams.push_back(myText);
+
+                rightColumnTwo.push_back(curr2.getWinner());
+                std::cout << "Round 1 right Winner is: " << curr2.getWinner().getName() << " the score was "
+                          << curr2.getWinner().getGameScore()
+                          << " and " << curr2.getLoser().getGameScore() << std::endl;
+                myText.setString(curr2.getWinner().getName());
+                myText.setPosition(235.0f, 160.0f + 55.0f * (i+4));
+                rightColTwoTeams.push_back(myText);
+
+                rightColumnTwo.push_back(curr3.getWinner());
+                std::cout << "Round 1 right Winner is: " << curr3.getWinner().getName() << " the score was "
+                          << curr3.getWinner().getGameScore()
+                          << " and " << curr3.getLoser().getGameScore() << std::endl;
+                myText.setString(curr3.getWinner().getName());
+                myText.setPosition(235.0f, 160.0f + 55.0f * (i+6));
                 rightColTwoTeams.push_back(myText);
             }
             roundOneCalc = false;
@@ -391,6 +487,107 @@ int main()
         if (roundTwoCalc)
         {
             // PLAY ROUND 2
+            int z = 0;
+            while (z == 0)
+            {
+                Game curr(leftColumnTwo.at(0), leftColumnTwo.at(1));
+                Game curr1(leftColumnTwo.at(2), leftColumnTwo.at(3));
+                std::thread t1(execute,&curr);
+                std::thread t2(execute,&curr1);
+                Game curr2(leftColumnTwo.at(4), leftColumnTwo.at(5));
+                Game curr3(leftColumnTwo.at(6), leftColumnTwo.at(7));
+                std::thread t3(execute,&curr2);
+                std::thread t4(execute,&curr3);
+
+                t1.join();
+                t2.join();
+                t3.join();
+                t4.join();
+                leftColumnThree.push_back(curr.getWinner());
+                std::cout << "Round 2 left Winner is: " << curr.getWinner().getName() << " the score was "
+                          << curr.getWinner().getGameScore()
+                          << " and " << curr.getLoser().getGameScore() << std::endl;
+                myText.setString(curr.getWinner().getName());
+                myText.setPosition(400.0f, 220.0f + 110.0f * 0);
+                leftColThreeTeams.push_back(myText);
+
+                leftColumnThree.push_back(curr1.getWinner());
+                std::cout << "Round 2 left Winner is: " << curr1.getWinner().getName() << " the score was "
+                          << curr1.getWinner().getGameScore()
+                          << " and " << curr1.getLoser().getGameScore() << std::endl;
+                myText.setString(curr1.getWinner().getName());
+                myText.setPosition(400.0f, 220.0f + 110.0f * 2);
+                leftColThreeTeams.push_back(myText);
+
+                leftColumnThree.push_back(curr2.getWinner());
+                std::cout << "Round 2 left Winner is: " << curr2.getWinner().getName() << " the score was "
+                          << curr2.getWinner().getGameScore()
+                          << " and " << curr2.getLoser().getGameScore() << std::endl;
+                myText.setString(curr2.getWinner().getName());
+                myText.setPosition(400.0f, 220.0f + 110.0f * 4);
+                leftColThreeTeams.push_back(myText);
+
+                leftColumnThree.push_back(curr3.getWinner());
+                std::cout << "Round 2 left Winner is: " << curr3.getWinner().getName() << " the score was "
+                          << curr3.getWinner().getGameScore()
+                          << " and " << curr3.getLoser().getGameScore() << std::endl;
+                myText.setString(curr3.getWinner().getName());
+                myText.setPosition(400.0f, 220.0f + 110.0f * 6);
+                leftColThreeTeams.push_back(myText);
+                z = 1;
+            }
+
+
+            int c = 0;
+            while (z == 0)
+            {
+                Game curr(rightColumnTwo.at(0), rightColumnTwo.at(1));
+                Game curr1(rightColumnTwo.at(2), rightColumnTwo.at(3));
+                std::thread t1(execute,&curr);
+                std::thread t2(execute,&curr1);
+                Game curr2(rightColumnTwo.at(4), rightColumnTwo.at(5));
+                Game curr3(rightColumnTwo.at(6), rightColumnTwo.at(7));
+                std::thread t3(execute,&curr2);
+                std::thread t4(execute,&curr3);
+
+                t1.join();
+                t2.join();
+                t3.join();
+                t4.join();
+                rightColumnThree.push_back(curr.getWinner());
+                std::cout << "Round 2 right Winner is: " << curr.getWinner().getName() << " the score was "
+                          << curr.getWinner().getGameScore()
+                          << " and " << curr.getLoser().getGameScore() << std::endl;
+                myText.setString(curr.getWinner().getName());
+                myText.setPosition(1380.0f, 220.0f + 110.0f * 0);
+                rightColThreeTeams.push_back(myText);
+
+                rightColumnThree.push_back(curr1.getWinner());
+                std::cout << "Round 2 right Winner is: " << curr1.getWinner().getName() << " the score was "
+                          << curr1.getWinner().getGameScore()
+                          << " and " << curr1.getLoser().getGameScore() << std::endl;
+                myText.setString(curr1.getWinner().getName());
+                myText.setPosition(1380.0f, 220.0f + 110.0f * 2);
+                rightColThreeTeams.push_back(myText);
+
+                rightColumnThree.push_back(curr2.getWinner());
+                std::cout << "Round 2 right Winner is: " << curr2.getWinner().getName() << " the score was "
+                          << curr2.getWinner().getGameScore()
+                          << " and " << curr2.getLoser().getGameScore() << std::endl;
+                myText.setString(curr2.getWinner().getName());
+                myText.setPosition(1380.0f, 220.0f + 110.0f * 4);
+                rightColThreeTeams.push_back(myText);
+
+                rightColumnThree.push_back(curr3.getWinner());
+                std::cout << "Round 2 right Winner is: " << curr3.getWinner().getName() << " the score was "
+                          << curr3.getWinner().getGameScore()
+                          << " and " << curr3.getLoser().getGameScore() << std::endl;
+                myText.setString(curr3.getWinner().getName());
+                myText.setPosition(1380.0f, 220.0f + 110.0f * 6);
+                rightColThreeTeams.push_back(myText);
+                c = 1;
+            }
+
             for (int i = 0; i < leftColumnTwo.size(); i += 2)
             {
                 Game curr(leftColumnTwo.at(i), leftColumnTwo.at(i + 1));
@@ -480,6 +677,7 @@ int main()
         //calculate the overall winner
         if (champCalc)
         {
+            std::cout << "LOOK HERE CHRIS BURG " << "twos " << leftColumnFour.at(0).getPlayer(1)->getNumTwo() << "threes : " << leftColumnFour.at(0).getPlayer(1)->getNumTwo() << leftColumnFour.at(0).getPlayer(1)->getName() << std::endl;
             // PLAY CHAMPIONSHIP
             Game curr(championship.at(0), championship.at(1));
             curr.fullGameSimulation();
@@ -505,56 +703,56 @@ int main()
             losingSFName = curr.getLoser().getPlayer(2)->getName();
             losingPFName = curr.getLoser().getPlayer(3)->getName();
             losingCName = curr.getLoser().getPlayer(4)->getName();
-            winningPGpts = curr.getWinner().getPlayer(0)->getGameNumTwo() * 2 + curr.getWinner().getPlayer(0)->getGameNumThree() * 3;
-            winningPGasts = curr.getWinner().getPlayer(0)->getGameNumAssist();
-            winningPGrebs = curr.getWinner().getPlayer(0)->getGameNumRebounds();
-            winningPGstls = curr.getWinner().getPlayer(0)->getGameNumSteals();
-            winningPGblks = curr.getWinner().getPlayer(0)->getGameNumBlocks();
-            winningSGpts = curr.getWinner().getPlayer(1)->getGameNumTwo() * 2 + curr.getWinner().getPlayer(1)->getGameNumThree() * 3;
-            winningSGasts = curr.getWinner().getPlayer(1)->getGameNumAssist();
-            winningSGrebs = curr.getWinner().getPlayer(1)->getGameNumRebounds();
-            winningSGstls = curr.getWinner().getPlayer(1)->getGameNumSteals();
-            winningSGblks = curr.getWinner().getPlayer(1)->getGameNumBlocks();
-            winningSFpts = curr.getWinner().getPlayer(2)->getGameNumTwo() * 2 + curr.getWinner().getPlayer(2)->getGameNumThree() * 3;
-            winningSFasts = curr.getWinner().getPlayer(2)->getGameNumAssist();
-            winningSFrebs = curr.getWinner().getPlayer(2)->getGameNumRebounds();
-            winningSFstls = curr.getWinner().getPlayer(2)->getGameNumSteals();
-            winningSFblks = curr.getWinner().getPlayer(2)->getGameNumBlocks();
-            winningPFpts = curr.getWinner().getPlayer(3)->getGameNumTwo() * 2 + curr.getWinner().getPlayer(3)->getGameNumThree() * 3;
-            winningPFasts = curr.getWinner().getPlayer(3)->getGameNumAssist();
-            winningPFrebs = curr.getWinner().getPlayer(3)->getGameNumRebounds();
-            winningPFstls = curr.getWinner().getPlayer(3)->getGameNumSteals();
-            winningPFblks = curr.getWinner().getPlayer(3)->getGameNumBlocks();
-            winningCpts = curr.getWinner().getPlayer(4)->getGameNumTwo() * 2 + curr.getWinner().getPlayer(4)->getGameNumThree() * 3;
-            winningCasts = curr.getWinner().getPlayer(4)->getGameNumAssist();
-            winningCrebs = curr.getWinner().getPlayer(4)->getGameNumRebounds();
-            winningCstls = curr.getWinner().getPlayer(4)->getGameNumSteals();
-            winningCblks = curr.getWinner().getPlayer(4)->getGameNumBlocks();
-            losingPGpts = curr.getLoser().getPlayer(0)->getGameNumTwo() * 2 + curr.getLoser().getPlayer(0)->getGameNumThree() * 3;
-            losingPGasts = curr.getLoser().getPlayer(0)->getGameNumAssist();
-            losingPGrebs = curr.getLoser().getPlayer(0)->getGameNumRebounds();
-            losingPGstls = curr.getLoser().getPlayer(0)->getGameNumSteals();
-            losingPGblks = curr.getLoser().getPlayer(0)->getGameNumBlocks();
-            losingSGpts = curr.getLoser().getPlayer(1)->getGameNumTwo() * 2 + curr.getLoser().getPlayer(1)->getGameNumThree() * 3;
-            losingSGasts = curr.getLoser().getPlayer(1)->getGameNumAssist();
-            losingSGrebs = curr.getLoser().getPlayer(1)->getGameNumRebounds();
-            losingSGstls = curr.getLoser().getPlayer(1)->getGameNumSteals();
-            losingSGblks = curr.getLoser().getPlayer(1)->getGameNumBlocks();
-            losingSFpts = curr.getLoser().getPlayer(2)->getGameNumTwo() * 2 + curr.getLoser().getPlayer(2)->getGameNumThree() * 3;
-            losingSFasts = curr.getLoser().getPlayer(2)->getGameNumAssist();
-            losingSFrebs = curr.getLoser().getPlayer(2)->getGameNumRebounds();
-            losingSFstls = curr.getLoser().getPlayer(2)->getGameNumSteals();
-            losingSFblks = curr.getLoser().getPlayer(2)->getGameNumBlocks();
-            losingPFpts = curr.getLoser().getPlayer(3)->getGameNumTwo() * 2 + curr.getLoser().getPlayer(3)->getGameNumThree() * 3;
-            losingPFasts = curr.getLoser().getPlayer(3)->getGameNumAssist();
-            losingPFrebs = curr.getLoser().getPlayer(3)->getGameNumRebounds();
-            losingPFstls = curr.getLoser().getPlayer(3)->getGameNumSteals();
-            losingPFblks = curr.getLoser().getPlayer(3)->getGameNumBlocks();
-            losingCpts = curr.getLoser().getPlayer(4)->getGameNumTwo() * 2 + curr.getLoser().getPlayer(4)->getGameNumThree() * 3;
-            losingCasts = curr.getLoser().getPlayer(4)->getGameNumAssist();
-            losingCrebs = curr.getLoser().getPlayer(4)->getGameNumRebounds();
-            losingCstls = curr.getLoser().getPlayer(4)->getGameNumSteals();
-            losingCblks = curr.getLoser().getPlayer(4)->getGameNumBlocks();
+            winningPGpts = curr.getWinner().getPlayer(0)->getNumTwo() * 2 + curr.getWinner().getPlayer(0)->getNumThree() * 3;
+            winningPGasts = curr.getWinner().getPlayer(0)->getNumAssist();
+            winningPGrebs = curr.getWinner().getPlayer(0)->getNumRebounds();
+            winningPGstls = curr.getWinner().getPlayer(0)->getNumSteals();
+            winningPGblks = curr.getWinner().getPlayer(0)->getNumBlocks();
+            winningSGpts = curr.getWinner().getPlayer(1)->getNumTwo() * 2 + curr.getWinner().getPlayer(1)->getNumThree() * 3;
+            winningSGasts = curr.getWinner().getPlayer(1)->getNumAssist();
+            winningSGrebs = curr.getWinner().getPlayer(1)->getNumRebounds();
+            winningSGstls = curr.getWinner().getPlayer(1)->getNumSteals();
+            winningSGblks = curr.getWinner().getPlayer(1)->getNumBlocks();
+            winningSFpts = curr.getWinner().getPlayer(2)->getNumTwo() * 2 + curr.getWinner().getPlayer(2)->getNumThree() * 3;
+            winningSFasts = curr.getWinner().getPlayer(2)->getNumAssist();
+            winningSFrebs = curr.getWinner().getPlayer(2)->getNumRebounds();
+            winningSFstls = curr.getWinner().getPlayer(2)->getNumSteals();
+            winningSFblks = curr.getWinner().getPlayer(2)->getNumBlocks();
+            winningPFpts = curr.getWinner().getPlayer(3)->getNumTwo() * 2 + curr.getWinner().getPlayer(3)->getNumThree() * 3;
+            winningPFasts = curr.getWinner().getPlayer(3)->getNumAssist();
+            winningPFrebs = curr.getWinner().getPlayer(3)->getNumRebounds();
+            winningPFstls = curr.getWinner().getPlayer(3)->getNumSteals();
+            winningPFblks = curr.getWinner().getPlayer(3)->getNumBlocks();
+            winningCpts = curr.getWinner().getPlayer(4)->getNumTwo() * 2 + curr.getWinner().getPlayer(0)->getNumThree() * 3;
+            winningCasts = curr.getWinner().getPlayer(4)->getNumAssist();
+            winningCrebs = curr.getWinner().getPlayer(4)->getNumRebounds();
+            winningCstls = curr.getWinner().getPlayer(4)->getNumSteals();
+            winningCblks = curr.getWinner().getPlayer(4)->getNumBlocks();
+            losingPGpts = curr.getLoser().getPlayer(0)->getNumTwo() * 2 + curr.getWinner().getPlayer(0)->getNumThree() * 3;
+            losingPGasts = curr.getLoser().getPlayer(0)->getNumAssist();
+            losingPGrebs = curr.getLoser().getPlayer(0)->getNumRebounds();
+            losingPGstls = curr.getLoser().getPlayer(0)->getNumSteals();
+            losingPGblks = curr.getLoser().getPlayer(0)->getNumBlocks();
+            losingSGpts = curr.getLoser().getPlayer(1)->getNumTwo() * 2 + curr.getWinner().getPlayer(1)->getNumThree() * 3;
+            losingSGasts = curr.getLoser().getPlayer(1)->getNumAssist();
+            losingSGrebs = curr.getLoser().getPlayer(1)->getNumRebounds();
+            losingSGstls = curr.getLoser().getPlayer(1)->getNumSteals();
+            losingSGblks = curr.getLoser().getPlayer(1)->getNumBlocks();
+            losingSFpts = curr.getLoser().getPlayer(2)->getNumTwo() * 2 + curr.getWinner().getPlayer(2)->getNumThree() * 3;
+            losingSFasts = curr.getLoser().getPlayer(2)->getNumAssist();
+            losingSFrebs = curr.getLoser().getPlayer(2)->getNumRebounds();
+            losingSFstls = curr.getLoser().getPlayer(2)->getNumSteals();
+            losingSFblks = curr.getLoser().getPlayer(2)->getNumBlocks();
+            losingPFpts = curr.getLoser().getPlayer(3)->getNumTwo() * 2 + curr.getWinner().getPlayer(3)->getNumThree() * 3;
+            losingPFasts = curr.getLoser().getPlayer(3)->getNumAssist();
+            losingPFrebs = curr.getLoser().getPlayer(3)->getNumRebounds();
+            losingPFstls = curr.getLoser().getPlayer(3)->getNumSteals();
+            losingPFblks = curr.getLoser().getPlayer(3)->getNumBlocks();
+            losingCpts = curr.getLoser().getPlayer(4)->getNumTwo() * 2 + curr.getWinner().getPlayer(0)->getNumThree() * 3;
+            losingCasts = curr.getLoser().getPlayer(4)->getNumAssist();
+            losingCrebs = curr.getLoser().getPlayer(4)->getNumRebounds();
+            losingCstls = curr.getLoser().getPlayer(4)->getNumSteals();
+            losingCblks = curr.getLoser().getPlayer(4)->getNumBlocks();
             champCalc = false;
         }
         //draw the screen
@@ -614,7 +812,7 @@ int main()
             //drawing box score
             window.draw(boxScoreText);
             boxScoreText.setString("BOX SCORE");
-            boxScoreText.setPosition(700, 100);
+            boxScoreText.setPosition(750, 100);
             boxScoreText.setCharacterSize(100);
             window.draw(boxScoreText); //draw title
             boxScoreText.setCharacterSize(50);
@@ -632,34 +830,34 @@ int main()
             window.draw(boxScoreText); //draw losing score
             boxScoreText.setCharacterSize(25);
             boxScoreText.setString(winningPGName);
-            boxScoreText.setPosition(370, 400);
+            boxScoreText.setPosition(420, 400);
             window.draw(boxScoreText); //draw PG name on winning team
             boxScoreText.setString(winningSGName);
-            boxScoreText.setPosition(370, 480);
+            boxScoreText.setPosition(420, 480);
             window.draw(boxScoreText); //draw SG name on winning team
             boxScoreText.setString(winningSFName);
-            boxScoreText.setPosition(370, 560);
+            boxScoreText.setPosition(420, 560);
             window.draw(boxScoreText); //draw SF name on winning team
             boxScoreText.setString(winningPFName);
-            boxScoreText.setPosition(370, 640);
+            boxScoreText.setPosition(420, 640);
             window.draw(boxScoreText); //draw PF name on winning team
             boxScoreText.setString(winningCName);
-            boxScoreText.setPosition(370, 720);
+            boxScoreText.setPosition(420, 720);
             window.draw(boxScoreText); //draw C name on winning team
             boxScoreText.setString(losingPGName);
-            boxScoreText.setPosition(1000, 400);
+            boxScoreText.setPosition(1050, 400);
             window.draw(boxScoreText); //draw PG name on losing team
             boxScoreText.setString(losingSGName);
-            boxScoreText.setPosition(1000, 480);
+            boxScoreText.setPosition(1050, 480);
             window.draw(boxScoreText); //draw SG name on losing team
             boxScoreText.setString(losingSFName);
-            boxScoreText.setPosition(1000, 560);
+            boxScoreText.setPosition(1050, 560);
             window.draw(boxScoreText); //draw SF name on losing team
             boxScoreText.setString(losingPFName);
-            boxScoreText.setPosition(1000, 640);
+            boxScoreText.setPosition(1050, 640);
             window.draw(boxScoreText); //draw PF name on losing team
             boxScoreText.setString(losingCName);
-            boxScoreText.setPosition(1000, 720);
+            boxScoreText.setPosition(1050, 720);
             window.draw(boxScoreText); //draw C name on losing team
             boxScoreText.setString(std::to_string(
                     winningPGpts) +
@@ -667,7 +865,7 @@ int main()
                                    std::to_string(winningPGrebs) + " rebs, " +
                                    std::to_string(winningPGstls) + " stls, " +
                                    std::to_string(winningPGblks) + " blks");
-            boxScoreText.setPosition(370, 440);
+            boxScoreText.setPosition(420, 440);
             window.draw(boxScoreText); //draw PG stats on winning team
             boxScoreText.setString(std::to_string(
                     winningSGpts) +
@@ -675,7 +873,7 @@ int main()
                                    std::to_string(winningSGrebs) + " rebs, " +
                                    std::to_string(winningSGstls) + " stls, " +
                                    std::to_string(winningSGblks) + " blks");
-            boxScoreText.setPosition(370, 520);
+            boxScoreText.setPosition(420, 520);
             window.draw(boxScoreText); //draw SG stats on winning team
             boxScoreText.setString(std::to_string(
                     winningSFpts) +
@@ -683,7 +881,7 @@ int main()
                                    std::to_string(winningSFrebs) + " rebs, " +
                                    std::to_string(winningSFstls) + " stls, " +
                                    std::to_string(winningSFblks) + " blks");
-            boxScoreText.setPosition(370, 600);
+            boxScoreText.setPosition(420, 600);
             window.draw(boxScoreText); //draw SF stats on winning team
             boxScoreText.setString(std::to_string(
                     winningPFpts) +
@@ -691,7 +889,7 @@ int main()
                                    std::to_string(winningPFrebs) + " rebs, " +
                                    std::to_string(winningPFstls) + " stls, " +
                                    std::to_string(winningPFblks) + " blks");
-            boxScoreText.setPosition(370, 680);
+            boxScoreText.setPosition(420, 680);
             window.draw(boxScoreText); //draw PF stats on winning team
             boxScoreText.setString(std::to_string(
                     winningCpts) +
@@ -699,7 +897,7 @@ int main()
                                    std::to_string(winningCrebs) + " rebs, " +
                                    std::to_string(winningCstls) + " stls, " +
                                    std::to_string(winningCblks) + " blks");
-            boxScoreText.setPosition(370, 760);
+            boxScoreText.setPosition(420, 760);
             window.draw(boxScoreText); //draw C stats on winning team
             boxScoreText.setString(std::to_string(
                     losingPGpts) +
@@ -707,7 +905,7 @@ int main()
                                    std::to_string(losingPGrebs) + " rebs, " +
                                    std::to_string(losingPGstls) + " stls, " +
                                    std::to_string(losingPGblks) + " blks");
-            boxScoreText.setPosition(1000, 440);
+            boxScoreText.setPosition(1050, 440);
             window.draw(boxScoreText); //draw PG stats on losing team
             boxScoreText.setString(std::to_string(
                     losingSGpts) +
@@ -715,7 +913,7 @@ int main()
                                    std::to_string(losingSGrebs) + " rebs, " +
                                    std::to_string(losingSGstls) + " stls, " +
                                    std::to_string(losingSGblks) + " blks");
-            boxScoreText.setPosition(1000, 520);
+            boxScoreText.setPosition(1050, 520);
             window.draw(boxScoreText); //draw SG stats on losing team
             boxScoreText.setString(std::to_string(
                     losingSFpts) +
@@ -723,7 +921,7 @@ int main()
                                    std::to_string(losingSFpts) + " rebs, " +
                                    std::to_string(losingSFstls) + " stls, " +
                                    std::to_string(losingSFblks) + " blks");
-            boxScoreText.setPosition(1000, 600);
+            boxScoreText.setPosition(1050, 600);
             window.draw(boxScoreText); //draw SF stats on losing team
             boxScoreText.setString(std::to_string(
                     losingPFpts) +
@@ -731,7 +929,7 @@ int main()
                                    std::to_string(losingPFrebs) + " rebs, " +
                                    std::to_string(losingPFstls) + " stls, " +
                                    std::to_string(losingPFblks) + " blks");
-            boxScoreText.setPosition(1000, 680);
+            boxScoreText.setPosition(1050, 680);
             window.draw(boxScoreText); //draw PF stats on losing team
             boxScoreText.setString(std::to_string(
                     losingCpts) +
@@ -739,11 +937,12 @@ int main()
                                    std::to_string(losingCrebs) + " rebs, " +
                                    std::to_string(losingCstls) + " stls, " +
                                    std::to_string(losingCblks) + " blks");
-            boxScoreText.setPosition(1000, 760);
+            boxScoreText.setPosition(1050, 760);
             window.draw(boxScoreText); //draw C stats on losing team
         }
 
         window.display();
     }
+    myfile.close();
     return 0;
 }
