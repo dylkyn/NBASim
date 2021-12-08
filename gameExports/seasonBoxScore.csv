@@ -1,218 +1,225 @@
 Season Box Score
-Celtics
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Jrue Holiday,27,9,0.5625,0,0,2,2,1
-Terry Rozier,23,5,0.555556,4,0.444444,9,4,5
-Bruno Fernando,28,8,0.571429,2,0.5,2,4,1
-Kelly Olynyk,34,2,0.333333,14,0.777778,6,1,2
-Derrick Favors,26,0,0,13,0.65,5,4,4
-Wizards
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Avery Bradley,15,5,0.3125,0,0,6,1,1
-Jalen Suggs,32,8,0.666667,4,0.5,6,2,2
-Lugentz Dort,17,5,0.384615,1,0.333333,3,4,3
-Aaron Gordon,23,1,0.25,10,0.666667,4,3,4
-Nerlens Noel,32,0,0,16,0.695652,3,2,3
-Kings
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Fred Vanfleet,15,5,0.416667,0,0,1,0,0
-CJ McCollum,29,7,0.777778,4,0.666667,7,2,7
-Kelly Oubre,19,3,0.333333,5,0.454545,6,4,1
-Larry Nance,35,1,0.142857,16,0.695652,2,5,3
-Hassan Whiteside,32,0,0,16,0.727273,4,1,1
-Timberwolves
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Fred Vanfleet,31,9,0.642857,2,0.5,2,2,0
-CJ McCollum,8,2,0.25,1,0.2,9,1,4
-Kelly Oubre,30,6,0.5,6,0.5,5,4,2
-Larry Nance,29,3,0.272727,10,0.769231,4,2,1
-Hassan Whiteside,32,0,0,16,0.695652,4,2,1
-Hawks
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-De'Aaron Fox,27,7,0.466667,3,0.75,3,3,1
-Donovan Mitchell,26,6,0.75,4,0.571429,12,0,3
-Norman Powell,40,10,0.588235,5,0.454545,7,4,2
-Zion Williamson,39,7,0.7,9,0.75,3,1,0
-Serge Ibaka,17,1,0.5,7,0.411765,2,2,0
-Pelicans
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Mike Conley,16,4,0.4,2,0.333333,6,2,0
-Jordan Poole,29,7,0.583333,4,0.8,9,3,2
-Dorian Finney-Smith,29,9,0.529412,1,0.142857,5,5,3
-Marcus Morris,35,7,0.583333,7,0.538462,4,0,4
-Dwight Howard,23,1,0.333333,10,0.555556,4,3,1
-Nuggets
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Russell Westbrook,18,6,0.3,0,0,5,0,2
-Zach Lavine,27,9,0.692308,0,0,5,3,0
-Bojan Bogdanovic,6,0,0,3,0.25,6,3,3
-Nemanja Bjelica,23,1,0.142857,10,0.833333,1,2,2
-Brook Lopez,34,0,0,17,0.653846,2,2,0
-Blazers
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Mike Conley,24,8,0.470588,0,0,7,1,1
-Jordan Poole,14,4,0.444444,1,0.166667,6,1,1
-Dorian Finney-Smith,26,4,0.333333,7,0.777778,3,2,4
-Marcus Morris,32,6,0.545455,7,0.538462,6,0,5
-Dwight Howard,35,1,0.5,16,0.842105,4,3,2
-Cavaliers
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Dennis Schroder,40,12,0.545455,2,0.285714,6,1,0
-Lou Williams,28,8,0.666667,2,0.5,8,2,2
-Miles Bridges,23,5,0.384615,4,0.5,1,5,6
-John Collins,24,4,0.8,6,0.545455,4,1,5
-Kevon Looney,24,0,0,12,0.6,4,3,1
-Lakers
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Mike Conley,26,8,0.533333,1,0.2,8,3,1
-Jordan Poole,26,6,0.666667,4,1,7,4,2
-Dorian Finney-Smith,23,5,0.333333,4,0.5,4,3,1
-Marcus Morris,30,4,0.666667,9,0.5625,3,2,4
-Dwight Howard,27,1,0.5,12,0.521739,4,4,3
-76ers
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Jordan Clarkson,19,5,0.384615,2,0.333333,7,1,0
-Gary Trent Jr.,31,9,0.6,2,0.5,8,3,3
-Thanasis Antetokounmpo,16,4,0.4,2,0.181818,1,4,1
-Isaiah Jackson,27,3,0.428571,9,0.75,6,1,1
-Jusuf Nurkic,32,0,0,16,0.727273,3,5,0
-Knicks
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Markelle Fultz,25,7,0.538462,2,0.4,6,0,0
-Caris LeVert,19,5,0.833333,2,0.5,8,2,1
-Tyler Cook,26,6,0.461538,4,0.363636,4,4,1
-Draymond Green,33,5,0.384615,9,0.642857,3,4,3
-Evan Mobley,32,0,0,16,0.761905,1,2,3
-Heat
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Markelle Fultz,26,8,0.470588,1,0.142857,3,3,0
-Caris LeVert,15,3,0.75,3,0.75,8,3,1
-Tyler Cook,19,5,0.333333,2,0.25,5,2,2
-Draymond Green,30,6,0.545455,6,0.666667,7,1,2
-Evan Mobley,34,0,0,17,0.62963,2,2,0
-Mavericks
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-John Wall,36,12,0.75,0,0,6,3,0
-Luke Kennard,12,4,0.444444,0,0,7,3,4
-Kent Bazemore,19,3,0.272727,5,0.714286,3,3,4
-Darius Bazley,17,3,0.333333,4,0.444444,6,2,2
-Robin Lopez,48,0,nan,24,0.705882,2,1,2
-Buzz
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Mike Conley,31,9,0.642857,2,0.5,4,2,0
-Jordan Poole,20,6,1,1,0.25,11,2,3
-Dorian Finney-Smith,28,6,0.461538,5,0.416667,4,3,2
-Marcus Morris,34,4,0.571429,11,0.647059,4,0,0
-Dwight Howard,31,1,1,14,0.56,5,4,0
-Jazz
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Russell Westbrook,18,6,0.461538,0,0,5,4,0
-Zach Lavine,44,12,0.631579,4,0.666667,6,0,5
-Bojan Bogdanovic,18,2,0.25,6,0.6,2,2,3
-Nemanja Bjelica,28,4,0.4,8,0.571429,3,0,2
-Brook Lopez,22,0,0,11,0.611111,7,1,2
-Raptors
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-John Wall,57,17,0.586207,3,0.214286,9,2,0
-Luke Kennard,58,14,0.7,8,0.5,14,6,4
-Kent Bazemore,55,13,0.8125,8,0.470588,9,7,4
-Darius Bazley,82,14,0.736842,20,0.606061,7,7,4
-Robin Lopez,48,2,0.4,21,0.567568,10,2,4
-Grizzlies
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Avery Bradley,62,18,0.486486,4,0.307692,12,3,1
-Jalen Suggs,55,15,0.6,5,0.384615,12,8,4
-Lugentz Dort,61,15,0.555556,8,0.444444,10,12,4
-Aaron Gordon,61,9,0.529412,17,0.607143,7,6,3
-Nerlens Noel,34,0,0,17,0.62963,7,6,4
-Spurs
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Dennis Schroder,48,14,0.56,3,0.25,14,3,1
-Lou Williams,67,19,0.59375,5,0.555556,19,6,7
-Miles Bridges,57,13,0.5,9,0.5,11,6,3
-John Collins,67,13,0.619048,14,0.666667,9,6,6
-Kevon Looney,46,0,0,23,0.605263,6,6,0
-Bulls
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Mike Conley,75,21,0.636364,6,0.428571,15,6,0
-Jordan Poole,54,14,0.7,6,0.857143,15,8,7
-Dorian Finney-Smith,63,17,0.53125,6,0.3,6,6,2
-Marcus Morris,57,7,0.411765,18,0.9,11,8,6
-Dwight Howard,53,1,0.142857,25,0.694444,5,6,5
-Rockets
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Jordan Clarkson,28,8,0.32,2,0.25,8,5,2
-Gary Trent Jr.,56,16,0.64,4,0.666667,14,2,8
-Thanasis Antetokounmpo,72,18,0.580645,9,0.391304,5,7,5
-Isaiah Jackson,46,8,0.380952,11,0.52381,11,7,6
-Jusuf Nurkic,55,1,0.2,26,0.634146,10,1,2
-Warriors
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Avery Bradley,59,17,0.515152,4,0.307692,9,2,0
-Jalen Suggs,45,13,0.65,3,0.375,18,3,11
-Lugentz Dort,46,10,0.322581,8,0.571429,9,6,8
-Aaron Gordon,64,8,0.5,20,0.666667,7,5,6
-Nerlens Noel,56,0,0,28,0.7,11,3,1
-Pistons
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Markelle Fultz,44,12,0.6,4,0.5,14,8,0
-Caris LeVert,47,13,0.65,4,0.666667,22,6,3
-Tyler Cook,71,19,0.791667,7,0.466667,15,7,3
-Draymond Green,84,8,0.5,30,0.714286,0,4,9
-Evan Mobley,62,0,0,31,0.632653,15,5,1
-Ramblin' Wreck
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Mike Conley,47,15,0.535714,1,0.142857,10,2,0
-Jordan Poole,57,17,0.566667,3,0.272727,12,5,7
-Dorian Finney-Smith,45,7,0.388889,12,0.48,12,6,1
-Marcus Morris,65,9,0.5,19,0.904762,15,5,4
-Dwight Howard,67,1,1,32,0.680851,8,9,4
-Suns
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Fred Vanfleet,89,25,0.480769,7,0.5,11,4,1
-CJ McCollum,61,15,0.428571,8,0.5,21,5,10
-Kelly Oubre,77,17,0.515152,13,0.5,19,7,5
-Larry Nance,104,22,0.594595,19,0.5,12,9,11
-Hassan Whiteside,77,1,0.25,37,0.685185,13,10,2
-Pacers
-Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Fred Vanfleet,63,19,0.558824,3,0.333333,21,5,0
-CJ McCollum,80,22,0.647059,7,0.4375,19,8,5
-Kelly Oubre,75,15,0.394737,15,0.5,11,10,7
-Larry Nance,105,19,0.633333,24,0.648649,9,12,8
-Hassan Whiteside,102,0,0,51,0.708333,15,16,5
 Clippers
 Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Jordan Clarkson,68,22,0.488889,1,0.1,10,2,0
-Gary Trent Jr.,94,30,0.75,2,0.2,22,5,5
-Thanasis Antetokounmpo,109,25,0.520833,17,0.53125,11,6,4
-Isaiah Jackson,117,21,0.617647,27,0.658537,17,10,7
-Jusuf Nurkic,52,0,0,26,0.565217,18,13,5
+Avery Bradley,11,3,0.375,1,0.166667,8,1,0
+Jalen Suggs,18,2,0.25,6,0.545455,5,5,0
+Lugentz Dort,17,1,0.5,7,0.411765,2,1,3
+Aaron Gordon,26,0,0,13,0.565217,4,4,3
+Nerlens Noel,33,1,0.5,15,0.652174,2,6,3
+Timberwolves
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Fred Vanfleet,37,1,0.166667,17,0.73913,4,3,2
+CJ McCollum,39,7,0.583333,9,0.9,9,3,0
+Kelly Oubre,16,0,nan,8,0.615385,6,4,3
+Larry Nance,32,6,0.666667,7,0.636364,7,4,2
+Hassan Whiteside,22,0,0,11,0.611111,11,6,3
+Kings
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Jordan Clarkson,5,1,0.142857,1,0.5,6,0,3
+Gary Trent Jr.,27,7,0.636364,3,0.5,6,0,1
+Thanasis Antetokounmpo,16,0,0,8,0.421053,6,3,2
+Isaiah Jackson,40,0,0,20,0.769231,0,3,1
+Jusuf Nurkic,40,0,0,20,0.8,1,3,1
+Suns
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Fred Vanfleet,5,1,0.142857,1,0.5,6,0,3
+CJ McCollum,27,7,0.636364,3,0.5,6,0,1
+Kelly Oubre,16,0,0,8,0.421053,6,3,2
+Larry Nance,40,0,0,20,0.769231,0,3,1
+Hassan Whiteside,40,0,0,20,0.8,1,3,1
 Hornets
 Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Jamal Murray,57,17,0.361702,3,0.25,21,9,0
-Klay Thompson,70,22,0.666667,2,0.285714,25,6,9
-Dillon Brooks,79,19,0.487179,11,0.392857,14,7,3
-Tobias Harris,112,16,0.64,32,0.727273,6,11,6
-Andre Drummond,102,0,0,51,0.728571,7,14,7
-Bucks
+Kyle Lowry,41,3,0.75,16,0.695652,5,2,1
+Landry Shamet,32,0,0,16,0.842105,5,1,2
+Danny Green,21,3,0.6,6,0.545455,11,2,4
+Udonis Haslem,26,6,0.75,4,0.363636,7,2,1
+Tacko Fall,22,0,nan,11,0.55,9,5,3
+Jazz
 Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Jordan Clarkson,110,32,0.5,7,0.333333,27,9,2
-Gary Trent Jr.,138,40,0.689655,9,0.529412,29,9,11
-Thanasis Antetokounmpo,138,32,0.653061,21,0.552632,13,14,7
-Isaiah Jackson,96,10,0.37037,33,0.6875,23,11,10
-Jusuf Nurkic,111,3,0.333333,51,0.62963,18,12,7
-Thunder
+John Wall,23,7,0.466667,1,0.25,3,1,2
+Luke Kennard,30,8,0.533333,3,0.333333,9,2,1
+Kent Bazemore,19,3,0.6,5,0.277778,4,4,3
+Darius Bazley,18,0,nan,9,0.692308,1,1,7
+Robin Lopez,22,0,0,11,0.55,5,4,6
+Spurs
 Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Shai Gilgeous-Alexander,122,38,0.567164,4,0.210526,26,9,0
-Austin Rivers,74,20,0.540541,7,0.7,31,9,7
-Otto Porter Jr.,125,25,0.520833,25,0.510204,14,6,15
-Thaddeus Young,150,22,0.578947,42,0.711864,15,11,15
-DeAndre Jordan,108,0,0,54,0.692308,19,18,7
+Fred Vanfleet,17,5,0.384615,1,0.333333,8,4,1
+CJ McCollum,8,0,0,4,0.363636,4,0,0
+Kelly Oubre,20,0,0,10,0.625,6,3,0
+Larry Nance,34,2,0.5,14,0.777778,4,4,2
+Hassan Whiteside,35,1,0.333333,16,0.761905,0,3,3
+Ramblin' Wreck
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Mike Conley,17,5,0.384615,1,0.25,7,1,3
+Jordan Poole,15,1,0.111111,6,0.6,1,1,0
+Dorian Finney-Smith,16,0,0,8,0.421053,1,2,1
+Marcus Morris,22,0,0,11,0.611111,3,3,5
+Dwight Howard,22,0,0,11,0.55,2,1,2
+Heat
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Russell Westbrook,4,0,0,2,0.285714,5,5,2
+Zach Lavine,12,2,0.5,3,0.75,5,2,1
+Bojan Bogdanovic,30,2,0.666667,12,0.521739,1,9,1
+Nemanja Bjelica,26,0,0,13,0.5,1,2,4
+Brook Lopez,30,0,0,15,0.714286,5,2,5
+Lakers
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Fred Vanfleet,33,5,0.555556,9,0.818182,5,1,2
+CJ McCollum,35,5,0.555556,10,0.769231,5,1,1
+Kelly Oubre,26,2,0.666667,10,0.625,6,3,3
+Larry Nance,24,4,0.307692,6,0.4,11,5,2
+Hassan Whiteside,16,0,nan,8,0.571429,6,3,0
+Cavaliers
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Jamal Murray,19,1,0.166667,8,0.5,8,1,2
+Klay Thompson,38,2,0.333333,16,0.842105,6,1,0
+Dillon Brooks,34,2,1,14,0.777778,6,6,3
+Tobias Harris,21,5,0.555556,3,0.6,6,1,6
+Andre Drummond,24,0,nan,12,0.545455,12,3,2
 Magic
 Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
-Avery Bradley,169,51,0.6375,8,0.363636,31,7,0
-Jalen Suggs,121,33,0.6875,11,0.6875,36,4,21
-Lugentz Dort,146,34,0.492754,22,0.488889,30,13,7
-Aaron Gordon,168,18,0.409091,57,0.74026,25,18,13
-Nerlens Noel,137,1,0.2,67,0.614679,28,17,7
+Avery Bradley,9,3,0.3,0,0,5,3,0
+Jalen Suggs,14,2,0.4,4,0.363636,2,3,0
+Lugentz Dort,24,0,0,12,0.666667,2,2,1
+Aaron Gordon,22,0,0,11,0.5,1,4,4
+Nerlens Noel,26,0,nan,13,0.619048,1,3,3
+Buzz
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Fred Vanfleet,17,5,0.5,1,0.333333,10,0,1
+CJ McCollum,22,2,0.222222,8,0.533333,3,2,0
+Kelly Oubre,27,1,0.2,12,0.521739,3,8,2
+Larry Nance,20,0,nan,10,0.588235,3,3,4
+Hassan Whiteside,29,1,0.5,13,0.684211,2,6,1
+Raptors
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Mike Conley,7,1,0.142857,2,0.4,9,3,2
+Jordan Poole,11,1,0.25,4,0.307692,2,4,0
+Dorian Finney-Smith,32,0,0,16,0.666667,2,3,1
+Marcus Morris,24,0,0,12,0.545455,1,3,6
+Dwight Howard,34,0,0,17,0.73913,3,5,2
+Grizzlies
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Mike Conley,32,2,0.333333,13,0.722222,7,0,3
+Jordan Poole,30,4,0.571429,9,0.692308,6,2,0
+Dorian Finney-Smith,18,4,0.571429,3,0.375,6,4,2
+Marcus Morris,35,7,0.583333,7,0.875,10,6,7
+Dwight Howard,32,0,nan,16,0.666667,11,2,3
+76ers
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Jordan Clarkson,16,4,0.444444,2,0.666667,3,0,0
+Gary Trent Jr.,24,4,0.571429,6,0.428571,6,1,0
+Thanasis Antetokounmpo,20,0,0,10,0.384615,1,5,0
+Isaiah Jackson,35,1,0.5,16,0.8,0,5,5
+Jusuf Nurkic,27,1,0.333333,12,0.75,6,3,1
+Wizards
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Markelle Fultz,19,5,0.384615,2,0.5,17,6,2
+Caris LeVert,52,10,0.5,11,0.52381,12,3,1
+Tyler Cook,56,2,0.181818,25,0.581395,6,8,3
+Draymond Green,55,1,0.2,26,0.684211,6,10,13
+Evan Mobley,77,1,0.5,37,0.755102,8,12,1
+Thunder
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+De'Aaron Fox,66,2,0.25,30,0.769231,10,5,3
+Donovan Mitchell,80,18,0.692308,13,0.619048,17,1,2
+Norman Powell,57,7,0.466667,18,0.818182,19,5,7
+Zion Williamson,40,8,0.444444,8,0.444444,12,7,8
+Serge Ibaka,54,0,nan,27,0.692308,16,10,2
+Bulls
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Mike Conley,26,8,0.5,1,0.125,21,6,2
+Jordan Poole,56,8,0.470588,16,0.5,12,6,2
+Dorian Finney-Smith,52,4,0.4,20,0.588235,3,10,5
+Marcus Morris,60,0,0,30,0.75,4,4,8
+Dwight Howard,62,2,0.5,28,0.666667,7,4,4
+Hawks
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Cade Cunningham,64,6,0.375,23,0.676471,14,6,5
+Josh Giddey,72,12,0.75,18,0.782609,9,3,0
+Tony Snell,47,5,0.555556,16,0.666667,21,2,5
+Jared Vanderbilt,60,12,0.571429,12,0.6,17,8,10
+Al Horford,62,0,0,31,0.738095,15,6,2
+Blazers
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Mike Conley,29,9,0.375,1,0.125,20,8,3
+Jordan Poole,52,8,0.571429,14,0.451613,3,3,0
+Dorian Finney-Smith,33,1,0.142857,15,0.441176,7,8,5
+Marcus Morris,53,1,0.25,25,0.694444,8,14,7
+Dwight Howard,59,1,0.166667,28,0.666667,5,13,6
+Pistons
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Russell Westbrook,58,6,0.461538,20,0.588235,14,3,4
+Zach Lavine,66,10,0.666667,18,0.782609,9,6,1
+Bojan Bogdanovic,72,14,0.823529,15,0.681818,15,4,11
+Nemanja Bjelica,37,7,0.4375,8,0.32,27,5,10
+Brook Lopez,50,0,0,25,0.641026,19,8,4
+Celtics
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Shai Gilgeous-Alexander,72,6,0.5,27,0.675,7,5,2
+Austin Rivers,64,12,0.666667,14,0.56,14,3,2
+Otto Porter Jr.,46,2,0.333333,20,0.8,22,6,5
+Thaddeus Young,53,11,0.52381,10,0.5,21,8,11
+DeAndre Jordan,42,0,0,21,0.552632,15,6,6
+Knicks
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+De'Aaron Fox,45,3,0.1875,18,0.642857,11,4,3
+Donovan Mitchell,101,19,0.678571,22,0.785714,14,4,1
+Norman Powell,74,10,0.833333,22,0.733333,20,6,5
+Zion Williamson,54,12,0.6,9,0.642857,18,12,11
+Serge Ibaka,38,0,nan,19,0.633333,14,4,2
+Mavericks
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Dennis Schroder,85,7,0.368421,32,0.627451,17,6,8
+Lou Williams,92,16,0.592593,22,0.647059,26,2,1
+Miles Bridges,96,12,0.705882,30,0.697674,25,9,10
+John Collins,77,13,0.541667,19,0.633333,26,18,9
+Kevon Looney,80,0,0,40,0.645161,28,11,3
+Pacers
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Jordan Clarkson,83,7,0.466667,31,0.607843,18,9,4
+Gary Trent Jr.,107,15,0.681818,31,0.673913,26,2,1
+Thanasis Antetokounmpo,108,12,0.631579,36,0.837209,28,12,6
+Isaiah Jackson,88,16,0.457143,20,0.645161,29,11,13
+Jusuf Nurkic,70,0,0,35,0.777778,26,15,8
+Nuggets
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+John Wall,87,9,0.45,30,0.588235,23,3,9
+Luke Kennard,96,16,0.695652,24,0.666667,22,8,1
+Kent Bazemore,90,14,0.736842,24,0.55814,26,8,11
+Darius Bazley,92,16,0.64,22,0.564103,18,11,15
+Robin Lopez,78,0,nan,39,0.735849,24,16,11
+Rockets
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Avery Bradley,101,5,0.384615,43,0.693548,25,3,7
+Jalen Suggs,120,20,0.689655,30,0.714286,15,9,3
+Lugentz Dort,84,8,0.727273,30,0.697674,27,8,9
+Aaron Gordon,75,19,0.59375,9,0.6,20,14,10
+Nerlens Noel,86,0,nan,43,0.693548,34,10,5
+Bucks
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Mike Conley,123,13,0.565217,42,0.65625,35,7,10
+Jordan Poole,134,22,0.758621,34,0.666667,22,6,1
+Dorian Finney-Smith,129,13,0.565217,45,0.762712,33,10,13
+Marcus Morris,110,22,0.536585,22,0.578947,42,21,14
+Dwight Howard,112,0,0,56,0.682927,31,17,9
+Nets
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Jrue Holiday,115,11,0.55,41,0.561644,26,7,5
+Terry Rozier,178,30,0.697674,44,0.77193,29,8,3
+Bruno Fernando,128,16,0.761905,40,0.701754,26,22,14
+Kelly Olynyk,123,25,0.657895,24,0.571429,37,15,19
+Derrick Favors,82,0,nan,41,0.672131,41,13,8
+Warriors
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Markelle Fultz,159,11,0.423077,63,0.677419,32,9,7
+Caris LeVert,201,33,0.785714,51,0.71831,41,6,1
+Tyler Cook,169,21,0.7,53,0.80303,39,7,14
+Draymond Green,147,31,0.645833,27,0.519231,43,26,12
+Evan Mobley,114,0,0,57,0.662791,48,17,8
+Pelicans
+Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks 
+Mike Conley,139,9,0.45,56,0.636364,28,10,10
+Jordan Poole,205,39,0.75,44,0.77193,43,6,5
+Dorian Finney-Smith,178,24,0.631579,53,0.757143,43,28,18
+Marcus Morris,170,38,0.655172,28,0.538462,41,22,18
+Dwight Howard,112,0,0,56,0.708861,59,11,12
