@@ -5,10 +5,15 @@ Last Date Modified : 12-7-2021
 Description :
 	Create an NBA simulation with 32 teams including the 30 professional NBA teams along with
  Buzz and Ramblin' Wreck. This file randomly creates our teams with players with random names
- and attributes. Then it simulates the actual season using Open MP to increase the speed of
- games and SFML to show the graphics. The graphics consist of displaying the team names that
- are continuing through each round of the tournament on the bracket, as well as a Box Score
- of the final game with the players outputs.
+ and attributes. Then it simulates the actual season using multithreading to increase the speed of
+ games and SFML to show the graphics. Multithreading is used in the first couple rounds of simulation.
+ Individual games are given their own thread to run a game simulation on.The graphics consist of
+ displaying the team names that are continuing through each round of the tournament on the bracket, as
+ well as a Box Score of the final game with the players outputs. In order to run the game, the user
+ clicks enter (return) to simulate the next round of the tournament. At the end, a winner is displayed.
+ After a winner is chosen, if the enter (return) button is pressed again, the game stats of the championship
+ game are displayed. After the window is exited using the esc key, an overall season box score CSV file is then
+ exported into the gameExport project folder.
 */
 
 #include "Player.h"
@@ -23,11 +28,14 @@ Description :
 #include <chrono>
 #include <fstream>
 #include <random>
-//#include <mshtmlc.h>
 
 using namespace sf;
 
-
+/**
+ * The exportCSV method writes the player's stats of the passed in team onto the csv file.
+ * @param myfile CSV file that has been opened
+ * @param loser The team whose stats are to be written onto the file
+ */
 void exportCSV(std::ofstream* myfile, Team loser)
 {
     *myfile << loser.getName() << "\n";
@@ -41,6 +49,11 @@ void exportCSV(std::ofstream* myfile, Team loser)
     }
 }
 
+/**
+ * This method is used for multithreading purposes. Different threads call this method
+ * with different teams to run simulations simultaneously.
+ * @param curr the game that is currently being simulated
+ */
 void execute(Game* curr)
 {
     curr->fullGameSimulation();
