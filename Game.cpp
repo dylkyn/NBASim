@@ -26,6 +26,10 @@ Game::Game(Team& team1, Team& team2)
 	team1.setGameScore(0);
 	team2.setGameScore(0);
 }
+Game::Game()
+{
+    //do nothing
+}
 /**
  * Getters and setters.
  */
