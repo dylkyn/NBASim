@@ -16,6 +16,14 @@ Player::Player(int playerType)
 	numSteals = 0;
     numBlocks = 0;
 	name = "";
+    gameNumTwo = 0;
+    gameNumThree = 0;
+    gameNumMissedTwo = 0;
+    gameNumMissedThree = 0;
+    gameNumAssists = 0;
+    gameNumRebounds = 0;
+    gameNumSteals = 0;
+    gameNumBlocks = 0;
 	int randIndex;
 	switch (playerType)
 	{
@@ -247,6 +255,41 @@ void Player::setNumBlocks(int newNumBlocks)
 {
 	numBlocks = newNumBlocks;
 }
+void Player::setGameNumTwo(int newNumTwo)
+{
+    gameNumTwo = newNumTwo;
+}
+void Player::setGameNumThree(int newNumThree)
+{
+    gameNumThree = newNumThree;
+}
+void Player::setGameNumAssist(int newNumAssist)
+{
+    gameNumAssists = newNumAssist;
+}
+void Player::setGameNumRebounds(int newNumRebounds)
+{
+    gameNumRebounds = newNumRebounds;
+}
+void Player::setGameNumSteals(int newNumSteals)
+{
+    gameNumSteals = newNumSteals;
+}
+void Player::setGameNumBlocks(int newNumBlocks)
+{
+    gameNumBlocks = newNumBlocks;
+}
+void Player::resetGameStats()
+{
+    gameNumTwo = 0;
+    gameNumThree = 0;
+    gameNumMissedTwo = 0;
+    gameNumMissedThree = 0;
+    gameNumAssists = 0;
+    gameNumRebounds = 0;
+    gameNumSteals = 0;
+    gameNumBlocks = 0;
+}
 int Player::getNumMissedThree()
 {
 	return numMissedThree;
@@ -283,5 +326,28 @@ int Player::getNumBlocks()
 {
 	return numBlocks;
 }
-
+int Player::getGameNumTwo()
+{
+    return gameNumTwo;
+}
+int Player::getGameNumThree()
+{
+    return gameNumThree;
+}
+int Player::getGameNumAssist()
+{
+    return gameNumAssists;
+}
+int Player::getGameNumRebounds()
+{
+    return gameNumRebounds;
+}
+int Player::getGameNumSteals()
+{
+    return gameNumSteals;
+}
+int Player::getGameNumBlocks()
+{
+    return gameNumBlocks;
+}
 

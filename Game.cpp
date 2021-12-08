@@ -90,15 +90,17 @@ void Game::possessionSimulation(Team& offense, Team& defense)
 			{
 				offense.setGameScore(2);
 				offender->setNumTwo(offender->getNumTwo() + 1);
+                offender->setGameNumTwo(offender->getGameNumTwo() + 1);
 				if (assist)
 				{
-					assister->setNumAssist(assister->getNumAssist()
-										  + 1); //this is just updating how many assists the player has
+					assister->setNumAssist(assister->getNumAssist()+ 1); //this is just updating how many assists the player has
+                    assister->setGameNumAssist(assister->getGameNumAssist() + 1);
 				}
 			}
 			else
 			{
 				defender->setNumBlocks(defender->getNumBlocks() + 1);
+                defender->setGameNumBlocks(defender->getGameNumBlocks() + 1);
 				offender->increaseMissedTwo();
 			}
 		}
@@ -111,15 +113,17 @@ void Game::possessionSimulation(Team& offense, Team& defense)
 			{
 				offense.setGameScore(2);
 				offender->setNumTwo(offender->getNumTwo() + 1);
+                offender->setGameNumTwo(offender->getGameNumTwo() + 1);
 				if (assist)
 				{
-					assister->setNumAssist(assister->getNumAssist()
-										  + 1); //this is just updating how many assists the player has. We can also do this by updating something within the Game file where its like the number of assists the player pos has
+					assister->setNumAssist(assister->getNumAssist() + 1); //this is just updating how many assists the player has. We can also do this by updating something within the Game file where its like the number of assists the player pos has
+                    assister->setGameNumAssist(assister->getGameNumAssist() + 1);
 				}
 			}
 			else
 			{
 				defender->setNumRebounds(defender->getNumRebounds() + 1);
+                defender->setGameNumRebounds(defender->getGameNumRebounds() + 1);
 				offender->increaseMissedTwo();
 			}
 		}
@@ -133,15 +137,17 @@ void Game::possessionSimulation(Team& offense, Team& defense)
 		{
 			offense.setGameScore(3); //I do not know how we are doing and setting up the game but this is lowkey pseudocode here
 			offender->setNumThree(offender->getNumThree() + 1);
+            offender->setGameNumThree(offender->getGameNumThree() + 1);
 			if (assist)
 			{
-				assister->setNumAssist(assister->getNumAssist()
-									  + 1); //this is just updating how many assists the player has. We can also do this by updating something within the Game file where its like the number of assists the player pos has
+				assister->setNumAssist(assister->getNumAssist() + 1); //this is just updating how many assists the player has. We can also do this by updating something within the Game file where its like the number of assists the player pos has
+                assister->setGameNumAssist(assister->getGameNumAssist() + 1);
 			}
 		}
 		else
 		{
 			defender->setNumSteals(defender->getNumSteals() + 1);
+            defender->setGameNumSteals(defender->getGameNumSteals() + 1);
 			offender->increaseMissedThree();
 		}
 	}
@@ -157,6 +163,16 @@ Team Game::fullGameSimulation()
     srand(seed);
 	team1.resetTeamScore();
 	team2.resetTeamScore();
+    team1.getPlayer(0)->resetGameStats();
+    team1.getPlayer(1)->resetGameStats();
+    team1.getPlayer(2)->resetGameStats();
+    team1.getPlayer(3)->resetGameStats();
+    team1.getPlayer(4)->resetGameStats();
+    team2.getPlayer(0)->resetGameStats();
+    team2.getPlayer(1)->resetGameStats();
+    team2.getPlayer(2)->resetGameStats();
+    team2.getPlayer(3)->resetGameStats();
+    team2.getPlayer(4)->resetGameStats();
 #pragma omp parallel for default(shared) private(i) schedule(static, chunk) reduction(+:totalArea)
 	for (int i = 0; i < 103; i++) //all of the possessions in a loop
 	{
