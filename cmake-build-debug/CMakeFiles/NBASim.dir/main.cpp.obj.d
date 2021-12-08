@@ -265,6 +265,10 @@ CMakeFiles/NBASim.dir/main.cpp.obj: \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/atomic_base.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/atomic_lockfree_defines.h \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/backward/auto_ptr.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/fstream \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/basic_file.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/i686-w64-mingw32/bits/c++io.h \
+ C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/bits/fstream.tcc \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/random \
  C:/mingw32/lib/gcc/i686-w64-mingw32/7.3.0/include/c++/cmath \
  C:/mingw32/i686-w64-mingw32/include/math.h \
