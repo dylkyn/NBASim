@@ -27,6 +27,7 @@ class Team
 	Team();
 	Team(std::string name, std::string logo);
 	Player getPlayer();
+    Player getPlayer(int playerType);
 	int getGameScore();
 	void resetTeamScore();
 	void setGameScore(int score);

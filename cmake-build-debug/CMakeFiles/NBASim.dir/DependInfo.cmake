@@ -8,12 +8,12 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/bella/ECE/ECE4122/NBASim/main.cpp" "CMakeFiles/NBASim.dir/main.cpp.obj" "gcc" "CMakeFiles/NBASim.dir/main.cpp.obj.d"
+  "C:/Users/justi/CLionProjects/NBASim/main.cpp" "CMakeFiles/NBASim.dir/main.cpp.obj" "gcc" "CMakeFiles/NBASim.dir/main.cpp.obj.d"
   )
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "C:/Users/bella/ECE/ECE4122/NBASim/cmake-build-debug/CMakeFiles/my-lib.dir/DependInfo.cmake"
+  "C:/Users/justi/CLionProjects/NBASim/cmake-build-debug/CMakeFiles/my-lib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

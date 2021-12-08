@@ -48,6 +48,12 @@ Player Team::getPlayer()
 /*
  * For a new game, reset the score to 0.
  */
+
+Player Team::getPlayer(int playerType)
+{
+    return players[playerType];
+}
+
 void Team::resetTeamScore()
 {
 	gameScore = 0;

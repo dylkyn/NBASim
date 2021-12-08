@@ -12,6 +12,7 @@ class Game
 	int team2Score;
  public:
 	Game(Team& team1, Team& team2);
+    Game();
 	void setWinner(Team team);
 	Team& getWinner();
 	Team& getLoser();

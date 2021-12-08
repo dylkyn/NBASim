@@ -11,9 +11,10 @@ Player::Player(int playerType)
 	numThree = 0;
 	numMissedTwo = 0;
 	numMissedThree = 0;
-	numAssist = 0;
+	numAssists = 0;
 	numRebounds = 0;
 	numSteals = 0;
+    numBlocks = 0;
 	name = "";
 	int randIndex;
 	switch (playerType)
@@ -163,7 +164,7 @@ Player::Player(int playerType)
 
 Player::Player()
 {
-    Player(1);
+    //do nothing if default
 }
 
 //getters and setters for attributes
@@ -232,7 +233,7 @@ void Player::setNumThree(int newNumThree)
 }
 void Player::setNumAssist(int newNumAssist)
 {
-	numAssist = newNumAssist;
+	numAssists = newNumAssist;
 }
 void Player::setNumRebounds(int newNumRebounds)
 {
@@ -268,7 +269,7 @@ int Player::getNumThree()
 }
 int Player::getNumAssist()
 {
-	return numAssist;
+	return numAssists;
 }
 int Player::getNumRebounds()
 {
