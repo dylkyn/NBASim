@@ -8,9 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "C:/Users/justi/CLionProjects/NBASim/Game.cpp" "CMakeFiles/my-lib.dir/Game.cpp.obj" "gcc" "CMakeFiles/my-lib.dir/Game.cpp.obj.d"
-  "C:/Users/justi/CLionProjects/NBASim/Player.cpp" "CMakeFiles/my-lib.dir/Player.cpp.obj" "gcc" "CMakeFiles/my-lib.dir/Player.cpp.obj.d"
-  "C:/Users/justi/CLionProjects/NBASim/Team.cpp" "CMakeFiles/my-lib.dir/Team.cpp.obj" "gcc" "CMakeFiles/my-lib.dir/Team.cpp.obj.d"
+  "C:/Users/bella/ECE/ECE4122/NBASim/Game.cpp" "CMakeFiles/my-lib.dir/Game.cpp.obj" "gcc" "CMakeFiles/my-lib.dir/Game.cpp.obj.d"
+  "C:/Users/bella/ECE/ECE4122/NBASim/Player.cpp" "CMakeFiles/my-lib.dir/Player.cpp.obj" "gcc" "CMakeFiles/my-lib.dir/Player.cpp.obj.d"
+  "C:/Users/bella/ECE/ECE4122/NBASim/Team.cpp" "CMakeFiles/my-lib.dir/Team.cpp.obj" "gcc" "CMakeFiles/my-lib.dir/Team.cpp.obj.d"
   )
 
 # Targets to which this target links.
