@@ -699,6 +699,7 @@ int main()
             Game curr(championship.at(0), championship.at(1));
             curr.fullGameSimulation();
             exportCSV(&myfile, curr.getLoser());
+            exportCSV(&myfile, curr.getWinner());
             std::cout << "The Championship Winner is: " << curr.getWinner().getName() << " the score was "
                       << curr.getWinner().getGameScore()
                       << " and " << curr.getLoser().getGameScore() << std::endl;
