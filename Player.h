@@ -31,7 +31,7 @@ class Player
 	int numMissedThree;
 	int numTwo;
 	int numThree;
-	int numAssist;
+	int numAssists;
 	int numRebounds;
 	int numSteals;
 	int numBlocks;

@@ -135,9 +135,9 @@ int main()
 	myText.setFont(font);
 	myText.setCharacterSize(25);
 	myText.setStyle(sf::Text::Regular);
-	myText.setFillColor(Color(255, 0, 0));
+	myText.setFillColor(Color(0, 0, 255));
 
-	std::chrono::seconds dura(1);
+	std::chrono::seconds dura(1/2);
 	std::this_thread::sleep_for(dura);
 
 	// SPLIT TEAMS
@@ -289,6 +289,20 @@ int main()
 	window.draw(myText);
 	window.display();
 	std::this_thread::sleep_for(dura);
+
+    //box score display
+    Texture textureBoxScore;
+    textureBoxScore.loadFromFile("../graphics/boxscore.png");
+    Sprite spriteBoxScore;
+    spriteBoxScore.setTexture(textureBoxScore);
+    spriteBoxScore.setPosition(370, 100);
+    spriteBoxScore.setScale(4.5, 4.2);
+
+    Text boxScoreText;
+    boxScoreText.setFont(font);
+    boxScoreText.setCharacterSize(25);
+    boxScoreText.setStyle(sf::Text::Regular);
+    boxScoreText.setFillColor(Color(0, 0, 255));
 	while (window.isOpen())
 	{
 		sf::Event e;
@@ -296,14 +310,104 @@ int main()
 		{
 			switch (e.type)
 			{
-			case sf::Event::EventType::Closed:
-				window.close();
-				break;
+			case sf::Event::KeyPressed:
+				if(e.key.code == sf::Keyboard::Escape)
+                {
+                    window.close();
+                    break;
+                }
 			}
 		}
 		window.clear();
 		window.draw(spriteBackground);
 		window.draw(myText);
+        window.draw(spriteBoxScore);
+
+        //drawing box score
+        window.draw(boxScoreText);
+        boxScoreText.setString("BOX SCORE");
+        boxScoreText.setPosition(750, 100);
+        boxScoreText.setCharacterSize(100);
+        window.draw(boxScoreText); //draw title
+        boxScoreText.setCharacterSize(50);
+        boxScoreText.setString(curr.getWinner().getName());
+        boxScoreText.setPosition(420, 250);
+        window.draw(boxScoreText); //draw winner
+        boxScoreText.setString(curr.getLoser().getName());
+        boxScoreText.setPosition(1200, 250);
+        window.draw(boxScoreText); //draw loser
+        boxScoreText.setString(std::to_string(curr.getWinner().getGameScore()));
+        boxScoreText.setPosition(460, 300);
+        window.draw(boxScoreText); //draw winning score
+        boxScoreText.setString(std::to_string(curr.getLoser().getGameScore()));
+        boxScoreText.setPosition(1240, 300);
+        window.draw(boxScoreText); //draw losing score
+        boxScoreText.setCharacterSize(25);
+        boxScoreText.setString(curr.getWinner().getPlayer(0).getName());
+        boxScoreText.setPosition(420, 400);
+        window.draw(boxScoreText); //draw PG name on winning team
+        boxScoreText.setString(curr.getWinner().getPlayer(1).getName());
+        boxScoreText.setPosition(420, 480);
+        window.draw(boxScoreText); //draw SG name on winning team
+        boxScoreText.setString(curr.getWinner().getPlayer(2).getName());
+        boxScoreText.setPosition(420, 560);
+        window.draw(boxScoreText); //draw SF name on winning team
+        boxScoreText.setString(curr.getWinner().getPlayer(3).getName());
+        boxScoreText.setPosition(420, 640);
+        window.draw(boxScoreText); //draw PF name on winning team
+        boxScoreText.setString(curr.getWinner().getPlayer(4).getName());
+        boxScoreText.setPosition(420, 720);
+        window.draw(boxScoreText); //draw C name on winning team
+        boxScoreText.setString(curr.getLoser().getPlayer(0).getName());
+        boxScoreText.setPosition(1050, 400);
+        window.draw(boxScoreText); //draw PG name on losing team
+        boxScoreText.setString(curr.getLoser().getPlayer(1).getName());
+        boxScoreText.setPosition(1050, 480);
+        window.draw(boxScoreText); //draw SG name on losing team
+        boxScoreText.setString(curr.getLoser().getPlayer(2).getName());
+        boxScoreText.setPosition(1050, 560);
+        window.draw(boxScoreText); //draw SF name on losing team
+        boxScoreText.setString(curr.getLoser().getPlayer(3).getName());
+        boxScoreText.setPosition(1050, 640);
+        window.draw(boxScoreText); //draw PF name on losing team
+        boxScoreText.setString(curr.getLoser().getPlayer(4).getName());
+        boxScoreText.setPosition(1050, 720);
+        window.draw(boxScoreText); //draw C name on losing team
+        boxScoreText.setString(std::to_string(curr.getWinner().getPlayer(0).getNumTwo() * 2 + curr.getWinner().getPlayer(0).getNumThree() * 3) + " pts, " + std::to_string(curr.getWinner().getPlayer(0).getNumAssist()) + " asts, " + std::to_string(curr.getWinner().getPlayer(0).getNumRebounds()) + " rebs, " + std::to_string(curr.getWinner().getPlayer(0).getNumSteals()) + " stls, " + std::to_string(curr.getWinner().getPlayer(0).getNumBlocks()) + " blks");
+        boxScoreText.setPosition(420, 440);
+        window.draw(boxScoreText); //draw PG stats on winning team
+        boxScoreText.setString(std::to_string(curr.getWinner().getPlayer(1).getNumTwo() * 2 + curr.getWinner().getPlayer(1).getNumThree() * 3) + " pts, " + std::to_string(curr.getWinner().getPlayer(1).getNumAssist()) + " asts, " + std::to_string(curr.getWinner().getPlayer(1).getNumRebounds()) + " rebs, " + std::to_string(curr.getWinner().getPlayer(1).getNumSteals()) + " stls, " + std::to_string(curr.getWinner().getPlayer(1).getNumBlocks()) + " blks");
+        boxScoreText.setPosition(420, 520);
+        window.draw(boxScoreText); //draw SG stats on winning team
+        boxScoreText.setString(std::to_string(curr.getWinner().getPlayer(2).getNumTwo() * 2 + curr.getWinner().getPlayer(2).getNumThree() * 3) + " pts, " + std::to_string(curr.getWinner().getPlayer(2).getNumAssist()) + " asts, " + std::to_string(curr.getWinner().getPlayer(2).getNumRebounds()) + " rebs, " + std::to_string(curr.getWinner().getPlayer(2).getNumSteals()) + " stls, " + std::to_string(curr.getWinner().getPlayer(2).getNumBlocks()) + " blks");
+        boxScoreText.setPosition(420, 600);
+        window.draw(boxScoreText); //draw SF stats on winning team
+        boxScoreText.setString(std::to_string(curr.getWinner().getPlayer(3).getNumTwo() * 2 + curr.getWinner().getPlayer(3).getNumThree() * 3) + " pts, " + std::to_string(curr.getWinner().getPlayer(3).getNumAssist()) + " asts, " + std::to_string(curr.getWinner().getPlayer(3).getNumRebounds()) + " rebs, " + std::to_string(curr.getWinner().getPlayer(3).getNumSteals()) + " stls, " + std::to_string(curr.getWinner().getPlayer(3).getNumBlocks()) + " blks");
+        boxScoreText.setPosition(420, 680);
+        window.draw(boxScoreText); //draw PF stats on winning team
+        boxScoreText.setString(std::to_string(curr.getWinner().getPlayer(4).getNumTwo() * 2 + curr.getWinner().getPlayer(4).getNumThree() * 3) + " pts, "+ std::to_string(curr.getWinner().getPlayer(4).getNumAssist()) + " asts, " + std::to_string(curr.getWinner().getPlayer(4).getNumRebounds()) + " rebs, " + std::to_string(curr.getWinner().getPlayer(4).getNumSteals()) + " stls, " + std::to_string(curr.getWinner().getPlayer(4).getNumBlocks()) + " blks");
+        boxScoreText.setPosition(420, 760);
+        window.draw(boxScoreText); //draw C stats on winning team
+        boxScoreText.setString(std::to_string(curr.getLoser().getPlayer(0).getNumTwo() * 2 + curr.getLoser().getPlayer(0).getNumThree() * 3) + " pts, " + std::to_string(curr.getLoser().getPlayer(0).getNumAssist()) + " asts, " + std::to_string(curr.getLoser().getPlayer(0).getNumRebounds()) + " rebs, " + std::to_string(curr.getLoser().getPlayer(0).getNumSteals()) + " stls, " + std::to_string(curr.getLoser().getPlayer(0).getNumBlocks()) + " blks");
+        boxScoreText.setPosition(1050, 440);
+        window.draw(boxScoreText); //draw PG stats on losing team
+        boxScoreText.setString(std::to_string(curr.getLoser().getPlayer(1).getNumTwo() * 2 + curr.getLoser().getPlayer(1).getNumThree() * 3) + " pts, " + std::to_string(curr.getLoser().getPlayer(1).getNumAssist()) + " asts, " + std::to_string(curr.getLoser().getPlayer(1).getNumRebounds()) + " rebs, " + std::to_string(curr.getLoser().getPlayer(1).getNumSteals()) + " stls, " + std::to_string(curr.getLoser().getPlayer(1).getNumBlocks()) + " blks");
+        boxScoreText.setPosition(1050, 520);
+        window.draw(boxScoreText); //draw SG stats on losing team
+        boxScoreText.setString(std::to_string(curr.getLoser().getPlayer(2).getNumTwo() * 2 + curr.getLoser().getPlayer(2).getNumThree() * 3) + " pts, " + std::to_string(curr.getLoser().getPlayer(2).getNumAssist()) + " asts, " + std::to_string(curr.getLoser().getPlayer(2).getNumRebounds()) + " rebs, " + std::to_string(curr.getLoser().getPlayer(2).getNumSteals()) + " stls, " + std::to_string(curr.getLoser().getPlayer(2).getNumBlocks()) + " blks");
+        boxScoreText.setPosition(1050, 600);
+        window.draw(boxScoreText); //draw SF stats on losing team
+        boxScoreText.setString(std::to_string(curr.getLoser().getPlayer(3).getNumTwo() * 2 + curr.getLoser().getPlayer(3).getNumThree() * 3) + " pts, " + std::to_string(curr.getLoser().getPlayer(3).getNumAssist()) + " asts, " + std::to_string(curr.getLoser().getPlayer(3).getNumRebounds()) + " rebs, " + std::to_string(curr.getLoser().getPlayer(3).getNumSteals()) + " stls, " + std::to_string(curr.getLoser().getPlayer(3).getNumBlocks()) + " blks");
+        boxScoreText.setPosition(1050, 680);
+        window.draw(boxScoreText); //draw PF stats on losing team
+        boxScoreText.setString(std::to_string(curr.getLoser().getPlayer(4).getNumTwo() * 2 + curr.getLoser().getPlayer(4).getNumThree() * 3) + " pts, "+ std::to_string(curr.getLoser().getPlayer(4).getNumAssist()) + " asts, " + std::to_string(curr.getLoser().getPlayer(4).getNumRebounds()) + " rebs, " + std::to_string(curr.getLoser().getPlayer(4).getNumSteals()) + " stls, " + std::to_string(curr.getLoser().getPlayer(4).getNumBlocks()) + " blks");
+        boxScoreText.setPosition(1050, 760);
+        window.draw(boxScoreText); //draw C stats on losing team
+        (*curr.getWinner().getLogo()).setPosition(10, 10);
+        (*curr.getLoser().getLogo()).setPosition(50, 50);
+        window.draw((*curr.getWinner().getLogo()));
+        window.draw((*curr.getLoser().getLogo()));
+
 		window.display();
 	}
 	return 0;

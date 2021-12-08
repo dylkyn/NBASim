@@ -18,13 +18,14 @@ class Team
 	Team();
 	Team(std::string name, std::string logo);
 	Player getPlayer();
+    Player getPlayer(int playerType);
 	int getGameScore();
 	void resetTeamScore();
 	void setGameScore(int score);
 	void setStatus(bool stat);
 	bool getStatus();
 	std::string getName();
-	Sprite getLogo();
+	Sprite* getLogo();
 	int getSeriesScore();
 	void increaseSeriesScore();
 };

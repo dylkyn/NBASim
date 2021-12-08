@@ -30,6 +30,11 @@ Player Team::getPlayer()
 	return players[player];
 }
 
+Player Team::getPlayer(int playerType)
+{
+    return players[playerType];
+}
+
 void Team::resetTeamScore()
 {
 	gameScore = 0;
@@ -68,7 +73,7 @@ std::string Team::getName()
 {
 	return teamName;
 }
-Sprite Team::getLogo()
+Sprite* Team::getLogo()
 {
-	return teamLogo;
+	return &teamLogo;
 }
