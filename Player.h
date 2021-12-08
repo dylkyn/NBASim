@@ -31,10 +31,20 @@ class Player
 	int numMissedThree;
 	int numTwo;
 	int numThree;
-	int numAssist;
+	int numAssists;
 	int numRebounds;
 	int numSteals;
 	int numBlocks;
+
+    //game stats
+    int gameNumMissedTwo;
+    int gameNumMissedThree;
+    int gameNumTwo;
+    int gameNumThree;
+    int gameNumAssists;
+    int gameNumRebounds;
+    int gameNumSteals;
+    int gameNumBlocks;
  public:
 	Player(int playerType);
 	Player();
@@ -60,6 +70,13 @@ class Player
 	void setNumRebounds(int newNumRebounds);
 	void setNumSteals(int newNumSteals);
 	void setNumBlocks(int newNumBlocks);
+    void setGameNumTwo(int newNumTwo);
+    void setGameNumThree(int newNumThree);
+    void setGameNumAssist(int newNumAssist);
+    void setGameNumRebounds(int newNumRebounds);
+    void setGameNumSteals(int newNumSteals);
+    void setGameNumBlocks(int newNumBlocks);
+    void resetGameStats();
 	int getNumMissedThree();
 	std::string getName();
 	int getNumMissedTwo();
@@ -69,6 +86,13 @@ class Player
 	int getNumRebounds();
 	int getNumSteals();
 	int getNumBlocks();
+    int getGameNumMissedTwo();
+    int getGameNumThree();
+    int getGameNumTwo();
+    int getGameNumAssist();
+    int getGameNumRebounds();
+    int getGameNumSteals();
+    int getGameNumBlocks();
 
 	//string array of names
 	static inline std::string pointGuardNames[32] = {

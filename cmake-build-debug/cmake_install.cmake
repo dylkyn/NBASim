@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/kynoc/OneDrive/Documents/GT/Classes/ECE 4122/Project/NBASim
+# Install script for directory: C:/Users/justi/CLionProjects/NBASim
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "C:/Users/kynoc/OneDrive/Documents/GT/Classes/ECE 4122/Project/NBASim/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Users/justi/CLionProjects/NBASim/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
