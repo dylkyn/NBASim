@@ -40,18 +40,18 @@ Team::Team()
  * Get a random player off of the team.
  * @return the random player to use for the current function
  */
-Player Team::getPlayer()
+Player* Team::getPlayer()
 {
 	int player = rand() % 5;
-	return players[player];
+	return &players[player];
 }
 /*
  * For a new game, reset the score to 0.
  */
 
-Player Team::getPlayer(int playerType)
+Player* Team::getPlayer(int playerType)
 {
-    return players[playerType];
+    return &players[playerType];
 }
 
 void Team::resetTeamScore()

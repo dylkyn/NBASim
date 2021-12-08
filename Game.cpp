@@ -26,16 +26,12 @@ Game::Game(Team& team1, Team& team2)
 	team1.setGameScore(0);
 	team2.setGameScore(0);
 }
-Game::Game()
-{
-    //do nothing
-}
 /**
  * Getters and setters.
  */
-void Game::setWinner(Team team)
+void Game::setWinner(Team* team)
 {
-	winner = team;
+	winner = *team;
 }
 Team& Game::getWinner()
 {
@@ -58,19 +54,19 @@ void Game::possessionSimulation(Team& offense, Team& defense)
 {
 	bool assist = false;
     // pick competing players
-	Player offender = offense.getPlayer();
-	Player assister = offense.getPlayer();
+	Player* offender = offense.getPlayer();
+	Player* assister = offense.getPlayer();
 
-	Player defender = defense.getPlayer();
+	Player* defender = defense.getPlayer();
 
     //do not have the same player chosen twice on the offense
-	while (offender.getPosition() == assister.getPosition())
+	while (offender->getPosition() == assister->getPosition())
 	{
 		assister = offense.getPlayer(); //This while loop makes sure that two different players are selected
 	}
     // randomize the players' current skills based off of their attributes
-	int pass = rand() % offender.getPass() + 1;
-	int shoot = rand() % offender.getShoot() + 1;
+	int pass = rand() % offender->getPass() + 1;
+	int shoot = rand() % offender->getShoot() + 1;
 
 	if (pass >= shoot)
 	{
@@ -78,77 +74,75 @@ void Game::possessionSimulation(Team& offense, Team& defense)
 		std::swap(offender, assister); //https://www.cplusplus.com/reference/algorithm/swap/ need to include <algorithms>
 	}
 
-	int twoPoint = rand() % offender.getTwoPointShot() + 1;
-	int threePoint = rand() % offender.getThreePointShot() + 1;
+	int twoPoint = rand() % offender->getTwoPointShot() + 1;
+	int threePoint = rand() % offender->getThreePointShot() + 1;
 	if (twoPoint >= threePoint)
 	{
-		int block = rand() % defender.getBlock() + 1;
-		int rebound = rand() % defender.getRebound() + 1;
+		int block = rand() % defender->getBlock() + 1;
+		int rebound = rand() % defender->getRebound() + 1;
 		if (block >= rebound)
 		{
-			twoPoint = rand() % offender.getTwoPointShot()
+			twoPoint = rand() % offender->getTwoPointShot()
 					   + 1; //This is ran for a second time due to the bias that would be created from it winning against the three point in the first time. This will be same logic for block being re-ran.
-			block = rand() % defender.getBlock() + 1;
+			block = rand() % defender->getBlock() + 1;
 
 			if (block <= twoPoint)
 			{
-				offense
-					.setGameScore(2);
-				offender.setNumTwo(offender.getNumTwo() + 1);
+				offense.setGameScore(2);
+				offender->setNumTwo(offender->getNumTwo() + 1);
 				if (assist)
 				{
-					assister.setNumAssist(assister.getNumAssist()
+					assister->setNumAssist(assister->getNumAssist()
 										  + 1); //this is just updating how many assists the player has
 				}
 			}
 			else
 			{
-				defender.setNumBlocks(defender.getNumBlocks() + 1);
-				offender.increaseMissedTwo();
+				defender->setNumBlocks(defender->getNumBlocks() + 1);
+				offender->increaseMissedTwo();
 			}
 		}
 		else
 		{
-			twoPoint = rand() % offender.getTwoPointShot()
+			twoPoint = rand() % offender->getTwoPointShot()
 					   + 1; //This is ran for a second time due to the bias that would be created from it winning against the three point in the first time. This will be same logic for block being re-ran.
-			rebound = rand() % defender.getBlock() + 1;
+			rebound = rand() % defender->getBlock() + 1;
 			if (rebound <= twoPoint)
 			{
 				offense.setGameScore(2);
-				offender.setNumTwo(offender.getNumTwo() + 1);
+				offender->setNumTwo(offender->getNumTwo() + 1);
 				if (assist)
 				{
-					assister.setNumAssist(assister.getNumAssist()
+					assister->setNumAssist(assister->getNumAssist()
 										  + 1); //this is just updating how many assists the player has. We can also do this by updating something within the Game file where its like the number of assists the player pos has
 				}
 			}
 			else
 			{
-				defender.setNumRebounds(defender.getNumRebounds() + 1);
-				offender.increaseMissedTwo();
+				defender->setNumRebounds(defender->getNumRebounds() + 1);
+				offender->increaseMissedTwo();
 			}
 		}
 	}
 	else
 	{
-		int perimeterD = rand() % defender.getPerimeterDefense() + 1;
-		threePoint = rand() % offender.getThreePointShot() + 1;
+		int perimeterD = rand() % defender->getPerimeterDefense() + 1;
+		threePoint = rand() % offender->getThreePointShot() + 1;
 
 		if (threePoint >= perimeterD)
 		{
-			offense
-				.setGameScore(3); //I do not know how we are doing and setting up the game but this is lowkey pseudocode here
-			offender.setNumThree(offender.getNumThree() + 1);
+			offense.setGameScore(3); //I do not know how we are doing and setting up the game but this is lowkey pseudocode here
+			offender->setNumThree(offender->getNumThree() + 1);
 			if (assist)
 			{
-				assister.setNumAssist(assister.getNumAssist()
+				assister->setNumAssist(assister->getNumAssist()
 									  + 1); //this is just updating how many assists the player has. We can also do this by updating something within the Game file where its like the number of assists the player pos has
 			}
 		}
 		else
 		{
-			defender.setNumSteals(defender.getNumSteals() + 1);
-			offender.increaseMissedThree();
+			defender->setNumSteals(defender->getNumSteals() + 1);
+			offender->increaseMissedThree();
 		}
 	}
 }
@@ -175,8 +169,8 @@ Team Game::fullGameSimulation()
 		int pickWinner = rand() % 2;
 		winner = pickWinner == 0 ? team1 : team2;
 		loser = pickWinner != 0 ? team1 : team2;
-		Player addScore = winner.getPlayer();
-		addScore.setNumTwo(addScore.getNumTwo() + 1);
+		Player* addScore = winner.getPlayer();
+		addScore->setNumTwo(addScore->getNumTwo() + 1);
 		winner.setGameScore(2);
 	}
     //team 1 score higher, team one is winner
