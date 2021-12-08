@@ -1,3 +1,11 @@
+/*
+Author: Bella Poage, Chris Burgett, Justin Lau, Dylan Knyoch
+Class : ECE4122
+Last Date Modified : 12-7-2021
+Description :
+	Header file for the team class containing all of the class variables and functions.
+*/
+
 #ifndef NBASIM_TEAM_H
 #define NBASIM_TEAM_H
 #include "Player.h"

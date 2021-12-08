@@ -1,3 +1,16 @@
+/*
+Author: Bella Poage, Chris Burgett, Justin Lau, Dylan Knyoch
+Class : ECE4122
+Last Date Modified : 12-7-2021
+Description :
+	Create an NBA simulation with 32 teams including the 30 professional NBA teams along with
+ Buzz and Ramblin' Wreck. This file randomly creates our teams with players with random names
+ and attributes. Then it simulates the actual season using Open MP to increase the speed of
+ games and SFML to show the graphics. The graphics consist of displaying the team names that
+ are continuing through each round of the tournament on the bracket, as well as a Box Score
+ of the final game with the players outputs.
+*/
+
 #include "Player.h"
 #include "Team.h"
 #include "Game.h"
@@ -37,9 +50,6 @@ int main()
 
 	// Set the spriteBackground to cover the screen
 	spriteBackground.setPosition(0, 0);
-
-	window.clear();
-	window.draw(spriteBackground);
 
 	//create vector of teams
 	std::vector<Team> teams;
@@ -139,15 +149,8 @@ int main()
 
 	std::chrono::milliseconds duration(250);
 	std::this_thread::sleep_for(duration);
-    //next button
-//    Text next;
-//    next.setFont(font);
-//    next.setString("Next Round");
-//    next.setPosition(1500, 975);
-//    next.setCharacterSize(40);
-//    next.setStyle(sf::Text::Regular);
-//    next.setFillColor(Color(0, 0, 0));
 
+    bool initialDisplay = false;
     bool started = false;
     bool nextSelected = false;
     bool roundOneCalc = false;
@@ -165,16 +168,14 @@ int main()
     std::vector<Text> rightColOneTeams;
     std::vector<Text> leftColTwoTeams;
     std::vector<Text> rightColTwoTeams;
-
-
-
-
-	std::chrono::seconds dura(5);
-	std::this_thread::sleep_for(dura);
-
-
-//	std::chrono::seconds dura( 5);
-//	std::this_thread::sleep_for( dura );
+    std::vector<Text> leftColThreeTeams;
+    std::vector<Text> rightColThreeTeams;
+    std::vector<Text> leftColFourTeams;
+    std::vector<Text> rightColFourTeams;
+    Text leftChampTeam;
+    Text rightChampTeam;
+    Text winnerText;
+    Sprite winnerLogo;
 
 	while (window.isOpen())
 	{
@@ -193,10 +194,12 @@ int main()
 
                     // key pressed
                 case sf::Event::KeyPressed:
+                    //Escape pressed to close
                     if (event.key.code == sf::Keyboard::Escape)
                     {
                         window.close();
                     }
+                    //Enter pressed
                     else if (event.key.code == sf::Keyboard::Enter)
                     {
                         nextSelected = true;
@@ -206,43 +209,43 @@ int main()
                     break;
             }
         }
-
+        //if nextSelected allow next round of games
         if (nextSelected)
         {
             nextSelected = false;
-            std::cout << "drawing test" << std::endl;
             if (!started)
             {
                 started = true;
-                roundOneCalc = true;
+                initialDisplay = true;
             }
             else if (!roundOneVisible)
             {
                 roundOneVisible = true;
-                roundTwoCalc = true;
+                roundOneCalc = true;
             }
             else if (!roundTwoVisible)
             {
                 roundTwoVisible = true;
-                roundThreeCalc = true;
+                roundTwoCalc = true;
             }
             else if (!roundThreeVisible)
             {
                 roundThreeVisible = true;
-                roundFourCalc = true;
+                roundThreeCalc = true;
             }
             else if (!roundFourVisible)
             {
                 roundFourVisible = true;
-                champCalc = true;
+                roundFourCalc = true;
             }
             else if (!championVisible)
             {
                 championVisible = true;
+                champCalc = true;
             }
         }
-
-        if (roundOneCalc)
+        //start with 16 teams on both sides
+        if (initialDisplay)
         {
             std::cout << "started" << std::endl;
             // SPLIT TEAMS
@@ -266,7 +269,11 @@ int main()
                 myText.setCharacterSize(25);
                 rightColOneTeams.push_back(myText);
             }
-
+            initialDisplay = false;
+        }
+        //8 teams on both sides
+        if (roundOneCalc)
+        {
             // PLAY ROUND 1
             //Above the left most and right most teams are put into their respected vectors
             for (int i = 0; i < leftColumnOne.size(); i += 2)
@@ -277,206 +284,134 @@ int main()
                 std::cout << "Round 1 left Winner is: " << curr.getWinner().getName() << " the score was "
                           << curr.getWinner().getGameScore()
                           << " and " << curr.getLoser().getGameScore() << std::endl;
+                myText.setString(curr.getWinner().getName());
+                myText.setPosition(235.0f, 160.0f + 55.0f * i);
+                leftColTwoTeams.push_back(myText);
             }
             for (int i = 0; i < rightColumnOne.size(); i += 2)
             {
                 Game curr(rightColumnOne.at(i), rightColumnOne.at(i + 1));
                 curr.fullGameSimulation();
                 rightColumnTwo.push_back(curr.getWinner());
-
                 std::cout << "Round 1 right Winner is: " << curr.getWinner().getName() << " the score was "
                           << curr.getWinner().getGameScore()
                           << " and " << curr.getLoser().getGameScore() << std::endl;
+                myText.setString(curr.getWinner().getName());
+                myText.setPosition(1550.0f, 160.0f + 55.0f * i);
+                rightColTwoTeams.push_back(myText);
             }
-
             roundOneCalc = false;
         }
-
+        // 4 teams on both sides
         if (roundTwoCalc)
         {
-	// SPLIT TEAMS
-	//first half of teams in the left most column
-	for (int i = 0; i < 16; i++)
-	{
-		leftColumnOne.push_back(randomTeams.at(i));
-		myText.setString(leftColumnOne.at(i).getName());
-		myText.setPosition(50.0f, 135.0f + 55.0f * i);
-		window.draw(myText);
-	}
-	//second half of teams in right most column
-	for (int i = 16; i < 32; i++)
-	{
-		rightColumnOne.push_back(randomTeams.at(i));
-		myText.setString(rightColumnOne.at(i - 16).getName());
-		myText.setPosition(1715.0f, 135.0f + 55.0f * (i - 16));
-		window.draw(myText);
-	}
-	window.display();
-	std::this_thread::sleep_for(duration);
-	window.clear();
-	window.draw(spriteBackground);
-	// PLAY ROUND 1
-	//Above the left most and right most teams are put into their respected vectors
-	for (int i = 0; i < leftColumnOne.size(); i += 2)
-	{
-		Game curr(leftColumnOne.at(i), leftColumnOne.at(i + 1));
-		curr.fullGameSimulation();
-		leftColumnTwo.push_back(curr.getWinner());
-		std::cout << "Round 1 left Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-		myText.setString(curr.getWinner().getName());
-		myText.setPosition(235.0f, 160.0f + 55.0f * i);
-		window.draw(myText);
-	}
-	for (int i = 0; i < rightColumnOne.size(); i += 2)
-	{
-		Game curr(rightColumnOne.at(i), rightColumnOne.at(i + 1));
-		curr.fullGameSimulation();
-		rightColumnTwo.push_back(curr.getWinner());
-		std::cout << "Round 1 right Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-		myText.setString(curr.getWinner().getName());
-		myText.setPosition(1550.0f, 160.0f + 55.0f * i);
-		window.draw(myText);
-	}
-	window.display();
-	std::this_thread::sleep_for(duration);
-	window.clear();
-	window.draw(spriteBackground);
-	// PLAY ROUND 2
-	for (int i = 0; i < leftColumnTwo.size(); i += 2)
-	{
-		Game curr(leftColumnTwo.at(i), leftColumnTwo.at(i + 1));
-		curr.fullGameSimulation();
-		leftColumnThree.push_back(curr.getWinner());
-		std::cout << "Round 2 left Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-		myText.setString(curr.getWinner().getName());
-		myText.setPosition(400.0f, 220.0f + 110.0f * i);
-		window.draw(myText);
-	}
-	for (int i = 0; i < rightColumnTwo.size(); i += 2)
-	{
-		Game curr(rightColumnTwo.at(i), rightColumnTwo.at(i + 1));
-		curr.fullGameSimulation();
-		rightColumnThree.push_back(curr.getWinner());
-		std::cout << "Round 2 right Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-		myText.setString(curr.getWinner().getName());
-		myText.setPosition(1380.0f, 220.0f + 110.0f * i);
-		window.draw(myText);
-	}
-	window.display();
-	std::this_thread::sleep_for(duration);
-	window.clear();
-	window.draw(spriteBackground);
-	// PLAY ROUND 3
-	for (int i = 0; i < leftColumnThree.size(); i += 2)
-	{
-		Game curr(leftColumnThree.at(i), leftColumnThree.at(i + 1));
-		curr.fullGameSimulation();
-		leftColumnFour.push_back(curr.getWinner());
-		std::cout << "Round 3 left Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-		myText.setString(curr.getWinner().getName());
-		myText.setPosition(570.0f, 330.0f + 220.0f * i);
-		window.draw(myText);
-	}
-	for (int i = 0; i < rightColumnThree.size(); i += 2)
-	{
-		Game curr(rightColumnThree.at(i), rightColumnThree.at(i + 1));
-		curr.fullGameSimulation();
-		rightColumnFour.push_back(curr.getWinner());
-		std::cout << "Round 3 right Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-		myText.setString(curr.getWinner().getName());
-		myText.setPosition(1215.0f, 330.0f + 220.0f * i);
-		window.draw(myText);
-	}
-	window.display();
-	std::this_thread::sleep_for(duration);
-	window.clear();
-	window.draw(spriteBackground);
-	// PLAY ROUND 4
-	for (int i = 0; i < leftColumnFour.size(); i += 2)
-	{
-		Game curr(leftColumnFour.at(i), leftColumnFour.at(i + 1));
-		curr.fullGameSimulation();
-		championship.push_back(curr.getWinner());
-		std::cout << "Round 4 left Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-		myText.setString(curr.getWinner().getName());
-		myText.setPosition(735.0f, 550);
-		window.draw(myText);
-	}
-	for (int i = 0; i < rightColumnFour.size(); i += 2)
-	{
-		Game curr(rightColumnFour.at(i), rightColumnFour.at(i + 1));
-		curr.fullGameSimulation();
-		championship.push_back(curr.getWinner());
-		std::cout << "Round 4 right Winner is: " << curr.getWinner().getName() << " the score was "
-				  << curr.getWinner().getGameScore()
-				  << " and " << curr.getLoser().getGameScore() << std::endl;
-		myText.setString(curr.getWinner().getName());
-		myText.setPosition(1050.0f, 550);
-		window.draw(myText);
-	}
-	window.display();
-	std::this_thread::sleep_for(duration);
-	window.clear();
-	window.draw(spriteBackground);
-	// PLAY CHAMPIONSHIP
-	Game curr(championship.at(0), rightColumnFour.at(1));
-	curr.fullGameSimulation();
-	std::cout << "The Championship Winner is: " << curr.getWinner().getName() << " the score was "
-			  << curr.getWinner().getGameScore()
-			  << " and " << curr.getLoser().getGameScore() << std::endl;
-	myText.setString(curr.getWinner().getName());
-	myText.setPosition(900.0f, 650);
-	curr.getWinner().getLogo()->setPosition(915.0f, 525.0f);
-	window.draw(*curr.getWinner().getLogo());
-	window.draw(myText);
-	window.display();
-	std::this_thread::sleep_for(duration);
-	while (window.isOpen())
-	{
-        sf::Event event;
-
-    // while there are pending events...
-        while (window.pollEvent(event))
-        {
-            // check the type of the event...
-            switch (event.type)
+            // PLAY ROUND 2
+            for (int i = 0; i < leftColumnTwo.size(); i += 2)
             {
-                // window closed
-                case sf::Event::Closed:
-                    window.close();
-                    break;
-
-                    // key pressed
-                case sf::Event::KeyPressed:
-                    if (event.key.code == sf::Keyboard::Escape)
-                    {
-                        window.close();
-                    }
-                    else if (event.key.code == sf::Keyboard::Enter)
-                    {
-                        nextSelected = true;
-                    }
-                    break;
-                default:
-                    break;
+                Game curr(leftColumnTwo.at(i), leftColumnTwo.at(i + 1));
+                curr.fullGameSimulation();
+                leftColumnThree.push_back(curr.getWinner());
+                std::cout << "Round 2 left Winner is: " << curr.getWinner().getName() << " the score was "
+                          << curr.getWinner().getGameScore()
+                          << " and " << curr.getLoser().getGameScore() << std::endl;
+                myText.setString(curr.getWinner().getName());
+                myText.setPosition(400.0f, 220.0f + 110.0f * i);
+                leftColThreeTeams.push_back(myText);
             }
+            for (int i = 0; i < rightColumnTwo.size(); i += 2)
+            {
+                Game curr(rightColumnTwo.at(i), rightColumnTwo.at(i + 1));
+                curr.fullGameSimulation();
+                rightColumnThree.push_back(curr.getWinner());
+                std::cout << "Round 2 right Winner is: " << curr.getWinner().getName() << " the score was "
+                          << curr.getWinner().getGameScore()
+                          << " and " << curr.getLoser().getGameScore() << std::endl;
+                myText.setString(curr.getWinner().getName());
+                myText.setPosition(1380.0f, 220.0f + 110.0f * i);
+                rightColThreeTeams.push_back(myText);
+            }
+            roundTwoCalc = false;
         }
+        //2 teams on each side
+        if (roundThreeCalc)
+        {
+            // PLAY ROUND 3
+            for (int i = 0; i < leftColumnThree.size(); i += 2)
+            {
+                Game curr(leftColumnThree.at(i), leftColumnThree.at(i + 1));
+                curr.fullGameSimulation();
+                leftColumnFour.push_back(curr.getWinner());
+                std::cout << "Round 3 left Winner is: " << curr.getWinner().getName() << " the score was "
+                          << curr.getWinner().getGameScore()
+                          << " and " << curr.getLoser().getGameScore() << std::endl;
+                myText.setString(curr.getWinner().getName());
+                myText.setPosition(570.0f, 330.0f + 220.0f * i);
+                leftColFourTeams.push_back(myText);
+            }
+            for (int i = 0; i < rightColumnThree.size(); i += 2)
+            {
+                Game curr(rightColumnThree.at(i), rightColumnThree.at(i + 1));
+                curr.fullGameSimulation();
+                rightColumnFour.push_back(curr.getWinner());
+                std::cout << "Round 3 right Winner is: " << curr.getWinner().getName() << " the score was "
+                          << curr.getWinner().getGameScore()
+                          << " and " << curr.getLoser().getGameScore() << std::endl;
+                myText.setString(curr.getWinner().getName());
+                myText.setPosition(1215.0f, 330.0f + 220.0f * i);
+                rightColFourTeams.push_back(myText);
+            }
+            roundThreeCalc = false;
+        }
+        //find finalists
+        if (roundFourCalc)
+        {
+            // PLAY ROUND 4
+            for (int i = 0; i < leftColumnFour.size(); i += 2)
+            {
+                Game curr(leftColumnFour.at(i), leftColumnFour.at(i + 1));
+                curr.fullGameSimulation();
+                championship.push_back(curr.getWinner());
+                std::cout << "Round 4 left Winner is: " << curr.getWinner().getName() << " the score was "
+                          << curr.getWinner().getGameScore()
+                          << " and " << curr.getLoser().getGameScore() << std::endl;
+                myText.setString(curr.getWinner().getName());
+                myText.setPosition(735.0f, 550);
+                leftChampTeam = myText;
+            }
+            for (int i = 0; i < rightColumnFour.size(); i += 2)
+            {
+                Game curr(rightColumnFour.at(i), rightColumnFour.at(i + 1));
+                curr.fullGameSimulation();
+                championship.push_back(curr.getWinner());
+                std::cout << "Round 4 right Winner is: " << curr.getWinner().getName() << " the score was "
+                          << curr.getWinner().getGameScore()
+                          << " and " << curr.getLoser().getGameScore() << std::endl;
+                myText.setString(curr.getWinner().getName());
+                myText.setPosition(1050.0f, 550);
+                rightChampTeam = myText;
+            }
+            roundFourCalc = false;
+        }
+        //calculate the overall winner
+        if (champCalc)
+        {
+            // PLAY CHAMPIONSHIP
+            Game curr(championship.at(0), championship.at(1));
+            curr.fullGameSimulation();
+            std::cout << "The Championship Winner is: " << curr.getWinner().getName() << " the score was "
+                      << curr.getWinner().getGameScore()
+                      << " and " << curr.getLoser().getGameScore() << std::endl;
+            myText.setString(curr.getWinner().getName());
+            myText.setPosition(900.0f, 650);
+            curr.getWinner().getLogo()->setPosition(915.0f, 525.0f);
+            winnerLogo = *curr.getWinner().getLogo();
+            winnerText = myText;
+            champCalc = false;
+        }
+        //draw the screen
         window.clear();
         window.draw(spriteBackground);
+        //outside column
         if (started)
         {
             for (int i = 0; i < 16; i++)
@@ -485,17 +420,46 @@ int main()
                 window.draw(rightColOneTeams.at(i));
             }
         }
-        window.display();
-        if (nextSelected)
+        //sweet 16 columns
+        if (roundOneVisible)
         {
-            std::cout << "drawing test" << std::endl;
-            // window.draw(test);
+            for (int i = 0; i < 8; i++)
+            {
+                window.draw(leftColTwoTeams.at(i));
+                window.draw(rightColTwoTeams.at(i));
+            }
         }
-
-		window.draw(spriteBackground);
-		window.draw(*curr.getWinner().getLogo());
-		window.draw(myText);
-		window.display();
-	}
+        //elite 8 columns
+        if (roundTwoVisible)
+        {
+            for (int i = 0; i < 4; i++)
+            {
+                window.draw(leftColThreeTeams.at(i));
+                window.draw(rightColThreeTeams.at(i));
+            }
+        }
+        //final 4 columns
+        if (roundThreeVisible)
+        {
+            for (int i = 0; i < 2; i++)
+            {
+                window.draw(leftColFourTeams.at(i));
+                window.draw(rightColFourTeams.at(i));
+            }
+        }
+        //championship game teams
+        if (roundFourVisible)
+        {
+            window.draw(leftChampTeam);
+            window.draw(rightChampTeam);
+        }
+        //champion!!
+        if (championVisible)
+        {
+            window.draw(winnerLogo);
+            window.draw(winnerText);
+        }
+        window.display();
+    }
 	return 0;
 }
