@@ -1,4 +1,4 @@
-C:/Users/justi/CLionProjects/NBASim/cmake-build-debug/CMakeFiles/my-lib.dir
-C:/Users/justi/CLionProjects/NBASim/cmake-build-debug/CMakeFiles/NBASim.dir
-C:/Users/justi/CLionProjects/NBASim/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/justi/CLionProjects/NBASim/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/cjburgett/Documents/ECE_4122/Final_project_real/cmake-build-debug/CMakeFiles/my-lib.dir
+/Users/cjburgett/Documents/ECE_4122/Final_project_real/cmake-build-debug/CMakeFiles/NBASim.dir
+/Users/cjburgett/Documents/ECE_4122/Final_project_real/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/cjburgett/Documents/ECE_4122/Final_project_real/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -21,13 +21,39 @@ Description :
 #include <thread>
 #include <vector>
 #include <chrono>
+#include <fstream>
 #include <random>
-#include <mshtmlc.h>
+//#include <mshtmlc.h>
 
 using namespace sf;
 
+
+void exportCSV(std::ofstream myfile, Team loser)
+{
+    myfile << loser.getName() << "\n";
+    myfile << "Name, Total Points, 3pt, 3pt %, 2pt, 2pt %, Assist, Rebounds, Blocks \n";
+    for (int i = 1; i < 4; i++)
+    {
+        myfile << loser.getPlayer(i)->getName() << "," << loser.getPlayer(i)->getNumTwo() * 2 + loser.getPlayer(i)->getNumThree() * 3 << "," <<
+        loser.getPlayer(i)->getNumThree() << "," << loser.getPlayer(i)->getNumThree() * 1.0 / (loser.getPlayer(i)->getNumMissedThree() * 1.0) <<
+        "," << loser.getPlayer(i)->getNumTwo() << "," << loser.getPlayer(i)->getNumTwo() * 1.0 / (loser.getPlayer(i)->getNumMissedTwo() * 1.0) <<
+        "," << loser.getPlayer(i)->getNumAssist() << "," << loser.getPlayer(i)->getNumRebounds() << "," << loser.getPlayer(i)->getNumBlocks();
+    }
+}
+
+void execute(Game* curr)
+{
+    curr->fullGameSimulation();
+}
+
+
 int main()
 {
+
+    std::ofstream myfile;
+    myfile.open ("../gameExports/seasonBoxScore.csv");
+    myfile << "Season Box Score\n";
+
     unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
 
     srand(seed);
@@ -361,28 +387,98 @@ int main()
         {
             // PLAY ROUND 1
             //Above the left most and right most teams are put into their respected vectors
-            for (int i = 0; i < leftColumnOne.size(); i += 2)
+            for (int i = 0; i < leftColumnOne.size(); i += 8)
             {
                 Game curr(leftColumnOne.at(i), leftColumnOne.at(i + 1));
-                curr.fullGameSimulation();
+                Game curr1(leftColumnOne.at(i+2), leftColumnOne.at(i + 3));
+                std::thread t1(execute,&curr);
+                std::thread t2(execute,&curr1);
+                Game curr2(leftColumnOne.at(i+4), leftColumnOne.at(i + 5));
+                Game curr3(leftColumnOne.at(i+6), leftColumnOne.at(i + 7));
+                std::thread t3(execute,&curr2);
+                std::thread t4(execute,&curr3);
+
+                t1.join();
+                t2.join();
+                t3.join();
+                t4.join();
                 leftColumnTwo.push_back(curr.getWinner());
                 std::cout << "Round 1 left Winner is: " << curr.getWinner().getName() << " the score was "
                           << curr.getWinner().getGameScore()
                           << " and " << curr.getLoser().getGameScore() << std::endl;
                 myText.setString(curr.getWinner().getName());
-                myText.setPosition(235.0f, 160.0f + 55.0f * i);
+                myText.setPosition(1550.0f, 160.0f + 55.0f * i);
+                leftColTwoTeams.push_back(myText);
+
+                leftColumnTwo.push_back(curr1.getWinner());
+                std::cout << "Round 1 left Winner is: " << curr1.getWinner().getName() << " the score was "
+                          << curr1.getWinner().getGameScore()
+                          << " and " << curr1.getLoser().getGameScore() << std::endl;
+                myText.setString(curr1.getWinner().getName());
+                myText.setPosition(1550.0f, 160.0f + 55.0f * (i+2));
+                leftColTwoTeams.push_back(myText);
+
+                leftColumnTwo.push_back(curr2.getWinner());
+                std::cout << "Round 1 left Winner is: " << curr2.getWinner().getName() << " the score was "
+                          << curr2.getWinner().getGameScore()
+                          << " and " << curr2.getLoser().getGameScore() << std::endl;
+                myText.setString(curr2.getWinner().getName());
+                myText.setPosition(1550.0f, 160.0f + 55.0f * (i+4));
+                leftColTwoTeams.push_back(myText);
+
+                leftColumnTwo.push_back(curr3.getWinner());
+                std::cout << "Round 1 left Winner is: " << curr3.getWinner().getName() << " the score was "
+                          << curr3.getWinner().getGameScore()
+                          << " and " << curr3.getLoser().getGameScore() << std::endl;
+                myText.setString(curr3.getWinner().getName());
+                myText.setPosition(1550.0f, 160.0f + 55.0f * (i+6));
                 leftColTwoTeams.push_back(myText);
             }
-            for (int i = 0; i < rightColumnOne.size(); i += 2)
+            for (int i = 0; i < rightColumnOne.size(); i += 8)
             {
                 Game curr(rightColumnOne.at(i), rightColumnOne.at(i + 1));
-                curr.fullGameSimulation();
+                Game curr1(rightColumnOne.at(i+2), rightColumnOne.at(i + 3));
+                std::thread t1(execute,&curr);
+                std::thread t2(execute,&curr1);
+                Game curr2(rightColumnOne.at(i+4), rightColumnOne.at(i + 5));
+                Game curr3(rightColumnOne.at(i+6), rightColumnOne.at(i + 7));
+                std::thread t3(execute,&curr2);
+                std::thread t4(execute,&curr3);
+
+                t1.join();
+                t2.join();
+                t3.join();
+                t4.join();
                 rightColumnTwo.push_back(curr.getWinner());
                 std::cout << "Round 1 right Winner is: " << curr.getWinner().getName() << " the score was "
                           << curr.getWinner().getGameScore()
                           << " and " << curr.getLoser().getGameScore() << std::endl;
                 myText.setString(curr.getWinner().getName());
-                myText.setPosition(1550.0f, 160.0f + 55.0f * i);
+                myText.setPosition(235.0f, 160.0f + 55.0f * i);
+                rightColTwoTeams.push_back(myText);
+
+                rightColumnTwo.push_back(curr1.getWinner());
+                std::cout << "Round 1 right Winner is: " << curr1.getWinner().getName() << " the score was "
+                          << curr1.getWinner().getGameScore()
+                          << " and " << curr1.getLoser().getGameScore() << std::endl;
+                myText.setString(curr1.getWinner().getName());
+                myText.setPosition(235.0f, 160.0f + 55.0f * (i+2));
+                rightColTwoTeams.push_back(myText);
+
+                rightColumnTwo.push_back(curr2.getWinner());
+                std::cout << "Round 1 right Winner is: " << curr2.getWinner().getName() << " the score was "
+                          << curr2.getWinner().getGameScore()
+                          << " and " << curr2.getLoser().getGameScore() << std::endl;
+                myText.setString(curr2.getWinner().getName());
+                myText.setPosition(235.0f, 160.0f + 55.0f * (i+4));
+                rightColTwoTeams.push_back(myText);
+
+                rightColumnTwo.push_back(curr3.getWinner());
+                std::cout << "Round 1 right Winner is: " << curr3.getWinner().getName() << " the score was "
+                          << curr3.getWinner().getGameScore()
+                          << " and " << curr3.getLoser().getGameScore() << std::endl;
+                myText.setString(curr3.getWinner().getName());
+                myText.setPosition(235.0f, 160.0f + 55.0f * (i+6));
                 rightColTwoTeams.push_back(myText);
             }
             roundOneCalc = false;
@@ -391,6 +487,107 @@ int main()
         if (roundTwoCalc)
         {
             // PLAY ROUND 2
+            int z = 0;
+            while (z == 0)
+            {
+                Game curr(leftColumnTwo.at(0), leftColumnTwo.at(1));
+                Game curr1(leftColumnTwo.at(2), leftColumnTwo.at(3));
+                std::thread t1(execute,&curr);
+                std::thread t2(execute,&curr1);
+                Game curr2(leftColumnTwo.at(4), leftColumnTwo.at(5));
+                Game curr3(leftColumnTwo.at(6), leftColumnTwo.at(7));
+                std::thread t3(execute,&curr2);
+                std::thread t4(execute,&curr3);
+
+                t1.join();
+                t2.join();
+                t3.join();
+                t4.join();
+                leftColumnThree.push_back(curr.getWinner());
+                std::cout << "Round 2 left Winner is: " << curr.getWinner().getName() << " the score was "
+                          << curr.getWinner().getGameScore()
+                          << " and " << curr.getLoser().getGameScore() << std::endl;
+                myText.setString(curr.getWinner().getName());
+                myText.setPosition(400.0f, 220.0f + 110.0f * 0);
+                leftColThreeTeams.push_back(myText);
+
+                leftColumnThree.push_back(curr1.getWinner());
+                std::cout << "Round 2 left Winner is: " << curr1.getWinner().getName() << " the score was "
+                          << curr1.getWinner().getGameScore()
+                          << " and " << curr1.getLoser().getGameScore() << std::endl;
+                myText.setString(curr1.getWinner().getName());
+                myText.setPosition(400.0f, 220.0f + 110.0f * 2);
+                leftColThreeTeams.push_back(myText);
+
+                leftColumnThree.push_back(curr2.getWinner());
+                std::cout << "Round 2 left Winner is: " << curr2.getWinner().getName() << " the score was "
+                          << curr2.getWinner().getGameScore()
+                          << " and " << curr2.getLoser().getGameScore() << std::endl;
+                myText.setString(curr2.getWinner().getName());
+                myText.setPosition(400.0f, 220.0f + 110.0f * 4);
+                leftColThreeTeams.push_back(myText);
+
+                leftColumnThree.push_back(curr3.getWinner());
+                std::cout << "Round 2 left Winner is: " << curr3.getWinner().getName() << " the score was "
+                          << curr3.getWinner().getGameScore()
+                          << " and " << curr3.getLoser().getGameScore() << std::endl;
+                myText.setString(curr3.getWinner().getName());
+                myText.setPosition(400.0f, 220.0f + 110.0f * 6);
+                leftColThreeTeams.push_back(myText);
+                z = 1;
+            }
+
+
+            int c = 0;
+            while (z == 0)
+            {
+                Game curr(rightColumnTwo.at(0), rightColumnTwo.at(1));
+                Game curr1(rightColumnTwo.at(2), rightColumnTwo.at(3));
+                std::thread t1(execute,&curr);
+                std::thread t2(execute,&curr1);
+                Game curr2(rightColumnTwo.at(4), rightColumnTwo.at(5));
+                Game curr3(rightColumnTwo.at(6), rightColumnTwo.at(7));
+                std::thread t3(execute,&curr2);
+                std::thread t4(execute,&curr3);
+
+                t1.join();
+                t2.join();
+                t3.join();
+                t4.join();
+                rightColumnThree.push_back(curr.getWinner());
+                std::cout << "Round 2 right Winner is: " << curr.getWinner().getName() << " the score was "
+                          << curr.getWinner().getGameScore()
+                          << " and " << curr.getLoser().getGameScore() << std::endl;
+                myText.setString(curr.getWinner().getName());
+                myText.setPosition(1380.0f, 220.0f + 110.0f * 0);
+                rightColThreeTeams.push_back(myText);
+
+                rightColumnThree.push_back(curr1.getWinner());
+                std::cout << "Round 2 right Winner is: " << curr1.getWinner().getName() << " the score was "
+                          << curr1.getWinner().getGameScore()
+                          << " and " << curr1.getLoser().getGameScore() << std::endl;
+                myText.setString(curr1.getWinner().getName());
+                myText.setPosition(1380.0f, 220.0f + 110.0f * 2);
+                rightColThreeTeams.push_back(myText);
+
+                rightColumnThree.push_back(curr2.getWinner());
+                std::cout << "Round 2 right Winner is: " << curr2.getWinner().getName() << " the score was "
+                          << curr2.getWinner().getGameScore()
+                          << " and " << curr2.getLoser().getGameScore() << std::endl;
+                myText.setString(curr2.getWinner().getName());
+                myText.setPosition(1380.0f, 220.0f + 110.0f * 4);
+                rightColThreeTeams.push_back(myText);
+
+                rightColumnThree.push_back(curr3.getWinner());
+                std::cout << "Round 2 right Winner is: " << curr3.getWinner().getName() << " the score was "
+                          << curr3.getWinner().getGameScore()
+                          << " and " << curr3.getLoser().getGameScore() << std::endl;
+                myText.setString(curr3.getWinner().getName());
+                myText.setPosition(1380.0f, 220.0f + 110.0f * 6);
+                rightColThreeTeams.push_back(myText);
+                c = 1;
+            }
+
             for (int i = 0; i < leftColumnTwo.size(); i += 2)
             {
                 Game curr(leftColumnTwo.at(i), leftColumnTwo.at(i + 1));
@@ -480,6 +677,7 @@ int main()
         //calculate the overall winner
         if (champCalc)
         {
+            std::cout << "LOOK HERE CHRIS BURG " << "twos " << leftColumnFour.at(0).getPlayer(1)->getNumTwo() << "threes : " << leftColumnFour.at(0).getPlayer(1)->getNumTwo() << leftColumnFour.at(0).getPlayer(1)->getName() << std::endl;
             // PLAY CHAMPIONSHIP
             Game curr(championship.at(0), championship.at(1));
             curr.fullGameSimulation();
@@ -745,5 +943,6 @@ int main()
 
         window.display();
     }
+    myfile.close();
     return 0;
 }
